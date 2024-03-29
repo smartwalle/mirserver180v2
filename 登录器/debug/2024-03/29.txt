@@ -478,3 +478,99 @@ Init done.
 
 Finishing..
 The End.
+HGE Started..
+
+HGE version: 1.80
+Date: 29. 3.2024, 19: 7:32
+
+OS: Windows 6.1.7601
+Memory: 4193720K total, 1889972K free
+
+D3D Driver: vm3dum_loader.dll
+Description: VMware SVGA 3D
+Version: 9.17.6.5
+Can't find appropriate full screen video mode 0
+Mode: 871 x 680 x UNKNOWN
+
+MaxTextureWidth: 16384
+MaxTextureHeight: 16384
+MaxPrimitiveCount: 2097151
+MaxVertexIndex: 1048575
+Cache 3072 4096 4096
+Init done.
+
+
+Finishing..
+The End.
+HGE Started..
+
+HGE version: 1.80
+Date: 29. 3.2024, 19: 8:42
+
+OS: Windows 6.1.7601
+Memory: 4193720K total, 1842312K free
+
+D3D Driver: vm3dum_loader.dll
+Description: VMware SVGA 3D
+Version: 9.17.6.5
+Can't find appropriate full screen video mode 0
+Mode: 871 x 680 x UNKNOWN
+
+MaxTextureWidth: 16384
+MaxTextureHeight: 16384
+MaxPrimitiveCount: 2097151
+MaxVertexIndex: 1048575
+Cache 3072 4096 4096
+Init done.
+
+
+Finishing..
+The End.
+HGE Started..
+
+HGE version: 1.80
+Date: 29. 3.2024, 19:10: 5
+
+OS: Windows 6.1.7601
+Memory: 4193720K total, 1836000K free
+
+D3D Driver: vm3dum_loader.dll
+Description: VMware SVGA 3D
+Version: 9.17.6.5
+Can't find appropriate full screen video mode 0
+Mode: 871 x 680 x UNKNOWN
+
+MaxTextureWidth: 16384
+MaxTextureHeight: 16384
+MaxPrimitiveCount: 2097151
+MaxVertexIndex: 1048575
+Cache 3072 4096 4096
+Init done.
+
+
+Finishing..
+The End.
+HGE Started..
+
+HGE version: 1.80
+Date: 29. 3.2024, 19:10:28
+
+OS: Windows 6.1.7601
+Memory: 4193720K total, 1836856K free
+
+D3D Driver: vm3dum_loader.dll
+Description: VMware SVGA 3D
+Version: 9.17.6.5
+Can't find appropriate full screen video mode 0
+Mode: 871 x 680 x UNKNOWN
+
+MaxTextureWidth: 16384
+MaxTextureHeight: 16384
+MaxPrimitiveCount: 2097151
+MaxVertexIndex: 1048575
+Cache 3072 4096 4096
+Init done.
+
+
+Finishing..
+The End.
