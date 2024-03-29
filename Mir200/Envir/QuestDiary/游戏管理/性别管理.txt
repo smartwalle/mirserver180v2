@@ -10,15 +10,13 @@
 ISADMIN
 #ACT
 CHANGEGENDER 0
-#SAY
-变性成功，小退生效。\ 
+GOTO @性别管理主页
 
 [@转为女性]
 #IF
 ISADMIN
 #ACT
 CHANGEGENDER 1
-#SAY
-变性成功，小退生效。\ 
+GOTO @性别管理主页
 
 }
