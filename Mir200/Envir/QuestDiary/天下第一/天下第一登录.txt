@@ -1,0 +1,38 @@
+[@天下第一登录]
+{
+#IF
+EQUAL <$GLOBAL(天下第一男战士名称)> <$USERNAME>
+#ACT
+SENDMSG 1 热烈欢迎天下第一男战士【<$USERNAME>】进入【<$SERVERNAME>】！
+BREAK
+
+#IF
+EQUAL <$GLOBAL(天下第一女战士名称)> <$USERNAME>
+#ACT
+SENDMSG 1 热烈欢迎天下第一女战士【<$USERNAME>】进入【<$SERVERNAME>】！
+BREAK
+
+#IF
+EQUAL <$GLOBAL(天下第一男法师名称)> <$USERNAME>
+#ACT
+SENDMSG 1 热烈欢迎天下第一男法师【<$USERNAME>】进入【<$SERVERNAME>】！
+BREAK
+
+#IF
+EQUAL <$GLOBAL(天下第一女法师名称)> <$USERNAME>
+#ACT
+SENDMSG 1 热烈欢迎天下第一女法师【<$USERNAME>】进入【<$SERVERNAME>】！
+BREAK
+
+#IF
+EQUAL <$GLOBAL(天下第一男道士名称)> <$USERNAME>
+#ACT
+SENDMSG 1 热烈欢迎天下第一男道士【<$USERNAME>】进入【<$SERVERNAME>】！
+BREAK
+
+#IF
+EQUAL <$GLOBAL(天下第一女道士名称)> <$USERNAME>
+#ACT
+SENDMSG 1 热烈欢迎天下第一女道士【<$USERNAME>】进入【<$SERVERNAME>】！
+BREAK
+}

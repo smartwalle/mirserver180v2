@@ -1,0 +1,30 @@
+[@玩家登录]
+{
+#IF
+ISNEWHUMAN
+#ACT
+SENDMSG 1 天下风云出我辈，欢迎新玩家【%s】的到来，从此玛法大陆又多了一份力量！
+BREAK
+
+#IF
+ISCASTLEMASTER
+#ACT
+SENDMSG 1 号令天下的沙城主【<$USERNAME>】进入了【<$SERVERNAME>】！
+
+#IF
+CHECKPKPOINT 2
+#ACT
+SENDMSG 1 罪大恶极的通缉要犯【<$USERNAME>】在%m出现，勇士门请有仇报仇，无仇也可以为民除害。
+
+#IF
+#ACT
+SENDMSG 5 系统提示：欢迎回来！
+
+#IF
+#ACT
+#CALL [\封号处理\封号处理.txt] @封号处理
+
+#IF
+#ACT
+#CALL [\天下第一\天下第一登录.txt] @天下第一登录
+}

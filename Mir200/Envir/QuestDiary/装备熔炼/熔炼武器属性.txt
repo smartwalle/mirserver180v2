@@ -1,0 +1,80 @@
+;用于合成武器极品属性
+;三把拥有相同属性的同一种武器，可以提升其属性
+;提升之后的属性将体现在第一件武器上，其其它属性不会受到影响，另外四件武器将回收
+;比如：三把+1攻击的裁决之杖，可以合成一把+2攻击的裁决之杖
+
+[@武器属性熔炼]
+{
+;#IF
+;CHECKPKPOINT 2
+;#SAY
+;我不想和你这样的人打交道.. \ \
+;<取消/@exit>
+;#ELSEACT
+#IF
+#ACT
+GOTO @提交熔炼武器
+
+[@提交熔炼武器]
+#IF
+#ACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+
+;重置所有本脚本会用到的变量
+MOV S$熔炼属性名称
+MOV N$熔炼最大次数 7
+MOV N$熔炼元宝数量 100
+MOV S$熔炼材料1 玛法精铁
+MOV N$熔炼材料1数量 100
+MOV S$熔炼材料2 玛法精魄
+MOV N$熔炼材料2数量 100
+MOV N$熔炼属性位置
+#SAY
+;<武器熔炼可以提升武器的伤害能力，开始之前仔细看看以下内容：/SCOLOR=255>\
+;<1、熔炼需要提供三把相同的武器，一把武器最多熔炼七次。/SCOLOR=250>\
+;<2、熔炼可以指定想要提升的属性，其它属性不会受到影响。/SCOLOR=250>\
+;<3、用于熔炼的武器，其将要熔炼的属性对应的值需要一致。/SCOLOR=250>\
+;<4、熔炼有一定的概率会失败，我会尽量保住第一把武器。/SCOLOR=250>\
+;<5、熔炼每次需要花费2000元宝。/SCOLOR=250>\
+传说中的神器那是可遇不可求……\
+<武器熔炼/@什么是熔炼>之术虽然不能帮你打造屠龙，但是可以让你更接近屠龙。\ \
+根据我师傅武器大师的指示，我在这里为大家提升武器的攻击能力，\
+熔炼需要{<$STR(S$熔炼材料1)>/SCOLOR=249}、{<$STR(S$熔炼材料2)>/SCOLOR=249}和{元宝/SCOLOR=249}。\ \
+<ITEMBOX:0:5:514:25:120:42:42:5,6:254#武器(主要)>
+<ITEMBOX:1:5:514:87:120:42:42:5,6:254#武器(材料)>\
+　　　 　　　　　　　　<选择熔炼属性/@选择属性>  <我再想想/@exit>\
+
+[@ItemIntoBox0]
+#OR
+COMPARETEXT <$BOXITEM[0].STDMODE> 5
+COMPARETEXT <$BOXITEM[0].STDMODE> 6
+#ACT
+BREAK
+#ELSEACT
+RETURNBOXITEM 0
+MESSAGEBOX 我只能对武器进行熔炼，其它装备爱莫能助。
+
+[@ItemIntoBox1]
+#OR
+COMPARETEXT <$BOXITEM[1].STDMODE> 5
+COMPARETEXT <$BOXITEM[1].STDMODE> 6
+#ACT
+BREAK
+#ELSEACT
+RETURNBOXITEM 1
+MESSAGEBOX 我只能对武器进行熔炼，其它装备爱莫能助。
+
+[@什么是熔炼]
+#IF
+#ACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+;RETURNBOXITEM 2
+#CALL [装备熔炼\熔炼装备.txt] @关于熔炼
+
+[@选择属性]
+#IF
+#ACT
+#CALL [装备熔炼\熔炼装备.txt] @选择熔炼属性
+}

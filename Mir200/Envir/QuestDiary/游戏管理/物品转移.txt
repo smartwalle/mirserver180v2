@@ -1,0 +1,133 @@
+[@转移]
+{
+#IF
+#ACT
+OpenBigDialogBox 24
+#say
+<你使用了一个空间转移石，利用我-风神-的力量/AUTOCOLOR=254,251,168,191,250,70,245,249,253>\
+<就能把你包袱中的一些药品传送到你朋友的包袱中/SCOLOR=254>\  \ 
+<传送超级金创药，输入名字:/@@InPutString99>     <传送超级魔法药，输入名字:/@@InPutString97>\ \
+<取消传送,还原空间转移石/@还>\ \
+
+[@还]
+#if
+#act
+give 空间转移石 1
+MOV S99 0
+ClosebigDialogBox
+CLOSE
+break
+
+[@InPutString99]
+#IF
+S99.CheckOnline
+#ACT
+GOTO @2CJC
+#ELSESAY
+<送药失败，你朋友不在线或不存在此人!!/AUTOCOLOR=254,251,168,191,250,19,245,253> \ \
+<重新输入/@@InPutString99>   <取消传送,还原空间转移石/@还\ \
+<注意：关闭窗口东西就没了，/AUTOCOLOR=254,251,168,191,250,19,245,253>请点<算了，我不用了/SCOLOR=253>
+
+
+[@2CJC]
+ \ \
+你输入的玩家名字是:<$STR(S99)>，确认对吗？\ \
+<对的，输入数量/@@InPutString98>
+
+[@InPutString98]
+#IF
+checkitem 超级金创药 <$STR(S98)>
+#ACT
+GOTO @3CJC
+#ELSESAY
+<送药失败，你身上携带药品数量不足!!/AUTOCOLOR=254,251,168,191,250,19,245,253> \ \
+<重新输入/@@InPutString98>   <取消传送,还原空间转移石/@还\ \
+<注意：关闭窗口东西就没了，/AUTOCOLOR=254,251,168,191,250,19,245,253>请点<算了，我不用了/SCOLOR=253>
+
+
+[@3cjc]
+ \ \
+你输入的玩家名字是:<$STR(S99)>\
+            数量是:<$STR(S98)>捆      确认对吗？\ \
+<对的，确认发送/@发送>
+
+[@发送]
+#if
+S99.CheckOnline
+checkitem 超级金创药 <$STR(S98)>
+#ACT
+take 超级金创药 <$STR(S98)>
+S99.Give 超级金创药 <$STR(S98)>
+SendCenterMsg 215 216  %S利用《空间转移石》向<$STR(S99)>远程传送了《超级金创药》<$STR(S98)>捆!~   1
+MOV S99 0
+MOV S98 0
+ClosebigDialogBox
+CLOSE
+break
+#ELSEACT
+give 空间转移石 1
+GuildNoticeMsg 215 216 送药失败，你朋友中途下线或你药品不足 Self 
+MOV S99 0
+MOV S98 0
+ClosebigDialogBox
+CLOSE
+break
+
+
+
+[@InPutString97]
+#IF
+S97.CheckOnline
+#ACT
+GOTO @2CJC1
+#ELSESAY
+<送药失败，你朋友不在线或不存在此人!!/AUTOCOLOR=254,251,168,191,250,19,245,253> \ \
+<重新输入/@@InPutString97>   <取消传送,还原空间转移石/@还\ \
+<注意：关闭窗口东西就没了，/AUTOCOLOR=254,251,168,191,250,19,245,253>请点<算了，我不用了/SCOLOR=253>
+
+
+[@2CJC1]
+ \ \
+你输入的玩家名字是:<$STR(S97)>，确认对吗？\ \
+<对的，输入数量/@@InPutString96>
+
+[@InPutString96]
+#IF
+checkitem 超级魔法药 <$STR(S96)>
+#ACT
+GOTO @3CJC1
+#ELSESAY
+<送药失败，你身上携带药品数量不足!!/AUTOCOLOR=254,251,168,191,250,19,245,253> \ \
+<重新输入/@@InPutString96>   <取消传送,还原空间转移石/@还\ \
+<注意：关闭窗口东西就没了，/AUTOCOLOR=254,251,168,191,250,19,245,253>请点<算了，我不用了/SCOLOR=253>
+
+
+[@3cjc1]
+ \ \
+你输入的玩家名字是:<$STR(S97)>\
+            数量是:<$STR(S96)>捆      确认对吗？\ \
+<对的，确认发送/@发送1>
+
+[@发送1]
+#if
+S97.CheckOnline
+checkitem 超级魔法药 <$STR(S96)>
+#ACT
+take 超级魔法药 <$STR(S96)>
+S97.Give 超级魔法药 <$STR(S96)>
+SendCenterMsg 215 216  %S利用《空间转移石》向<$STR(S97)>远程传送了《超级魔法药》<$STR(S96)>捆!~   1
+MOV S97 0
+MOV S96 0
+ClosebigDialogBox
+CLOSE
+break
+#ELSEACT
+give 空间转移石 1
+GuildNoticeMsg 215 216 送药失败，你朋友中途下线或你药品不足 Self 
+MOV S97 0
+MOV S96 0
+ClosebigDialogBox
+CLOSE
+break
+
+}

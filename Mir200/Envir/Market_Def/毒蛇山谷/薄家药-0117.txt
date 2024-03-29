@@ -1,0 +1,9 @@
+(@buy @sell @repair @s_repair )
+%100
++0
++42
+[@main]
+#IF
+#ACT
+#CALL [\城市商人\药店.txt] @药店
+Break

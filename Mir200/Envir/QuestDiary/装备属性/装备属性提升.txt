@@ -1,0 +1,358 @@
+;用于合成装备极品属性
+;三个拥有相同额外属性的同一种装备，可以提升其额外属性
+;提升之后的属性将体现在第一件装备上，其其它额外属性不会受到影响，另外两件装备将回收
+;比如：三把+1攻击的裁决之杖，可以合成一把+2攻击的裁决之杖
+
+;变量说明
+;S$属性名称 - 属性名称
+;P0 - 属性位置
+;P1 - 最大允许提升点数条件
+;其它已用变量
+;P2 - 新点数
+;P10 - 第一件装备已有点数
+;P11 - 第二件装备已有点数
+;P12 - 第三件装备已有点数
+
+[@装备属性提升]
+{
+;#IF
+;CHECKPKPOINT 2
+;#SAY
+;我不想和你这样的人打交道.. \ \
+;<取消/@exit>
+;#ELSEACT
+#IF
+#ACT
+GOTO @提交合成装备
+
+[@提交合成装备]
+#IF
+#ACT
+;重置所有本脚本会用到的变量
+MOV S$属性名称
+MOV P0
+MOV P1
+#SAY
+<提升装备属性可是我的绝活，仔细看看以下内容：/SCOLOR=255>\
+<1、属性提升需要三件拥有相同额外属性值的同一种装备。/SCOLOR=250>\
+<2、提升将在第一件装备上进行，该装备的其它属性不会受到影响。/SCOLOR=250>\
+<3、提升有一定概率失败，失败后只会返回第一件装备。/SCOLOR=250>\
+<4、每次提升需要花费500元宝。/SCOLOR=250>\ \
+<ITEMBOX:0:5:514:25:119:42:42:*:254#放入装备>
+<ITEMBOX:1:5:514:72:119:42:42:*:254#放入装备>
+<ITEMBOX:2:5:514:119:119:42:42:*:254#放入装备>\ 
+　　　 　　　　　　　　        <下一步/@选择提升属性>  <我再想想/@exit>\
+
+;[@ItemIntoBox0]
+;#IF
+;#ACT
+;SETUPGRADEITEM 0
+;CHANGEITEMADDVALUE -1 0 = 0
+;UPDATEBOXITEM 0
+;RETURNBOXITEM 0
+
+[@选择提升属性]
+#IF
+CHECKBOXITEMCOUNT 0 1
+CHECKBOXITEMCOUNT 1 1
+CHECKBOXITEMCOUNT 2 1
+#ACT
+#ELSESAY
+请放入所有需要的装备！\ \
+<返回/@提交合成装备>\ 
+<离开/@exit>\ 
+#ELSEACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+RETURNBOXITEM 2
+BREAK
+
+;武器
+#OR
+COMPARETEXT <$BOXITEM[0].STDMODE> 5
+COMPARETEXT <$BOXITEM[0].STDMODE> 6
+#ACT
+BREAK
+#SAY
+请选择你要提升【<$BOXITEM[0].NAME>】的哪种属性：\ \
+<提升攻击/@提升武器攻击属性>属性\
+<提升魔法/@提升武器魔法属性>属性\
+<提升道术/@提升武器道术属性>属性\ \
+<我再想想/@exit>\
+
+;衣服、头盔、鞋子、腰带
+#OR
+COMPARETEXT <$BOXITEM[0].STDMODE> 10
+COMPARETEXT <$BOXITEM[0].STDMODE> 11
+COMPARETEXT <$BOXITEM[0].STDMODE> 15
+COMPARETEXT <$BOXITEM[0].STDMODE> 16
+COMPARETEXT <$BOXITEM[0].STDMODE> 62
+COMPARETEXT <$BOXITEM[0].STDMODE> 64
+#ACT
+BREAK
+#SAY
+请选择你要提升【<$BOXITEM[0].NAME>】的哪种属性：\ \
+<提升防御/@提升防具防御属性>属性\
+<提升魔御/@提升防具魔御属性>属性\
+<提升攻击/@提升防具攻击属性>属性\
+<提升魔法/@提升防具魔法属性>属性\
+<提升道术/@提升防具道术属性>属性\ \
+<我再想想/@exit>\
+
+;项链、戒指、手镯、勋章、宝石
+#OR
+COMPARETEXT <$BOXITEM[0].STDMODE> 19
+COMPARETEXT <$BOXITEM[0].STDMODE> 20
+COMPARETEXT <$BOXITEM[0].STDMODE> 21
+COMPARETEXT <$BOXITEM[0].STDMODE> 22
+COMPARETEXT <$BOXITEM[0].STDMODE> 23
+COMPARETEXT <$BOXITEM[0].STDMODE> 24
+COMPARETEXT <$BOXITEM[0].STDMODE> 26
+COMPARETEXT <$BOXITEM[0].STDMODE> 30
+COMPARETEXT <$BOXITEM[0].STDMODE> 63
+#ACT
+BREAK
+#SAY
+请选择你要提升【<$BOXITEM[0].NAME>】的哪种属性：\ \
+<提升攻击/@提升首饰攻击属性>属性\
+<提升魔法/@提升首饰魔法属性>属性\
+<提升道术/@提升首饰道术属性>属性\ \
+<我再想想/@exit>\
+
+#IF
+#ACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+RETURNBOXITEM 2
+#SAY
+恕我眼拙，你这件宝贝我重来没有见过，不知道该怎么帮助你。\ \ 
+<离开/@exit>\
+
+[@提升武器攻击属性]
+#IF
+#ACT
+MOV S$属性名称 攻击
+MOV P0 0
+MOV P1 7
+GOTO @开始升级
+
+[@提升武器魔法属性]
+#IF
+#ACT
+MOV S$属性名称 魔法
+MOV P0 1
+MOV P1 7
+GOTO @开始升级
+
+[@提升武器道术属性]
+#IF
+#ACT
+MOV S$属性名称 道术
+MOV P0 2
+MOV P1 7
+GOTO @开始升级
+
+[@提升防具防御属性]
+#IF
+#ACT
+MOV S$属性名称 防御
+MOV P0 0
+MOV P1 3
+GOTO @开始升级
+
+[@提升防具魔御属性]
+#IF
+#ACT
+MOV S$属性名称 魔御
+MOV P0 1
+MOV P1 3
+GOTO @开始升级
+
+[@提升防具攻击属性]
+#IF
+#ACT
+MOV S$属性名称 攻击
+MOV P0 2
+MOV P1 3
+GOTO @开始升级
+
+[@提升防具魔法属性]
+#IF
+#ACT
+MOV S$属性名称 魔法
+MOV P0 3
+MOV P1 3
+GOTO @开始升级
+
+[@提升防具道术属性]
+#IF
+#ACT
+MOV S$属性名称 道术
+MOV P0 4
+MOV P1 3
+GOTO @开始升级
+
+[@提升首饰攻击属性]
+#IF
+#ACT
+MOV S$属性名称 攻击
+MOV P0 2
+MOV P1 3
+GOTO @开始升级
+
+[@提升首饰魔法属性]
+#IF
+#ACT
+MOV S$属性名称 魔法
+MOV P0 3
+MOV P1 3
+GOTO @开始升级
+
+[@提升首饰道术属性]
+#IF
+#ACT
+MOV S$属性名称 道术
+MOV P0 4
+MOV P1 3
+GOTO @开始升级
+
+[@开始升级]
+#IF
+CHECKBOXITEMCOUNT 0 1
+CHECKBOXITEMCOUNT 1 1
+CHECKBOXITEMCOUNT 2 1
+#ACT
+#ELSEACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+RETURNBOXITEM 2
+BREAK
+#ELSESAY
+请放入所有需要的装备！\ \
+<返回/@提交合成装备>\ 
+<离开/@exit>\ 
+
+;检测相同物品
+#IF
+COMPARETEXT <$BOXITEM[1].INDEX> <$BOXITEM[0].INDEX>
+COMPARETEXT <$BOXITEM[2].INDEX> <$BOXITEM[0].INDEX>
+#ELSEACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+RETURNBOXITEM 2
+BREAK
+#ELSESAY
+想要提升【<$BOXITEM[0].NAME>】的【<$STR(S$属性名称)>】属性?\
+需要提供三件拥有相同额外【<$STR(S$属性名称)>】属性的【<$BOXITEM[0].NAME>】！\
+你给我的物品好像不全是【<$BOXITEM[0].NAME>】。\ \ 
+<重新提交装备/@提交合成装备>\
+<离开/@exit>\ 
+
+;获取额外属性值
+#IF
+#ACT
+SETUPGRADEITEM 0
+GETITEMADDVALUE -1 P0 <$STR(P10)>
+SETUPGRADEITEM 1
+GETITEMADDVALUE -1 P0 <$STR(P11)>
+SETUPGRADEITEM 2
+GETITEMADDVALUE -1 P0 <$STR(P12)>
+
+;检测是否有额外属性值
+#IF
+SMALL P10 0
+#ACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+RETURNBOXITEM 2
+BREAK
+#SAY
+想要提升【<$BOXITEM[0].NAME>】的【<$STR(S$属性名称)>】属性?\
+需要提供三件拥有相同额外【<$STR(S$属性名称)>】属性的【<$BOXITEM[0].NAME>】！\
+你给我的【<$BOXITEM[0].NAME>】好像没有额外的【<$STR(S$属性名称)>】属性。\ \ 
+<重新提交装备/@提交合成装备>\
+<离开/@exit>\ 
+
+;检测额外属性值是否一致
+#IF
+COMPARETEXT P11 P10
+COMPARETEXT P12 P10
+#ELSEACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+RETURNBOXITEM 2
+BREAK
+#ELSESAY
+想要提升【<$BOXITEM[0].NAME>】的【<$STR(S$属性名称)>】属性?\
+需要提供三件拥有相同额外【<$STR(S$属性名称)>】属性的【<$BOXITEM[0].NAME>】！\
+你给我的【<$BOXITEM[0].NAME>】拥有不同的额外【<$STR(S$属性名称)>】属性。\ \ 
+<重新提交装备/@提交合成装备>\
+<离开/@exit>\ 
+
+;重新获取一次额外属性，并计算提升值
+#IF
+#ACT
+SETUPGRADEITEM 0
+GETITEMADDVALUE -1 P0 <$STR(P2)>
+INC P2 1
+
+;检测最大额外提升点数
+#IF
+LARGE P2 <$STR(P1)>
+#ACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+RETURNBOXITEM 2
+BREAK
+#SAY
+实在抱歉，以我目前的能力，\
+【<$BOXITEM[0].NAME>】的【<$STR(S$属性名称)>】属性最多提升【<$STR(P1)>】点。\ \
+<离开/@exit>\ 
+
+;检查材料是否充足
+#IF
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+#ELSESAY
+什么，你连这点实力都没有，还想我为你服务？\ 
+准备好足够的元宝再来找我吧。\ \ 
+<离开/@exit>\ 
+#ELSEACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+RETURNBOXITEM 2
+BREAK
+
+;失败
+#IF
+#ACT
+MOVR P5 0 1000
+
+#IF
+LARGE P5 600
+#ACT
+RETURNBOXITEM 0
+DELBOXITEM 1
+DELBOXITEM 2
+BREAK
+#SAY
+很遗憾，【<$BOXITEM[0].NAME>】的【<$STR(S$属性名称)>】属性提升失败，\
+这也不是我想要的结果。\ \ 
+<返回/@提交合成装备>\ 
+<离开/@exit>\ 
+
+;属性合成
+#IF
+#ACT
+SETUPGRADEITEM 0
+CHANGEITEMADDVALUE -1 P0 = <$STR(P2)>
+UPDATEBOXITEM 0
+RETURNBOXITEM 0
+DELBOXITEM 1
+DELBOXITEM 2
+#SAY
+你总是如此幸运，【<$BOXITEM[0].NAME>】的【<$STR(S$属性名称)>】属性提升成功！\ \
+<返回/@提交合成装备>\ 
+<离开/@exit>\ 
+}

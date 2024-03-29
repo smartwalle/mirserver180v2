@@ -1,0 +1,11 @@
+[@行会召唤令变量]
+{
+#IF
+#ACT
+VAR STRING GLOBAL 行会召唤令发起行会 
+VAR STRING GLOBAL 行会召唤令地图名称 
+VAR STRING GLOBAL 行会召唤令发起者
+VAR STRING GLOBAL 行会召唤令地图编号 
+VAR STRING GLOBAL 行会召唤令地图坐标X
+VAR STRING GLOBAL 行会召唤令地图坐标Y
+}

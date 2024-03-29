@@ -1,0 +1,7 @@
+(@buy @sell @repair @s_repair )
+%100
+[@main]
+#IF
+#ACT
+#CALL [\装备回收\装备回收.txt] @装备回收
+Break

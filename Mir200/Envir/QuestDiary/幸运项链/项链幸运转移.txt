@@ -1,0 +1,123 @@
+;用于将一条项链的额外幸运属性转移到另一条项链
+;只做额外幸运属性转移，项链不会回收
+[@项链幸运转移]
+{
+;#IF
+;CHECKPKPOINT 2
+;#SAY
+;我不想和你这样的人打交道.. \ \
+;<取消/@exit>
+;#ELSEACT
+#IF
+#ACT
+GOTO @提交转移项链
+
+;变量说明
+;N$转移幸运元宝数量 - 需要元宝数量
+;其它已用变量
+;P0 - 幸运点数
+;P1 - 元宝真实数量
+;P2 - 元宝条件
+[@提交转移项链]
+#IF
+#ACT
+;重置所有本脚本会用到的变量
+MOV N$转移幸运元宝数量 500
+#SAY
+<想为你心爱的项链附加幸运，前提是你有另一条带有额外幸运的项链：/SCOLOR=255>\
+<1、要转出的项链需包含额外幸运属性，且转出后原项链幸运会消失。/SCOLOR=250>\
+<2、被转入的项链最好不要带有额外幸运属性，转移后幸运会被替换。/SCOLOR=250>\
+<3、目前已知灯笼项链、白色虎齿项链和记忆项链等支持幸运转移。/SCOLOR=250>\
+<4、每次转移需要花费【<$STR(N$转移幸运元宝数量)>】元宝，转移次数不限。/SCOLOR=250>\ \
+<ITEMBOX:6:5:514:25:120:42:42:19:254#转出幸运项链><ITEMBOX:7:5:514:120:120:42:42:19:254#转入幸运项链>\ 
+　　　 　　->　　　　　        <开始转移/@开始转移>    <我再想想/@exit>\
+
+[@ItemIntoBox6]
+
+[@ItemIntoBox7]
+
+[@开始转移]
+#IF
+CHECKBOXITEMCOUNT 6 0
+#ELSEACT
+RETURNBOXITEM 6
+RETURNBOXITEM 7
+BREAK
+#ELSESAY
+请放入要【转出】幸运的项链！\ \
+<返回/@提交转移项链>\ 
+<离开/@exit>\ 
+
+#IF
+CHECKBOXITEMCOUNT 7 0
+#ELSEACT
+RETURNBOXITEM 6
+RETURNBOXITEM 7
+BREAK
+#ELSESAY
+请放入要【转入】幸运的项链！\ \
+<返回/@提交转移项链>\ 
+<离开/@exit>\ 
+
+#IF
+#ACT
+SETUPGRADEITEM 6
+
+#IF
+CHECKITEMADDVALUE -1 1 > 0
+#ELSEACT
+RETURNBOXITEM 6
+RETURNBOXITEM 7
+BREAK
+#ELSESAY
+放入的【<$BOXITEM[6].NAME>】项链没有额外幸运属性，不能进行转出！ \ \
+<返回/@提交转移项链>\ 
+<离开/@exit>\ 
+
+;计算元宝条件
+#IF
+#ACT
+MOV P1 <$STR(N$转移幸运元宝数量)>
+DEC P1 1
+MOV P2 <$STR(P1)>
+INC P1 1
+
+;检查材料是否充足
+#IF
+CHECKGAMEGOLD > <$STR(P2)>
+#ACT
+GAMEGOLD - <$STR(P1)>
+#ELSESAY
+什么，你连这点实力都没有，还想我为你服务？\ 
+准备好足够的元宝再来找我吧。\ \ 
+<离开/@exit>\ 
+#ELSEACT
+RETURNBOXITEM 6
+RETURNBOXITEM 7
+BREAK
+
+;获取转出项链的额外幸运
+#IF
+#ACT
+SETUPGRADEITEM 6
+GETITEMADDVALUE -1 1 <$STR(P0)>
+
+;幸运转移
+#IF
+#ACT
+SETUPGRADEITEM 7
+CHANGEITEMADDVALUE -1 1 = <$STR(P0)>
+
+SETUPGRADEITEM 6
+CHANGEITEMADDVALUE -1 1 = 0
+
+UPDATEBOXITEM 6
+RETURNBOXITEM 6
+UPDATEBOXITEM 7
+RETURNBOXITEM 7
+#SAY
+一切都在我的掌控之内，\
+已经成功将【<$BOXITEM[6].NAME>】的幸运转移到了【<$BOXITEM[7].NAME>】。\ \
+<返回/@提交转移项链>\ 
+<离开/@exit>\ 
+}

@@ -1,0 +1,59 @@
+[@行会召唤令发起]
+{
+#IF
+HAVEGUILD
+#ACT
+CALCVAR GLOBAL 行会召唤令发起行会 = <$GUILDNAME>
+CALCVAR GLOBAL 行会召唤令地图名称 = <$MAPTITLE>
+CALCVAR GLOBAL 行会召唤令发起者 = <$USERNAME>
+CALCVAR GLOBAL 行会召唤令地图编号 = <$MAP>
+CALCVAR GLOBAL 行会召唤令地图坐标X = <$X>
+CALCVAR GLOBAL 行会召唤令地图坐标Y = <$Y>  
+GMEXECUTE 开始提问 @行会召唤令
+SENDMSG 5 系统提示：行会召唤令已放出，请耐心等待援军的到来！
+SENDMSG 1 【<$GUILDNAME>】的成员【<$USERNAME>】发起了一个行会召唤令，请求兄弟们火速增援！！！
+BREAK
+#ELSEACT
+SENDMSG 5 系统提示：您没有加入任何行会，无法使用行会召唤令。
+GIVE 行会召唤令 1
+}
+
+[@行会召唤令响应]
+{
+#IF
+EQUAL <$GLOBAL(行会召唤令发起者)> <$USERNAME>
+#ACT
+BREAK
+
+#IF
+HAVEGUILD
+CHECKOFGUILD <$GLOBAL(行会召唤令发起行会)>
+#ACT
+MOV S$行会召唤令发起行会 <$GLOBAL(行会召唤令发起行会)>
+MOV S$行会召唤令地图名称 <$GLOBAL(行会召唤令地图名称)>
+MOV S$行会召唤令发起者 <$GLOBAL(行会召唤令发起者)>
+MOV S$行会召唤令地图编号 <$GLOBAL(行会召唤令地图编号)>
+MOV S$行会召唤令地图坐标X <$GLOBAL(行会召唤令地图坐标X)>
+MOV S$行会召唤令地图坐标Y <$GLOBAL(行会召唤令地图坐标Y)>
+#SAY
+同门师兄弟【<$STR(S$行会召唤令发起者)>】在【<$STR(S$行会召唤令地图名称)>】遇险，\
+需要你的紧急支援！你是否愿意前往，助他一臂之力呢？\ \
+<为兄弟九死一生/@行会召唤令支援>　　<我和他不熟/@EXIT>\
+
+[@行会召唤令支援]
+#IF
+HAVEGUILD
+CHECKOFGUILD <$STR(S$行会召唤令发起行会)>
+#ACT
+MAPMOVE <$STR(S$行会召唤令地图编号)> <$STR(S$行会召唤令地图坐标X)> <$STR(S$行会召唤令地图坐标Y)>
+MOV S$行会召唤令发起行会
+MOV S$行会召唤令地图名称
+MOV S$行会召唤令发起者
+MOV S$行会召唤令地图编号 
+MOV S$行会召唤令地图坐标X
+MOV S$行会召唤令地图坐标Y
+BREAK
+#ELSESAY
+你已经不在该行会。\ \
+<离开/@exit>
+}

@@ -1,0 +1,346 @@
+[@装备领取主页]
+{
+您可以领取以下装备：\
+战士：<沃玛/@沃玛战套> <祖玛/@祖玛战套> <圣战/@赤月战套> <雷霆/@魔龙战套>[<强化/@魔龙强化战套>] <英雄/@英雄战套> <幽冥/@幽冥战套> <狂雷/@雷炎战套> <天龙/@天龙战套> <主宰/@主宰战套>\
+法师：<沃玛/@沃玛法套> <祖玛/@祖玛法套> <法神/@赤月法套> <烈焰/@魔龙法套>[<强化/@魔龙强化法套>] <英雄/@英雄法套> <幽冥/@幽冥法套> <逆火/@雷炎法套> <天龙/@天龙法套> <主宰/@主宰法套>\
+道士：<沃玛/@沃玛道套> <祖玛/@祖玛道套> <天尊/@赤月道套> <光芒/@魔龙道套>[<强化/@魔龙强化道套>] <英雄/@英雄道套> <幽冥/@幽冥道套> <通云/@雷炎道套> <天龙/@天龙道套> <主宰/@主宰道套>\ \
+<返回/@游戏管理>   <离开/@exit>\
+
+[@沃玛战套]
+#IF
+ISADMIN
+#ACT
+GIVE 鹿皮靴
+GIVE 铁腰带
+GIVE 幽灵项链
+GIVE 幽灵手套 2
+GIVE 龙之戒指 2
+GOTO @装备领取主页
+
+[@沃玛法套]
+#IF
+ISADMIN
+#ACT
+GIVE 鹿皮靴
+GIVE 铁腰带
+GIVE 生命项链
+GIVE 思贝儿手镯 2
+GIVE 红宝石戒指 2
+GOTO @装备领取主页
+
+[@沃玛道套]
+#IF
+ISADMIN
+#ACT
+GIVE 鹿皮靴
+GIVE 铁腰带
+GIVE 天珠项链
+GIVE 心灵手镯 2
+GIVE 铂金戒指 2
+GOTO @装备领取主页
+
+[@祖玛战套]
+#IF
+ISADMIN
+#ACT
+GIVE 紫绸靴
+GIVE 青铜腰带
+GIVE 黑铁头盔
+GIVE 绿色项链
+GIVE 阎罗手套 2
+GIVE 骑士手镯 2
+GIVE 力量戒指 2
+GOTO @装备领取主页
+
+[@祖玛法套]
+#IF
+ISADMIN
+#ACT
+GIVE 紫绸靴
+GIVE 青铜腰带
+GIVE 黄金头盔
+GIVE 恶魔铃铛
+GIVE 龙之手镯 2
+GIVE 紫碧螺 2
+GOTO @装备领取主页
+
+[@祖玛道套]
+#IF
+ISADMIN
+#ACT
+GIVE 紫绸靴
+GIVE 青铜腰带
+GIVE 黄金头盔
+GIVE 灵魂项链
+GIVE 三眼手镯 2
+GIVE 泰坦戒指 2
+GOTO @装备领取主页
+
+[@赤月战套]
+#IF
+ISADMIN
+#ACT
+GIVE 钢铁腰带
+GIVE 避魂靴
+GIVE 圣战头盔
+GIVE 圣战项链
+GIVE 圣战手镯 2
+GIVE 圣战戒指 2
+GIVE 荣耀勋章
+GOTO @装备领取主页
+
+[@赤月法套]
+#IF
+ISADMIN
+#ACT
+GIVE 钢铁腰带
+GIVE 避魂靴
+GIVE 法神头盔
+GIVE 法神项链
+GIVE 法神手镯 2
+GIVE 法神戒指 2
+GIVE 荣耀勋章
+GOTO @装备领取主页
+
+[@赤月道套]
+#IF
+ISADMIN
+#ACT
+GIVE 钢铁腰带
+GIVE 避魂靴
+GIVE 天尊头盔
+GIVE 天尊项链
+GIVE 天尊手镯 2
+GIVE 天尊戒指 2
+GIVE 荣耀勋章
+GOTO @装备领取主页
+
+[@魔龙战套]
+#IF
+ISADMIN
+#ACT
+GIVE 雷霆战靴
+GIVE 雷霆腰带
+GIVE 雷霆战盔
+GIVE 雷霆项链
+GIVE 雷霆勋章
+GIVE 雷霆护腕 2
+GIVE 雷霆战戒 2
+GOTO @装备领取主页
+
+[@魔龙法套]
+#IF
+ISADMIN
+#ACT
+GIVE 烈焰腰带
+GIVE 烈焰魔靴
+GIVE 烈焰魔盔
+GIVE 烈焰项链
+GIVE 烈焰勋章
+GIVE 烈焰护腕 2
+GIVE 烈焰魔戒 2
+GOTO @装备领取主页
+
+[@魔龙道套]
+#IF
+ISADMIN
+#ACT
+GIVE 光芒道靴
+GIVE 光芒腰带
+GIVE 光芒道盔
+GIVE 光芒项链
+GIVE 光芒勋章
+GIVE 光芒护腕 2
+GIVE 光芒道戒 2
+GOTO @装备领取主页
+
+[@魔龙强化战套]
+#IF
+ISADMIN
+#ACT
+GIVE 强化雷霆战靴
+GIVE 强化雷霆腰带
+GIVE 强化雷霆战盔
+GIVE 强化雷霆项链
+GIVE 强化雷霆勋章
+GIVE 强化雷霆护腕 2
+GIVE 强化雷霆战戒 2
+GOTO @装备领取主页
+
+[@魔龙强化法套]
+#IF
+ISADMIN
+#ACT
+GIVE 强化烈焰腰带
+GIVE 强化烈焰魔靴
+GIVE 强化烈焰魔盔
+GIVE 强化烈焰项链
+GIVE 强化烈焰勋章
+GIVE 强化烈焰护腕 2
+GIVE 强化烈焰魔戒 2
+GOTO @装备领取主页
+
+[@魔龙强化道套]
+#IF
+ISADMIN
+#ACT
+GIVE 强化光芒道靴
+GIVE 强化光芒腰带
+GIVE 强化光芒道盔
+GIVE 强化光芒项链
+GIVE 强化光芒勋章
+GIVE 强化光芒护腕 2
+GIVE 强化光芒道戒 2
+GOTO @装备领取主页
+
+[@英雄战套]
+#IF
+#ACT
+GOTO @英雄套
+
+[@英雄法套]
+#IF
+#ACT
+GOTO @英雄套
+
+[@英雄道套]
+#IF
+#ACT
+GOTO @英雄套
+
+[@英雄套]
+#IF
+ISADMIN
+#ACT
+GIVE 英雄圣带
+GIVE 英雄圣靴
+GIVE 英雄圣盔
+GIVE 英雄圣链
+GIVE 英雄圣章
+GIVE 英雄圣镯 2
+GIVE 英雄圣戒 2
+GOTO @装备领取主页
+
+[@幽冥战套]
+#IF
+#ACT
+GOTO @幽冥套
+
+[@幽冥法套]
+#IF
+#ACT
+GOTO @幽冥套
+
+[@幽冥道套]
+#IF
+#ACT
+GOTO @幽冥套
+
+[@幽冥套]
+#IF
+ISADMIN
+#ACT
+GIVE 幽冥魂带
+GIVE 幽冥魂靴
+GIVE 幽冥魂盔
+GIVE 幽冥魂链
+GIVE 幽冥魂章
+GIVE 幽冥魂镯 2
+GIVE 幽冥魂戒 2
+GOTO @装备领取主页
+
+[@雷炎战套]
+#IF
+ISADMIN
+#ACT
+GIVE 狂雷腰带
+GIVE 狂雷战靴
+GIVE 狂雷头盔
+GIVE 狂雷项链
+GIVE 狂雷勋章
+GIVE 狂雷护腕 2
+GIVE 狂雷战戒 2
+GOTO @装备领取主页
+
+[@雷炎法套]
+#IF
+ISADMIN
+#ACT
+GIVE 逆火腰带
+GIVE 逆火魔靴
+GIVE 逆火头盔
+GIVE 逆火项链
+GIVE 逆火勋章
+GIVE 逆火护腕 2
+GIVE 逆火魔戒 2
+GOTO @装备领取主页
+
+[@雷炎道套]
+#IF
+ISADMIN
+#ACT
+GIVE 通云腰带
+GIVE 通云道靴
+GIVE 通云头盔
+GIVE 通云项链
+GIVE 通云勋章
+GIVE 通云护腕 2
+GIVE 通云道戒 2
+GOTO @装备领取主页
+
+[@天龙战套]
+#IF
+#ACT
+GOTO @天龙套
+
+[@天龙法套]
+#IF
+#ACT
+GOTO @天龙套
+
+[@天龙道套]
+#IF
+#ACT
+GOTO @天龙套
+
+[@天龙套]
+#IF
+ISADMIN
+#ACT
+GIVE 天龙圣带
+GIVE 天龙圣靴
+GIVE 天龙圣盔
+GIVE 天龙圣链
+GIVE 天龙圣章
+GIVE 天龙圣镯 2
+GIVE 天龙圣戒 2
+GOTO @装备领取主页
+
+[@主宰战套]
+#IF
+#ACT
+GOTO @主宰套
+
+[@主宰法套]
+#IF
+#ACT
+GOTO @主宰套
+
+[@主宰道套]
+#IF
+#ACT
+GOTO @主宰套
+
+[@主宰套]
+#IF
+ISADMIN
+#ACT
+GIVE 主宰神带
+GIVE 主宰神靴
+GIVE 主宰神盔
+GIVE 主宰神链
+GIVE 主宰神章
+GIVE 主宰神镯 2
+GIVE 主宰神戒 2
+GOTO @装备领取主页
+}

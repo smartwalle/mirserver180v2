@@ -1,0 +1,5 @@
+[@main]
+#IF
+#ACT
+#CALL [\装备升级\武器升级.txt] @武器升级
+Break

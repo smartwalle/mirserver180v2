@@ -1,0 +1,54 @@
+[@天下第一变量]
+{
+#IF
+#ACT
+VAR STRING GLOBAL 天下第一男战士名称
+VAR STRING GLOBAL 天下第一男战士行会
+VAR STRING GLOBAL 天下第一男战士等级
+VAR STRING GLOBAL 天下第一男战士日期
+VAR STRING GLOBAL 天下第一男法师名称
+VAR STRING GLOBAL 天下第一男法师行会
+VAR STRING GLOBAL 天下第一男法师等级
+VAR STRING GLOBAL 天下第一男法师日期
+VAR STRING GLOBAL 天下第一男道士名称
+VAR STRING GLOBAL 天下第一男道士行会
+VAR STRING GLOBAL 天下第一男道士等级
+VAR STRING GLOBAL 天下第一男道士日期
+VAR STRING GLOBAL 天下第一女战士名称
+VAR STRING GLOBAL 天下第一女战士行会
+VAR STRING GLOBAL 天下第一女战士等级
+VAR STRING GLOBAL 天下第一女战士日期
+VAR STRING GLOBAL 天下第一女法师名称
+VAR STRING GLOBAL 天下第一女法师行会
+VAR STRING GLOBAL 天下第一女法师等级
+VAR STRING GLOBAL 天下第一女法师日期
+VAR STRING GLOBAL 天下第一女道士名称
+VAR STRING GLOBAL 天下第一女道士行会
+VAR STRING GLOBAL 天下第一女道士等级
+VAR STRING GLOBAL 天下第一女道士日期
+
+LOADVAR GLOBAL 天下第一男战士名称 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一男战士行会 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一男战士等级 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一男战士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一男法师名称 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一男法师行会 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一男法师等级 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一男法师日期 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一男道士名称 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一男道士行会 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一男道士等级 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一男道士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一女战士名称 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一女战士行会 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一女战士等级 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一女战士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一女法师名称 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一女法师行会 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一女法师等级 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一女法师日期 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一女道士名称 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一女道士行会 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一女道士等级 ..\QuestDiary\天下第一\天下第一数据.txt
+LOADVAR GLOBAL 天下第一女道士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+}

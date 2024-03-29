@@ -1,0 +1,10 @@
+(@buy @sell @repair @s_repair )
+%100
++30
++3
++25
+[@main]
+#IF
+#ACT
+#CALL [\城市商人\杂货.txt] @杂货
+Break

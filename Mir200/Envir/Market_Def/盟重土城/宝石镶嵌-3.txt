@@ -1,0 +1,8 @@
+(@buy @sell @repair @s_repair )
+%100
++63
+[@main]
+#IF
+#ACT
+#CALL [\镶嵌系统\镶嵌系统.txt] @镶嵌系统
+Break

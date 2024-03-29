@@ -1,0 +1,7 @@
+(@buy @sell @repair @s_repair )
+%100
+[@main]
+#IF
+#ACT
+#CALL [\快速买药\快速买药.txt] @快速买药
+Break

@@ -1,0 +1,168 @@
+[@技能管理主页]
+{
+请选择你要学习的技能：\ \
+<学习战士技能/@学习战士技能>     <删除战士技能/@删除战士技能>     <删除所有技能/@删除所有技能>\
+<学习法师技能/@学习法师技能>     <删除法师技能/@删除法师技能>     <删除非本职技能/@删除非本职技能>\
+<学习道士技能/@学习道士技能>     <删除道士技能/@删除道士技能>\ \
+<返回/@游戏管理>   <离开/@exit>\
+
+[@学习战士技能]
+#IF
+ISADMIN
+#ACT
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 野蛮冲撞 3
+ADDSKILL 烈火剑法 3
+ADDSKILL 狮子吼 3
+ADDSKILL 龙影剑法 3
+ADDSKILL 开天斩 3
+ADDSKILL 逐日剑法 3
+ADDSKILL 十步一杀 3
+ADDSKILL 心灵召唤 3
+ADDSKILL 护体神盾 3
+GOTO @技能管理主页
+
+[@学习法师技能]
+#IF
+ISADMIN
+#ACT
+ADDSKILL 火球术 3
+ADDSKILL 抗拒火环 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 地狱火 3
+ADDSKILL 雷电术 3
+ADDSKILL 大火球 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 爆裂火焰 3
+ADDSKILL 火墙 3
+ADDSKILL 疾光电影 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+ADDSKILL 寒冰掌 3
+ADDSKILL 灭天火 3
+ADDSKILL 火焰冰 3
+ADDSKILL 流星火雨 3
+ADDSKILL 冰霜群雨 3
+ADDSKILL 心灵召唤 3
+ADDSKILL 护体神盾 3
+GOTO @技能管理主页
+
+[@学习道士技能]
+#IF
+ISADMIN
+#ACT
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 召唤骷髅 3
+ADDSKILL 隐身术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 解毒术 3
+ADDSKILL 困魔咒 3
+ADDSKILL 气功波 3
+ADDSKILL 群体治疗术 3
+ADDSKILL 召唤神兽 3
+ADDSKILL 无极真气 3
+ADDSKILL 飓风破 3
+ADDSKILL 召唤圣兽 3
+ADDSKILL 噬血术 3
+ADDSKILL 死亡之眼 3
+ADDSKILL 心灵召唤 3
+ADDSKILL 护体神盾 3
+GOTO @技能管理主页
+
+[@删除战士技能]
+#IF
+ISADMIN
+#ACT
+DELSKILL 基本剑术
+DELSKILL 攻杀剑术
+DELSKILL 刺杀剑术
+DELSKILL 半月弯刀
+DELSKILL 野蛮冲撞
+DELSKILL 烈火剑法
+DELSKILL 狮子吼
+DELSKILL 龙影剑法
+DELSKILL 开天斩
+DELSKILL 逐日剑法
+DELSKILL 十步一杀
+DELSKILL 心灵召唤
+DELSKILL 护体神盾
+GOTO @技能管理主页
+
+[@删除法师技能]
+#IF
+ISADMIN
+#ACT
+DELSKILL 火球术
+DELSKILL 抗拒火环
+DELSKILL 诱惑之光
+DELSKILL 地狱火
+DELSKILL 雷电术
+DELSKILL 大火球
+DELSKILL 瞬息移动
+DELSKILL 爆裂火焰
+DELSKILL 火墙
+DELSKILL 疾光电影
+DELSKILL 地狱雷光
+DELSKILL 魔法盾
+DELSKILL 圣言术
+DELSKILL 冰咆哮
+DELSKILL 寒冰掌
+DELSKILL 灭天火
+DELSKILL 火焰冰
+DELSKILL 流星火雨
+DELSKILL 冰霜群雨
+DELSKILL 心灵召唤
+DELSKILL 护体神盾
+GOTO @技能管理主页
+
+[@删除道士技能]
+#IF
+ISADMIN
+#ACT
+DELSKILL 治愈术
+DELSKILL 精神力战法
+DELSKILL 施毒术
+DELSKILL 灵魂火符
+DELSKILL 召唤骷髅
+DELSKILL 隐身术
+DELSKILL 集体隐身术
+DELSKILL 幽灵盾
+DELSKILL 神圣战甲术
+DELSKILL 解毒术
+DELSKILL 困魔咒
+DELSKILL 气功波
+DELSKILL 群体治疗术
+DELSKILL 召唤神兽
+DELSKILL 无极真气
+DELSKILL 飓风破
+DELSKILL 召唤圣兽
+DELSKILL 噬血术
+DELSKILL 死亡之眼
+DELSKILL 心灵召唤
+DELSKILL 护体神盾
+GOTO @技能管理主页
+
+[@删除所有技能]
+#IF
+ISADMIN
+#ACT
+CLEARSKILL
+GOTO @技能管理主页
+
+[@删除非本职技能]
+#IF
+ISADMIN
+#ACT
+DELNOJOBSKILL
+GOTO @技能管理主页
+}

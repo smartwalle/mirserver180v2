@@ -1,0 +1,7 @@
+(@buy @sell @repair @s_repair )
+%100
+[@main]
+#IF
+#ACT
+#CALL [\天下第一\天下第一女道士.txt] @天下第一女道士
+Break

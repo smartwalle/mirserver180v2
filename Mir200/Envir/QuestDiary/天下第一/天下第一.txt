@@ -1,0 +1,504 @@
+[@天下第一]
+{
+国王有令：为天下最强的勇士们在盟重土城树立雕像，彰显他们名号。\
+天下群豪尽可以到我这里来登记在案，看看到底谁是群雄中的最强者。\
+如果来登记的勇士中你是最强的一位，你从此以后就可以名扬天下了。 \ \
+<我是天下第一/@申请天下第一> \
+<天下第一有谁/@查看第一> \
+<离开/@exit> \
+
+[@查看第一]
+他们就是当今天下第一：\ \
+<天下第一男战士/@男战士>    <天下第一女战士/@女战士> \
+<天下第一男法师/@男法师>    <天下第一女法师/@女法师> \
+<天下第一男道士/@男道士>    <天下第一女道士/@女道士> \ \
+<返回/@天下第一> \
+<离开/@exit> \
+
+[@男战士]
+#IF
+#ACT
+#CALL [\天下第一\天下第一男战士.txt] @天下第一男战士
+BREAK
+
+[@女战士]
+#IF
+#ACT
+#CALL [\天下第一\天下第一女战士.txt] @天下第一女战士
+BREAK
+
+[@男法师]
+#IF
+#ACT
+#CALL [\天下第一\天下第一男法师.txt] @天下第一男法师
+BREAK
+
+[@女法师]
+#IF
+#ACT
+#CALL [\天下第一\天下第一女法师.txt] @天下第一女法师
+BREAK
+
+[@男道士]
+#IF
+#ACT
+#CALL [\天下第一\天下第一男道士.txt] @天下第一男道士
+BREAK
+
+[@女道士]
+#IF
+#ACT
+#CALL [\天下第一\天下第一女道士.txt] @天下第一女道士
+BREAK
+
+[@申请天下第一]
+#IF
+CHECKLEVELEX < 35
+#ACT
+BREAK
+#SAY
+看来你很有信心，不过你还没有达到资格，\
+你需要35级来证明自己的实力，现在来申请天下第一恐怕还太早。\
+<离开/@exit>\
+
+#IF
+GENDER MAN
+CHECKJOB WARRIOR
+#ACT
+GOTO @申请天下第一男战士
+BREAK
+
+#IF
+GENDER MAN
+CHECKJOB WIZARD
+#ACT
+GOTO @申请天下第一男法师
+BREAK
+
+#IF
+GENDER MAN
+CHECKJOB TAOIST
+#ACT
+GOTO @申请天下第一男道士
+BREAK
+
+#IF
+GENDER WOMAN
+CHECKJOB WARRIOR
+#ACT
+GOTO @申请天下第一女战士
+BREAK
+
+#IF
+GENDER WOMAN
+CHECKJOB WIZARD
+#ACT
+GOTO @申请天下第一女法师
+BREAK
+
+#IF
+GENDER WOMAN
+CHECKJOB TAOIST
+#ACT
+GOTO @申请天下第一女道士
+BREAK
+
+[@申请天下第一男战士]
+#IF
+EQUAL <$GLOBAL(天下第一男战士名称)> <$USERNAME>
+#ACT
+BREAK
+#SAY
+你目前已经是天下第一，不用重复申请！\ \
+<离开/@exit> \
+
+#OR
+LARGE <$GLOBAL(天下第一男战士等级)> <$LEVEL>
+EQUAL <$GLOBAL(天下第一男战士等级)> <$LEVEL>
+#ACT
+BREAK
+#SAY
+对不起，你目前还不是最高等级！\ \
+<离开/@exit> \
+
+#IF
+#ACT
+MOV S$原天下第一 <$GLOBAL(天下第一男战士名称)>
+
+CALCVAR GLOBAL 天下第一男战士名称 = <$USERNAME>
+CALCVAR GLOBAL 天下第一男战士行会 = <$GUILDNAME>
+CALCVAR GLOBAL 天下第一男战士等级 = <$LEVEL>
+CALCVAR GLOBAL 天下第一男战士日期 = <$DATETIME>
+SAVEVAR GLOBAL 天下第一男战士名称 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男战士行会 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男战士等级 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男战士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+MOV A0 <$USERNAME>
+
+SENDMSG 1 恭喜【%s】申请成为天下第一男战士！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 1 恭喜【%s】申请成为天下第一男战士！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
+
+#CALL [\封号处理\封号处理.txt] @封号处理
+#CALL [\天下第一\天下第一变更.txt] @原天下第一处理
+BREAK
+#SAY
+恭喜你！申请成为天下第一男战士！\
+今天的天下第一男战士是<$USERNAME>，明天的天下第一会是谁? \ \
+<离开/@exit>\
+
+[@申请天下第一女战士]
+#IF
+EQUAL <$GLOBAL(天下第一女战士名称)> <$USERNAME>
+#ACT
+BREAK
+#SAY
+你目前已经是天下第一，不用重复申请！\ \
+<离开/@exit> \
+
+#OR
+LARGE <$GLOBAL(天下第一女战士等级)> <$LEVEL>
+EQUAL <$GLOBAL(天下第一女战士等级)> <$LEVEL>
+#ACT
+BREAK
+#SAY
+对不起，你目前还不是最高等级！\ \
+<离开/@exit> \
+
+#IF
+#ACT
+MOV S$原天下第一 <$GLOBAL(天下第一女战士名称)>
+
+CALCVAR GLOBAL 天下第一女战士名称 = <$USERNAME>
+CALCVAR GLOBAL 天下第一女战士行会 = <$GUILDNAME>
+CALCVAR GLOBAL 天下第一女战士等级 = <$LEVEL>
+CALCVAR GLOBAL 天下第一女战士日期 = <$DATETIME>
+SAVEVAR GLOBAL 天下第一女战士名称 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女战士行会 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女战士等级 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女战士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+MOV A1 <$USERNAME>
+
+SENDMSG 1 恭喜【%s】申请成为天下第一女战士！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 1 恭喜【%s】申请成为天下第一女战士！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
+
+#CALL [\封号处理\封号处理.txt] @封号处理
+#CALL [\天下第一\天下第一变更.txt] @原天下第一处理
+BREAK
+#SAY
+恭喜你！申请成为天下第一女战士！\
+今天的天下第一女战士是<$USERNAME>，明天的天下第一会是谁? \ \
+<离开/@exit>\
+
+[@申请天下第一男法师]
+#IF
+EQUAL <$GLOBAL(天下第一男法师名称)> <$USERNAME>
+#ACT
+BREAK
+#SAY
+你目前已经是天下第一，不用重复申请！\ \
+<离开/@exit> \
+
+#OR
+LARGE <$GLOBAL(天下第一男法师等级)> <$LEVEL>
+EQUAL <$GLOBAL(天下第一男法师等级)> <$LEVEL>
+#ACT
+BREAK
+#SAY
+对不起，你目前还不是最高等级！\ \
+<离开/@exit> \
+
+#IF
+#ACT
+MOV S$原天下第一 <$GLOBAL(天下第一男法师名称)>
+
+CALCVAR GLOBAL 天下第一男法师名称 = <$USERNAME>
+CALCVAR GLOBAL 天下第一男法师行会 = <$GUILDNAME>
+CALCVAR GLOBAL 天下第一男法师等级 = <$LEVEL>
+CALCVAR GLOBAL 天下第一男法师日期 = <$DATETIME>
+SAVEVAR GLOBAL 天下第一男法师名称 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男法师行会 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男法师等级 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男法师日期 ..\QuestDiary\天下第一\天下第一数据.txt
+MOV A2 <$USERNAME>
+
+SENDMSG 1 恭喜【%s】申请成为天下第一男法师！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 1 恭喜【%s】申请成为天下第一男法师！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
+
+#CALL [\封号处理\封号处理.txt] @封号处理
+#CALL [\天下第一\天下第一变更.txt] @原天下第一处理
+BREAK
+#SAY
+恭喜你！申请成为天下第一男法师！\
+今天的天下第一男法师是<$USERNAME>，明天的天下第一会是谁? \ \
+<离开/@exit>\
+
+[@申请天下第一女法师]
+#IF
+EQUAL <$GLOBAL(天下第一女法师名称)> <$USERNAME>
+#ACT
+BREAK
+#SAY
+你目前已经是天下第一，不用重复申请！\ \
+<离开/@exit> \
+
+#OR
+LARGE <$GLOBAL(天下第一女法师等级)> <$LEVEL>
+EQUAL <$GLOBAL(天下第一女法师等级)> <$LEVEL>
+#ACT
+BREAK
+#SAY
+对不起，你目前还不是最高等级！\ \
+<离开/@exit> \
+
+#IF
+#ACT
+MOV S$原天下第一 <$GLOBAL(天下第一女法师名称)>
+
+CALCVAR GLOBAL 天下第一女法师名称 = <$USERNAME>
+CALCVAR GLOBAL 天下第一女法师行会 = <$GUILDNAME>
+CALCVAR GLOBAL 天下第一女法师等级 = <$LEVEL>
+CALCVAR GLOBAL 天下第一女法师日期 = <$DATETIME>
+SAVEVAR GLOBAL 天下第一女法师名称 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女法师行会 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女法师等级 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女法师日期 ..\QuestDiary\天下第一\天下第一数据.txt
+MOV A3 <$USERNAME>
+
+SENDMSG 1 恭喜【%s】申请成为天下第一女法师！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 1 恭喜【%s】申请成为天下第一女法师！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
+
+#CALL [\封号处理\封号处理.txt] @封号处理
+#CALL [\天下第一\天下第一变更.txt] @原天下第一处理
+BREAK
+#SAY
+恭喜你！申请成为天下第一女法师！\
+今天的天下第一女法师是<$USERNAME>，明天的天下第一会是谁? \ \
+<离开/@exit>\
+
+[@申请天下第一男道士]
+#IF
+EQUAL <$GLOBAL(天下第一男道士名称)> <$USERNAME>
+#ACT
+BREAK
+#SAY
+你目前已经是天下第一，不用重复申请！\ \
+<离开/@exit> \
+
+#OR
+LARGE <$GLOBAL(天下第一男道士等级)> <$LEVEL>
+EQUAL <$GLOBAL(天下第一男道士等级)> <$LEVEL>
+#ACT
+BREAK
+#SAY
+对不起，你目前还不是最高等级！\ \
+<离开/@exit> \
+
+#IF
+#ACT
+MOV S$原天下第一 <$GLOBAL(天下第一男道士名称)>
+
+CALCVAR GLOBAL 天下第一男道士名称 = <$USERNAME>
+CALCVAR GLOBAL 天下第一男道士行会 = <$GUILDNAME>
+CALCVAR GLOBAL 天下第一男道士等级 = <$LEVEL>
+CALCVAR GLOBAL 天下第一男道士日期 = <$DATETIME>
+SAVEVAR GLOBAL 天下第一男道士名称 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男道士行会 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男道士等级 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男道士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+MOV A4 <$USERNAME>
+
+SENDMSG 1 恭喜【%s】申请成为天下第一男道士！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 1 恭喜【%s】申请成为天下第一男道士！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
+
+#CALL [\封号处理\封号处理.txt] @封号处理
+#CALL [\天下第一\天下第一变更.txt] @原天下第一处理
+BREAK
+#SAY
+恭喜你！申请成为天下第一男道士！\
+今天的天下第一男道士是<$USERNAME>，明天的天下第一会是谁? \ \
+<离开/@exit>\
+
+[@申请天下第一女道士]
+#IF
+EQUAL <$GLOBAL(天下第一女道士名称)> <$USERNAME>
+#ACT
+BREAK
+#SAY
+你目前已经是天下第一，不用重复申请！\ \
+<离开/@exit> \
+
+#OR
+LARGE <$GLOBAL(天下第一女道士等级)> <$LEVEL>
+EQUAL <$GLOBAL(天下第一女道士等级)> <$LEVEL>
+#ACT
+BREAK
+#SAY
+对不起，你目前还不是最高等级！\ \
+<离开/@exit> \
+
+#IF
+#ACT
+MOV S$原天下第一 <$GLOBAL(天下第一女道士名称)>
+
+CALCVAR GLOBAL 天下第一女道士名称 = <$USERNAME>
+CALCVAR GLOBAL 天下第一女道士行会 = <$GUILDNAME>
+CALCVAR GLOBAL 天下第一女道士等级 = <$LEVEL>
+CALCVAR GLOBAL 天下第一女道士日期 = <$DATETIME>
+SAVEVAR GLOBAL 天下第一女道士名称 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女道士行会 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女道士等级 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女道士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+MOV A5 <$USERNAME>
+
+SENDMSG 1 恭喜【%s】申请成为天下第一女道士！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
+SENDMSG 1 恭喜【%s】申请成为天下第一女道士！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
+
+#CALL [\封号处理\封号处理.txt] @封号处理
+#CALL [\天下第一\天下第一变更.txt] @原天下第一处理
+BREAK
+#SAY
+恭喜你！申请成为天下第一女道士！\
+今天的天下第一女道士是<$USERNAME>，明天的天下第一会是谁? \ \
+<离开/@exit>\
+}
+
+[@删除当前角色天下第一]
+{
+#IF
+EQUAL <$GLOBAL(天下第一男战士名称)> <$USERNAME>
+#ACT
+#CALL [\天下第一\天下第一.txt] @删除天下第一男战士
+
+#IF
+EQUAL <$GLOBAL(天下第一女战士名称)> <$USERNAME>
+#ACT
+#CALL [\天下第一\天下第一.txt] @删除天下第一女战士
+
+#IF
+EQUAL <$GLOBAL(天下第一男法师名称)> <$USERNAME>
+#ACT
+#CALL [\天下第一\天下第一.txt] @删除天下第一男法师
+
+#IF
+EQUAL <$GLOBAL(天下第一女法师名称)> <$USERNAME>
+#ACT
+#CALL [\天下第一\天下第一.txt] @删除天下第一女法师
+
+#IF
+EQUAL <$GLOBAL(天下第一男道士名称)> <$USERNAME>
+#ACT
+#CALL [\天下第一\天下第一.txt] @删除天下第一男道士
+
+#IF
+EQUAL <$GLOBAL(天下第一女道士名称)> <$USERNAME>
+#ACT
+#CALL [\天下第一\天下第一.txt] @删除天下第一女道士
+}
+
+[@删除天下第一男战士]
+{
+#IF
+#ACT
+MOV S$原天下第一 <$GLOBAL(天下第一男战士名称)>
+
+CALCVAR GLOBAL 天下第一男战士名称 =
+CALCVAR GLOBAL 天下第一男战士行会 =
+CALCVAR GLOBAL 天下第一男战士等级 =
+CALCVAR GLOBAL 天下第一男战士日期 =
+SAVEVAR GLOBAL 天下第一男战士名称 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男战士行会 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男战士等级 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男战士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+MOV A0
+#CALL [\天下第一\天下第一变更.txt] @原天下第一处理
+}
+
+[@删除天下第一女战士]
+{
+#IF
+#ACT
+MOV S$原天下第一 <$GLOBAL(天下第一女战士名称)>
+
+CALCVAR GLOBAL 天下第一女战士名称 =
+CALCVAR GLOBAL 天下第一女战士行会 =
+CALCVAR GLOBAL 天下第一女战士等级 =
+CALCVAR GLOBAL 天下第一女战士日期 =
+SAVEVAR GLOBAL 天下第一女战士名称 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女战士行会 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女战士等级 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女战士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+MOV A1
+#CALL [\天下第一\天下第一变更.txt] @原天下第一处理
+}
+
+[@删除天下第一男法师]
+{
+#IF
+#ACT
+MOV S$原天下第一 <$GLOBAL(天下第一男法师名称)>
+
+CALCVAR GLOBAL 天下第一男法师名称 =
+CALCVAR GLOBAL 天下第一男法师行会 =
+CALCVAR GLOBAL 天下第一男法师等级 =
+CALCVAR GLOBAL 天下第一男法师日期 =
+SAVEVAR GLOBAL 天下第一男法师名称 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男法师行会 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男法师等级 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男法师日期 ..\QuestDiary\天下第一\天下第一数据.txt
+MOV A2
+#CALL [\天下第一\天下第一变更.txt] @原天下第一处理
+}
+
+[@删除天下第一女法师]
+{
+#IF
+#ACT
+MOV S$原天下第一 <$GLOBAL(天下第一女法师名称)>
+
+CALCVAR GLOBAL 天下第一女法师名称 =
+CALCVAR GLOBAL 天下第一女法师行会 =
+CALCVAR GLOBAL 天下第一女法师等级 =
+CALCVAR GLOBAL 天下第一女法师日期 =
+SAVEVAR GLOBAL 天下第一女法师名称 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女法师行会 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女法师等级 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女法师日期 ..\QuestDiary\天下第一\天下第一数据.txt
+MOV A3
+#CALL [\天下第一\天下第一变更.txt] @原天下第一处理
+}
+
+[@删除天下第一男道士]
+{
+#IF
+#ACT
+MOV S$原天下第一 <$GLOBAL(天下第一男道士名称)>
+
+CALCVAR GLOBAL 天下第一男道士名称 =
+CALCVAR GLOBAL 天下第一男道士行会 =
+CALCVAR GLOBAL 天下第一男道士等级 =
+CALCVAR GLOBAL 天下第一男道士日期 =
+SAVEVAR GLOBAL 天下第一男道士名称 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男道士行会 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男道士等级 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男道士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+MOV A4
+#CALL [\天下第一\天下第一变更.txt] @原天下第一处理
+}
+
+[@删除天下第一女道士]
+{
+#IF
+#ACT
+MOV S$原天下第一 <$GLOBAL(天下第一女道士名称)>
+
+CALCVAR GLOBAL 天下第一女道士名称 =
+CALCVAR GLOBAL 天下第一女道士行会 =
+CALCVAR GLOBAL 天下第一女道士等级 =
+CALCVAR GLOBAL 天下第一女道士日期 =
+SAVEVAR GLOBAL 天下第一女道士名称 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女道士行会 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女道士等级 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女道士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+MOV A5
+#CALL [\天下第一\天下第一变更.txt] @原天下第一处理
+}

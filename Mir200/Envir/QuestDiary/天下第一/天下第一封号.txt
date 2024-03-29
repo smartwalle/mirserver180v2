@@ -1,0 +1,38 @@
+[@天下第一封号]
+{
+#IF
+EQUAL <$GLOBAL(天下第一男战士名称)> <$USERNAME>
+#ACT
+MOV S$玩家封号 ↘天下第一战士↙\
+BREAK
+
+#IF
+EQUAL <$GLOBAL(天下第一女战士名称)> <$USERNAME>
+#ACT
+MOV S$玩家封号 ↘天下第一战士↙\
+BREAK
+
+#IF
+EQUAL <$GLOBAL(天下第一男法师名称)> <$USERNAME>
+#ACT
+MOV S$玩家封号 ↘天下第一法师↙\
+BREAK
+
+#IF
+EQUAL <$GLOBAL(天下第一女法师名称)> <$USERNAME>
+#ACT
+MOV S$玩家封号 ↘天下第一法师↙\
+BREAK
+
+#IF
+EQUAL <$GLOBAL(天下第一男道士名称)> <$USERNAME>
+#ACT
+MOV S$玩家封号 ↘天下第一道士↙\
+BREAK
+
+#IF
+EQUAL <$GLOBAL(天下第一女道士名称)> <$USERNAME>
+#ACT
+MOV S$玩家封号 ↘天下第一道士↙\
+BREAK
+}

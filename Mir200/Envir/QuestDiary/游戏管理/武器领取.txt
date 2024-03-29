@@ -1,0 +1,185 @@
+[@武器领取主页]
+{
+您可以领取以下武器：\
+<炼狱/@炼狱>  <井中月/@井中月>  <裁决之杖/@裁决之杖>  <怒斩/@怒斩>    <屠龙/@屠龙>      <开天/@开天>\
+<魔杖/@魔杖>  <血饮/@血饮>    <骨玉权杖/@骨玉权杖>  <龙牙/@龙牙>    <嗜魂法杖/@嗜魂法杖>  <镇天/@镇天>\
+<银蛇/@银蛇>  <无极棍/@无极棍>  <龙纹剑/@龙纹剑>    <逍遥扇/@逍遥扇>  <乾坤扇/@乾坤扇>    <玄天/@玄天>\
+<英雄权杖/@英雄权杖>  <幽冥魂剑/@幽冥魂剑>  <狂雷战刃/@狂雷战刃>  <逆火魔杖/@逆火魔杖>  <通云道剑/@通云道剑>\
+<天龙圣剑/@天龙圣剑>  <主宰神剑/@主宰神剑>\ \
+<返回/@游戏管理>   <离开/@exit>\
+
+[@炼狱]
+#IF
+ISADMIN
+#ACT
+GIVE 炼狱
+GOTO @武器领取主页
+
+[@魔杖]
+#IF
+ISADMIN
+#ACT
+GIVE 魔杖
+GOTO @武器领取主页
+
+[@银蛇]
+#IF
+ISADMIN
+#ACT
+GIVE 银蛇
+GOTO @武器领取主页
+
+[@井中月]
+#IF
+ISADMIN
+#ACT
+GIVE 井中月
+GOTO @武器领取主页
+
+[@血饮]
+#IF
+ISADMIN
+#ACT
+GIVE 血饮
+GOTO @武器领取主页
+
+[@无极棍]
+#IF
+ISADMIN
+#ACT
+GIVE 无极棍
+GOTO @武器领取主页
+
+[@裁决之杖]
+#IF
+ISADMIN
+#ACT
+GIVE 裁决之杖
+GOTO @武器领取主页
+
+[@骨玉权杖]
+#IF
+ISADMIN
+#ACT
+GIVE 骨玉权杖
+GOTO @武器领取主页
+
+[@龙纹剑]
+#IF
+ISADMIN
+#ACT
+GIVE 龙纹剑
+GOTO @武器领取主页
+
+[@怒斩]
+#IF
+ISADMIN
+#ACT
+GIVE 怒斩
+GOTO @武器领取主页
+
+[@龙牙]
+#IF
+ISADMIN
+#ACT
+GIVE 龙牙
+GOTO @武器领取主页
+
+[@逍遥扇]
+#IF
+ISADMIN
+#ACT
+GIVE 逍遥扇
+GOTO @武器领取主页
+
+[@屠龙]
+#IF
+ISADMIN
+#ACT
+GIVE 屠龙
+GOTO @武器领取主页
+
+[@嗜魂法杖]
+#IF
+ISADMIN
+#ACT
+GIVE 嗜魂法杖
+GOTO @武器领取主页
+
+[@乾坤扇]
+#IF
+ISADMIN
+#ACT
+GIVE 乾坤扇
+GOTO @武器领取主页
+
+[@开天]
+#IF
+ISADMIN
+#ACT
+GIVE 开天
+GOTO @武器领取主页
+
+[@镇天]
+#IF
+ISADMIN
+#ACT
+GIVE 镇天
+GOTO @武器领取主页
+
+[@玄天]
+#IF
+ISADMIN
+#ACT
+GIVE 玄天
+GOTO @武器领取主页
+
+[@英雄权杖]
+#IF
+ISADMIN
+#ACT
+GIVE 英雄权杖
+GOTO @武器领取主页
+
+[@幽冥魂剑]
+#IF
+ISADMIN
+#ACT
+GIVE 幽冥魂剑
+GOTO @武器领取主页
+
+[@狂雷战刃]
+#IF
+ISADMIN
+#ACT
+GIVE 狂雷战刃
+GOTO @武器领取主页
+
+[@逆火魔杖]
+#IF
+ISADMIN
+#ACT
+GIVE 逆火魔杖
+GOTO @武器领取主页
+
+[@通云道剑]
+#IF
+ISADMIN
+#ACT
+GIVE 通云道剑
+GOTO @武器领取主页
+
+[@天龙圣剑]
+#IF
+ISADMIN
+#ACT
+GIVE 天龙圣剑
+GOTO @武器领取主页
+
+[@主宰神剑]
+#IF
+ISADMIN
+#ACT
+GIVE 主宰神剑
+GOTO @武器领取主页
+}

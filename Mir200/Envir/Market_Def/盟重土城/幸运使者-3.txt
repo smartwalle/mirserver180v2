@@ -1,0 +1,8 @@
+(@buy @sell @repair @s_repair )
+%100
++63
+[@main]
+#IF
+#ACT
+#CALL [\幸运项链\项链幸运转移.txt] @项链幸运转移
+Break

@@ -1,0 +1,142 @@
+[@快速买药]
+{
+#IF
+#ACT
+;MOV P0 <$MAXHP>
+;MOV P1 <$HP>
+;DEC P0 <$STR(P1)>
+;HUMANHP + <$STR(P0)>
+;MOV P2 <$MAXMP>
+;MOV P3 <$MP>
+;DEC P2 <$STR(P3)>
+;HUMANMP + <$STR(P2)>
+#SAY
+想当年老夫也是江湖上名重一时的人物，\
+现如今都是你们这些年轻人的天下啦，买一点药品防身吧！\ \
+强效金创药        <5万金币购买30瓶/@购买强效金创药小>     <8万金币购买60瓶/@购买强效金创药大>\
+强效魔法药        <5万金币购买30瓶/@购买强效魔法药小>     <8万金币购买60瓶/@购买强效魔法药大>\
+强效太阳水        <6个元宝购买30瓶/@购买强效太阳水小>     <10个元宝购买60瓶/@购买强效太阳水大>\
+万年雪霜          <12个元宝购买30根/@购买万年雪霜小>    <20个元宝购买60根/@购买万年雪霜大>\
+疗伤药            <18个元宝购买30瓶/@购买疗伤药小>    <30个元宝购买60瓶/@购买疗伤药大>\
+
+[@购买强效魔法药小]
+#IF
+CHECKGOLD 50000
+#ACT
+TAKE 金币 50000
+GIVE 强效魔法药 30
+SENDMSG 6 购买强效魔法药成功！
+GOTO @快速买药
+#ELSESAY
+年轻人，天下可没有免费的午餐，努力一点吧！\ \
+<离开/@exit>\
+
+[@购买强效金创药小]
+#IF
+CHECKGOLD 50000
+#ACT
+TAKE 金币 50000
+GIVE 强效金创药 30
+SENDMSG 6 购买强效金创药成功！
+GOTO @快速买药
+#ELSESAY
+年轻人，天下可没有免费的午餐，努力一点吧！\ \
+<离开/@exit>\
+
+[@购买强效太阳水小]
+#IF
+CHECKGAMEGOLD > 5
+#ACT
+GAMEGOLD - 6
+GIVE 强效太阳水 30
+SENDMSG 6 购买强效太阳水成功！
+GOTO @快速买药
+#ELSESAY
+年轻人，天下可没有免费的午餐，努力一点吧！\ \
+<离开/@exit>\
+
+[@购买万年雪霜小]
+#IF
+CHECKGAMEGOLD > 11
+#ACT
+GAMEGOLD - 12
+GIVE 万年雪霜 30
+SENDMSG 6 购买万年雪霜成功！
+GOTO @快速买药
+#ELSESAY
+年轻人，天下可没有免费的午餐，努力一点吧！\ \
+<离开/@exit>\
+
+[@购买疗伤药小]
+#IF
+CHECKGAMEGOLD > 17
+#ACT
+GAMEGOLD - 18
+GIVE 疗伤药 30
+SENDMSG 6 购买疗伤药成功！
+GOTO @快速买药
+#ELSESAY
+年轻人，天下可没有免费的午餐，努力一点吧！\ \
+<离开/@exit>\
+
+
+[@购买强效魔法药大]
+#IF
+CHECKGOLD 80000
+#ACT
+TAKE 金币 80000
+GIVE 强效魔法药 60
+SENDMSG 6 购买强效魔法药成功！
+GOTO @快速买药
+#ELSESAY
+年轻人，天下可没有免费的午餐，努力一点吧！\ \
+<离开/@exit>\
+
+[@购买强效金创药大]
+#IF
+CHECKGOLD 80000
+#ACT
+TAKE 金币 80000
+GIVE 强效金创药 60
+SENDMSG 6 购买强效金创药成功！
+GOTO @快速买药
+#ELSESAY
+年轻人，天下可没有免费的午餐，努力一点吧！\ \
+<离开/@exit>\
+
+[@购买强效太阳水大]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+GIVE 强效太阳水 60
+SENDMSG 6 购买强效太阳水成功！
+GOTO @快速买药
+#ELSESAY
+年轻人，天下可没有免费的午餐，努力一点吧！\ \
+<离开/@exit>\
+
+[@购买万年雪霜大]
+#IF
+CHECKGAMEGOLD > 19
+#ACT
+GAMEGOLD - 20
+GIVE 万年雪霜 60
+SENDMSG 6 购买万年雪霜成功！
+GOTO @快速买药
+#ELSESAY
+年轻人，天下可没有免费的午餐，努力一点吧！\ \
+<离开/@exit>\
+
+[@购买疗伤药大]
+#IF
+CHECKGAMEGOLD > 29
+#ACT
+GAMEGOLD - 30
+GIVE 疗伤药 60
+SENDMSG 6 购买疗伤药成功！
+GOTO @快速买药
+#ELSESAY
+年轻人，天下可没有免费的午餐，努力一点吧！\ \
+<离开/@exit>\
+}

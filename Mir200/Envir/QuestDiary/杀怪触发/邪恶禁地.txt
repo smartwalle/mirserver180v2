@@ -1,0 +1,26 @@
+[@邪恶禁地]
+{
+#IF
+CHECKMAPNAME XEJD
+CHECKKILLMONNAME 邪恶树妖
+#ACT
+CLEARMAPMON XEZX
+ADDMAPROUTE 1001 XEJD 164 126
+SETMAPROUTE 1001 XEZX 11 25
+SENDMSG 1 邪恶禁地的邪恶树妖被勇士【<$USERNAME>】消灭，打开了通往邪恶之心的通道，请各位勇士火速前往支援，通道将在60秒后关闭！！！
+SENDMSG 1 邪恶禁地的邪恶树妖被勇士【<$USERNAME>】消灭，打开了通往邪恶之心的通道，请各位勇士火速前往支援，通道将在60秒后关闭！！！
+SENDMSG 1 邪恶禁地的邪恶树妖被勇士【<$USERNAME>】消灭，打开了通往邪恶之心的通道，请各位勇士火速前往支援，通道将在60秒后关闭！！！
+DELAYGOTO 60000 @删除邪恶之心入口
+
+[@删除邪恶之心入口]
+#IF
+#ACT
+DELMAPROUTE 1001
+SENDMSG 1 通往邪恶之心的通道已关闭，邪恶力量开始滋生，请各位勇士注意安全！
+DELAYGOTO 10000 @刷新邪恶之心怪物
+
+[@刷新邪恶之心怪物]
+#IF
+#ACT
+MONGENEX XEZX 17 21 赤月恶魔 0 1 
+}

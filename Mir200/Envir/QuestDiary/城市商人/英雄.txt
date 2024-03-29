@@ -1,0 +1,74 @@
+[@英雄]
+{
+漫漫长路，何不觅一伴侣...\ \
+<创建英雄/@@CreateHero>\ \
+<删除英雄/@DelMyHero>\ \
+
+[@@CreateHero]
+#ACT
+DELAYCALL 1 @CREATEHERO 
+
+[@CREATEHERO]
+请创建英雄：\ 
+<男战士/@CREATEHERO_WARR_MAN> <女战士 /@CREATEHERO_WARR_WOM>\ 
+<男法师/@CREATEHERO_WIZA_MAN> <女法师 /@CREATEHERO_WIZA_WOM>\ 
+<男道士/@CREATEHERO_TAOS_MAN> <女道士 /@CREATEHERO_TAOS_WOM>\ 
+<退出/@exit>\
+
+[@CREATEHERO_WARR_MAN]
+#ACT
+CREATEHERO 0 0
+
+[@CREATEHERO_WARR_WOM]
+#ACT
+CREATEHERO 0 1
+
+[@CREATEHERO_WIZA_MAN]
+#ACT
+CREATEHERO 1 0
+
+[@CREATEHERO_WIZA_WOM]
+#ACT
+CREATEHERO 1 1
+
+[@CREATEHERO_TAOS_MAN]
+#ACT
+CREATEHERO 2 0
+
+[@CREATEHERO_TAOS_WOM]
+#ACT
+CREATEHERO 2 1
+
+//返回消息
+
+[@CreateingHero]
+系统正在接受申请,请稍候……\
+<关闭/@exit>
+
+[@HaveHero]
+您已经有英雄了.\
+<关闭/@exit>
+
+[@SetHeroName]
+请先给您的英雄取名字.\
+<关闭/@exit>
+
+[@DelMyHero]
+#IF
+#ACT
+DELETEHERO
+
+[@NotHaveHero]
+你没有英雄.\ \
+<关闭/@exit>
+
+[@LogOutHeroFirst]
+请将英雄设置下线!\ \
+<关闭/@exit>
+
+[@DeleteHeroOK]
+删除英雄成功.\ \
+<关闭/@exit>
+
+
+}

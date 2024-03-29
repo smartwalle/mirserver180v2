@@ -1,0 +1,7 @@
+(@buy @sell @repair @s_repair )
+%100
+[@main]
+#IF
+#ACT
+#CALL [\技能回收\技能回收.txt] @技能回收
+Break

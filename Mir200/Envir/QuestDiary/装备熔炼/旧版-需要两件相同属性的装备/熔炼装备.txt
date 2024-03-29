@@ -1,0 +1,384 @@
+[@关于熔炼]
+{
+熔炼是一种特殊的装备重铸方法，其可以将多件装备的力量融合于一\
+件装备中，从而提升装备的能力。熔炼虽好，却也有一定的限制：\
+<1、熔炼需要多件有着相同属性值的相同装备才能进行。/SCOLOR=250>\
+　<如：需要两把普通攻击的炼狱才能熔炼出一把攻击+1的炼狱。/SCOLOR=154>\
+　　　<+3攻击的炼狱不能和+2攻击的炼狱一起熔炼攻击属性。/SCOLOR=154>\
+<2、每次只能熔炼1点属性，装备自带的极品属性和熔炼次数没有关系。/SCOLOR=250>\
+　<如：自带+1攻击的炼狱可以熔炼出+8攻击的炼狱。/SCOLOR=154>\
+<3、武器最多熔炼7次，其它装备最多熔炼5次。/SCOLOR=250>\
+<返回/@main>\
+}
+
+;变量说明
+;S$熔炼属性名称 - 属性名称
+;N$熔炼最大次数 - 最大熔炼次数条件
+;N$熔炼元宝数量 - 需要元宝数量
+;S$熔炼材料1 - 材料1名称
+;N$熔炼材料1数量 - 材料1基础数量
+;S$熔炼材料2 - 材料2名称
+;N$熔炼材料2数量 - 材料2基础数量
+;其它已用变量
+;N$熔炼属性位置 - 属性位置
+;P0 - 已熔炼次数
+;P1 - 元宝真实数量
+;P2 - 元宝条件
+;P3 - 材料1真实数量
+;P4 - 材料2真实数量
+;P10 - 第一件装备已有点数
+;P11 - 第二件装备已有点数
+;P12 - 第三件装备已有点数
+;P13 - 新点数
+;P14 - 破碎概率计算
+
+[@选择熔炼属性]
+{
+#IF
+CHECKBOXITEMCOUNT 0 1
+CHECKBOXITEMCOUNT 1 1
+;CHECKBOXITEMCOUNT 2 1
+#ACT
+#ELSESAY
+请放入所有需要的装备！\ \
+<返回/@main>\ 
+<离开/@exit>\ 
+#ELSEACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+;RETURNBOXITEM 2
+BREAK
+
+;武器
+#OR
+COMPARETEXT <$BOXITEM[0].STDMODE> 5
+COMPARETEXT <$BOXITEM[0].STDMODE> 6
+#ACT
+BREAK
+#SAY
+请选择你要熔炼【<$BOXITEM[0].NAME>】的哪种属性：\ \
+<熔炼攻击/@熔炼武器攻击属性>属性\
+<熔炼魔法/@熔炼武器魔法属性>属性\
+<熔炼道术/@熔炼武器道术属性>属性\ \
+<我再想想/@exit>\
+
+;衣服、头盔、鞋子、腰带
+#OR
+COMPARETEXT <$BOXITEM[0].STDMODE> 10
+COMPARETEXT <$BOXITEM[0].STDMODE> 11
+COMPARETEXT <$BOXITEM[0].STDMODE> 15
+COMPARETEXT <$BOXITEM[0].STDMODE> 16
+COMPARETEXT <$BOXITEM[0].STDMODE> 62
+COMPARETEXT <$BOXITEM[0].STDMODE> 64
+#ACT
+BREAK
+#SAY
+请选择你要熔炼【<$BOXITEM[0].NAME>】的哪种属性：\ \
+<熔炼防御/@熔炼防具防御属性>属性\
+<熔炼魔御/@熔炼防具魔御属性>属性\ \
+<我再想想/@exit>\
+
+;项链、戒指、手镯、勋章
+#OR
+COMPARETEXT <$BOXITEM[0].STDMODE> 19
+COMPARETEXT <$BOXITEM[0].STDMODE> 20
+COMPARETEXT <$BOXITEM[0].STDMODE> 21
+COMPARETEXT <$BOXITEM[0].STDMODE> 22
+COMPARETEXT <$BOXITEM[0].STDMODE> 23
+COMPARETEXT <$BOXITEM[0].STDMODE> 24
+COMPARETEXT <$BOXITEM[0].STDMODE> 26
+COMPARETEXT <$BOXITEM[0].STDMODE> 30
+#ACT
+BREAK
+#SAY
+请选择你要熔炼【<$BOXITEM[0].NAME>】的哪种属性：\ \
+<熔炼攻击/@熔炼首饰攻击属性>属性\
+<熔炼魔法/@熔炼首饰魔法属性>属性\
+<熔炼道术/@熔炼首饰道术属性>属性\ \
+<我再想想/@exit>\
+
+#IF
+#ACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+;RETURNBOXITEM 2
+#SAY
+恕我眼拙，你这件宝贝我重来没有见过，不知道该怎么帮助你。\ \ 
+<离开/@exit>\
+
+[@熔炼武器攻击属性]
+#IF
+#ACT
+MOV S$熔炼属性名称 攻击
+MOV N$熔炼属性位置 0
+GOTO @确认熔炼
+
+[@熔炼武器魔法属性]
+#IF
+#ACT
+MOV S$熔炼属性名称 魔法
+MOV N$熔炼属性位置 1
+GOTO @确认熔炼
+
+[@熔炼武器道术属性]
+#IF
+#ACT
+MOV S$熔炼属性名称 道术
+MOV N$熔炼属性位置 2
+GOTO @确认熔炼
+
+[@熔炼防具防御属性]
+#IF
+#ACT
+MOV S$熔炼属性名称 防御
+MOV N$熔炼属性位置 0
+GOTO @确认熔炼
+
+[@熔炼防具魔御属性]
+#IF
+#ACT
+MOV S$熔炼属性名称 魔御
+MOV N$熔炼属性位置 1
+GOTO @确认熔炼
+
+[@熔炼防具攻击属性]
+#IF
+#ACT
+MOV S$熔炼属性名称 攻击
+MOV N$熔炼属性位置 2
+GOTO @确认熔炼
+
+[@熔炼防具魔法属性]
+#IF
+#ACT
+MOV S$熔炼属性名称 魔法
+MOV N$熔炼属性位置 3
+GOTO @确认熔炼
+
+[@熔炼防具道术属性]
+#IF
+#ACT
+MOV S$熔炼属性名称 道术
+MOV N$熔炼属性位置 4
+GOTO @确认熔炼
+
+[@熔炼首饰防御属性]
+#IF
+#ACT
+MOV S$熔炼属性名称 防御
+MOV N$熔炼属性位置 0
+GOTO @确认熔炼
+
+[@熔炼首饰魔御属性]
+#IF
+#ACT
+MOV S$熔炼属性名称 魔御
+MOV N$熔炼属性位置 1
+GOTO @确认熔炼
+
+[@熔炼首饰攻击属性]
+#IF
+#ACT
+MOV S$熔炼属性名称 攻击
+MOV N$熔炼属性位置 2
+GOTO @确认熔炼
+
+[@熔炼首饰魔法属性]
+#IF
+#ACT
+MOV S$熔炼属性名称 魔法
+MOV N$熔炼属性位置 3
+GOTO @确认熔炼
+
+[@熔炼首饰道术属性]
+#IF
+#ACT
+MOV S$熔炼属性名称 道术
+MOV N$熔炼属性位置 4
+GOTO @确认熔炼
+
+[@确认熔炼]
+#IF
+#ACT
+SETUPGRADEITEM 0
+
+;检查熔炼次数
+#IF
+CHECKITEMUPGRADECOUNT 0 -1 < <$STR(N$熔炼最大次数)>
+#ELSEACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+BREAK
+#ELSESAY
+实在抱歉，以我目前的能力，\
+【<$BOXITEM[0].NAME>】最多只能熔炼【<$STR(N$熔炼最大次数)>】次。\ \
+<离开/@exit>\ 
+
+;获取已熔炼次数并计算实际物品消耗数量
+#IF
+#ACT
+GETUPGRADECOUNT -1 P0
+INC P0 1
+MUL P1 <$STR(N$熔炼元宝数量)> <$STR(P0)>
+MUL P3 <$STR(N$熔炼材料1数量)> 1
+MUL P4 <$STR(N$熔炼材料2数量)> 1
+
+#IF
+#ACT
+#SAY
+对{【<$BOXITEM[0].NAME>】/SCOLOR=250}的{【<$STR(S$熔炼属性名称)>】/SCOLOR=250}属性进行熔炼，需要消耗：\
+元宝：<$STR(P1)> \
+<$STR(S$熔炼材料1)>：<$STR(P3)>\
+<$STR(S$熔炼材料2)>：<$STR(P4)>\ \
+确定要进行熔炼吗？ \ \
+<确认熔炼/@开始熔炼>  <我再想想/@exit>\
+
+[@开始熔炼]
+#IF
+CHECKBOXITEMCOUNT 0 1
+CHECKBOXITEMCOUNT 1 1
+;CHECKBOXITEMCOUNT 2 1
+#ACT
+#ELSEACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+;RETURNBOXITEM 2
+BREAK
+#ELSESAY
+请放入所有需要的装备！\ \
+<返回/@main>\ 
+<离开/@exit>\ 
+
+;检测相同物品
+#IF
+COMPARETEXT <$BOXITEM[1].INDEX> <$BOXITEM[0].INDEX>
+;COMPARETEXT <$BOXITEM[2].INDEX> <$BOXITEM[0].INDEX>
+#ELSEACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+;RETURNBOXITEM 2
+BREAK
+#ELSESAY
+想要熔炼【<$BOXITEM[0].NAME>】的【<$STR(S$熔炼属性名称)>】属性?\
+需要提供两件拥有相同【<$STR(S$熔炼属性名称)>】属性的【<$BOXITEM[0].NAME>】！\
+你给我的物品好像不全是【<$BOXITEM[0].NAME>】。\ \ 
+<重新提交装备/@main>\
+<离开/@exit>\ 
+
+;获取额外属性值
+#IF
+#ACT
+SETUPGRADEITEM 0
+GETITEMADDVALUE -1 <$STR(N$熔炼属性位置)> <$STR(P10)>
+SETUPGRADEITEM 1
+GETITEMADDVALUE -1 <$STR(N$熔炼属性位置)> <$STR(P11)>
+;SETUPGRADEITEM 2
+;GETITEMADDVALUE -1 <$STR(N$熔炼属性位置)> <$STR(P12)>
+
+;检测额外属性值是否一致
+#IF
+COMPARETEXT P11 P10
+;COMPARETEXT P12 P10
+#ELSEACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+;RETURNBOXITEM 2
+BREAK
+#ELSESAY
+想要熔炼【<$BOXITEM[0].NAME>】的【<$STR(S$熔炼属性名称)>】属性?\
+需要提供两件拥有相同【<$STR(S$熔炼属性名称)>】属性的【<$BOXITEM[0].NAME>】！\
+你给我的【<$BOXITEM[0].NAME>】拥有不同的【<$STR(S$熔炼属性名称)>】属性。\ \ 
+<重新提交装备/@main>\
+<离开/@exit>\ 
+
+#IF
+#ACT
+SETUPGRADEITEM 0
+
+;检查熔炼次数
+#IF
+CHECKITEMUPGRADECOUNT 0 -1 < <$STR(N$熔炼最大次数)>
+#ELSEACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+;RETURNBOXITEM 2
+BREAK
+#ELSESAY
+实在抱歉，以我目前的能力，\
+【<$BOXITEM[0].NAME>】最多只能熔炼【<$STR(N$熔炼最大次数)>】次。\ \
+<离开/@exit>\ 
+
+;获取已熔炼次数并计算实际物品消耗数量
+#IF
+#ACT
+GETUPGRADECOUNT -1 P0
+INC P0 1
+MUL P1 <$STR(N$熔炼元宝数量)> <$STR(P0)>
+MUL P3 <$STR(N$熔炼材料1数量)> 1
+MUL P4 <$STR(N$熔炼材料2数量)> 1
+
+;计算元宝条件
+#IF
+#ACT
+DEC P1 1
+MOV P2 <$STR(P1)>
+INC P1 1
+
+;检查材料是否充足
+#IF
+CHECKGAMEGOLD > <$STR(P2)>
+CHECKITEM <$STR(S$熔炼材料1)> <$STR(P3)>
+CHECKITEM <$STR(S$熔炼材料2)> <$STR(P4)>
+#ACT
+GAMEGOLD - <$STR(P1)>
+TAKE <$STR(S$熔炼材料1)> <$STR(P3)>
+TAKE <$STR(S$熔炼材料2)> <$STR(P4)>
+#ELSESAY
+什么，你连这点实力都没有，还想我为你服务？\ 
+准备好足够的<$STR(S$熔炼材料1)>、<$STR(S$熔炼材料2)>和元宝再来找我吧。\ \ 
+<离开/@exit>\ 
+#ELSEACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+;RETURNBOXITEM 2
+BREAK
+
+;成功概率计算
+#IF
+#ACT
+MOVR P14 0 800 ;调整为一定成功
+
+;失败处理
+#IF
+LARGE P14 800
+#ACT
+RETURNBOXITEM 0
+DELBOXITEM 1
+;DELBOXITEM 2
+BREAK
+#SAY
+很遗憾，【<$BOXITEM[0].NAME>】的【<$STR(S$熔炼属性名称)>】属性<熔炼失败/SCOLOR=249>，\
+这也不是我想要的结果。\ \ 
+<返回/@main>\ 
+<离开/@exit>\ 
+
+;获取额外属性，并计算提升值
+#IF
+#ACT
+GETITEMADDVALUE -1 <$STR(N$熔炼属性位置)> <$STR(P13)>
+INC P13 1
+
+;属性熔炼
+#IF
+#ACT
+CHANGEITEMUPGRADECOUNT -1 + 1
+CHANGEITEMADDVALUE -1 <$STR(N$熔炼属性位置)> = <$STR(P13)>
+UPDATEBOXITEM 0
+RETURNBOXITEM 0
+DELBOXITEM 1
+;DELBOXITEM 2
+#SAY
+你总是如此幸运，【<$BOXITEM[0].NAME>】的【<$STR(S$熔炼属性名称)>】属性<熔炼成功/SCOLOR=250>！\ \
+<返回/@main>\ 
+<离开/@exit>\ 
+}

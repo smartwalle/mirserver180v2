@@ -1,0 +1,9 @@
+(@buy @sell @repair @s_repair )
+%100
++15
+[@main]
+#IF
+#ACT
+#CALL [\城市商人\头盔店.txt] @头盔店
+Break
+

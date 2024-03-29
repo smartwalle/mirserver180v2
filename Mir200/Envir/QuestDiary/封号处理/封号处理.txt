@@ -1,0 +1,14 @@
+[@封号处理]
+{
+#IF
+#ACT
+MOV S$玩家封号
+
+#IF
+#ACT
+#CALL [\天下第一\天下第一封号.txt] @天下第一封号
+
+#IF
+#ACT
+SETRANKLEVELNAME %s\<$STR(S$玩家封号)>
+}

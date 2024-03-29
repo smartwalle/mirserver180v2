@@ -1,0 +1,7 @@
+(@@CreateHero )
+
+[@main]
+#IF
+#ACT
+#CALL [\城市商人\英雄.txt] @英雄
+Break

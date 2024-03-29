@@ -1,0 +1,7 @@
+(@buy @sell @repair @s_repair )
+%100
+[@main]
+#IF
+#ACT
+#CALL [\装备熔炼\熔炼首饰属性.txt] @首饰属性熔炼
+Break

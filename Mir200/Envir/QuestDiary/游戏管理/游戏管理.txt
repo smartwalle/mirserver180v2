@@ -1,0 +1,1411 @@
+[@游戏管理]
+{
+#IF
+ISADMIN
+#SAY
+欢迎来到【<$SERVERNAME>】，有什么可以帮您：\ \
+<装备领取/@领取装备>  <衣服领取/@领取衣服>  <武器领取/@领取武器>\
+<技能管理/@技能管理>  <职业管理/@职业管理>\
+<沙城管理/@沙城管理>  <天下第一/@天下第一>\
+#ELSESAY
+没有操作权限！\ \
+<离开/@exit>
+
+[@领取装备]
+#IF
+ISADMIN
+#ACT
+#CALL [\游戏管理\装备领取.txt] @装备领取主页
+BREAK
+
+[@领取衣服]
+#IF
+ISADMIN
+#ACT
+#CALL [\游戏管理\衣服领取.txt] @衣服领取主页
+BREAK
+
+[@领取武器]
+#IF
+ISADMIN
+#ACT
+#CALL [\游戏管理\武器领取.txt] @武器领取主页
+BREAK
+
+[@技能管理]
+#IF
+ISADMIN
+#ACT
+#CALL [\游戏管理\技能管理.txt] @技能管理主页
+BREAK
+
+[@职业管理]
+#IF
+ISADMIN
+#ACT
+#CALL [\游戏管理\职业管理.txt] @职业管理主页
+BREAK
+
+[@性别管理]
+#IF
+ISADMIN
+#ACT
+#CALL [\游戏管理\性别管理.txt] @性别管理主页
+BREAK
+
+[@沙城管理]
+#IF
+ISADMIN
+#ACT
+#CALL [\游戏管理\沙城管理.txt] @沙城管理主页
+BREAK
+
+[@天下第一]
+#IF
+ISADMIN
+#ACT
+#CALL [\游戏管理\天下第一.txt] @天下第一管理主页
+BREAK
+}
+
+[@管理]
+{
+#IF
+ISADMIN
+#say
+你可以在我这儿享受以下服务:\\
+\
+┃<安全区域/@ANQUAN>┃<险恶区域/@XIANE>┃<装备管理/@进行装备管理>┃\
+\\
+┃<怪物攻城活动/@进行怪物攻城>┃<清除全部怪物/@清除怪物>┃\
+\
+#elseact
+messagebox 对不起!!!你不是管理员!!!快点闪开!!!!\
+;------------------------------------
+
+[@ANQUAN]
+你可以享受以下地区的通航服务.\\
+┃<比齐大城/@JIANAN>┃<毒蛇山谷/@FENGDI>┃<银杏小村/@XIAGU>┃<比奇村庄/@HAIBIN>┃\
+\
+┃<盟重土城/@YASHU>┃<苍月之岛/@HUANGCHENG>┃<封魔神谷/@JIANYU>┃<白 日 门/@SHADINDAO>┃\
+\
+........................................<返回/@管理>
+
+[@JIANAN] 
+#IF 
+#ACT
+mapmove 0 333 268 
+
+[@XIAGU] 
+#IF 
+#ACT
+mapmove 0 634 612 
+
+[@HAIBIN] 
+#IF 
+#ACT
+mapmove 0 288 615 
+
+
+[@YASHU] 
+#IF 
+#ACT
+mapmove 3 330 330 
+
+
+[@SHADINDAO]
+#IF 
+#ACT 
+mapmove 11 177 324
+
+[@HUANGCHENG]
+#IF 
+#ACT
+give 回城卷 1 
+mapmove 5 110 360
+
+
+[@JIANYU]
+#IF 
+#ACT
+give 回城卷 1 
+mapmove 4 233 210
+
+
+[@FENGDI] 
+#IF 
+#ACT
+mapmove 2 503 482
+
+[@XIANE]
+#IF
+#SAY
+你可以前往以下地区:\
+\
+\
+┃<沃玛三层/@JM7>┃<猪洞七层/@JM8>┃<祖玛七层/@JM5>┃<死亡棺材/@JM6>┃<抉择之地/@S6>┃\
+\
+\
+┃<比齐矿区/@JN1>┃<蜈蚣洞穴/@JN2>┃<天然洞穴/@JM1>┃<牛魔四层/@JM2>┃<封魔矿区/@FENGMOKOU>┃\
+\
+\
+┃<未知暗殿/@JXJDVE>┃<尸 魔 洞/@JM3>┃<骨 魔 洞/@JM4>┃<尸王大殿/@LM2>┃<沙城区域/@沙城区域>┃\
+\
+........................................<返回/@管理>
+
+[@沙城区域]
+#ACT
+give 回城卷 1
+mapmove 3 716 407
+
+
+[@S1]
+#ACT
+give 回城卷 1
+mapmove D023
+
+
+[@S2]
+#ACT
+give 回城卷 1
+mapmove D711
+
+
+[@S3]
+#ACT
+give 回城卷 1
+mapmove D503
+
+
+[@S4]
+#ACT
+give 回城卷 1
+mapmove D601
+
+
+[@S5]
+#ACT
+give 回城卷 1
+mapmove D10011
+
+
+[@S6]
+#ACT
+give 回城卷 1
+mapmove D1004
+
+
+[@H4]
+#ACT
+give 回城卷 1
+mapmove D716
+
+
+[@NN7]
+#ACT
+give 回城卷 1
+mapmove D2071
+
+
+[@JM2]
+#ACT
+give 回城卷 1
+mapmove D2075
+
+
+[@JM3]
+#ACT
+give 回城卷 1
+mapmove D2051
+
+
+[@JM4]
+#ACT
+give 回城卷 1
+mapmove D2061
+
+
+[@JM5]
+#ACT
+give 回城卷 1
+mapmove D5071 8 10
+
+
+[@JM6]
+#ACT
+give 回城卷 1
+mapmove D606
+
+[@JM7]
+#ACT
+give 回城卷 1
+mapmove D024
+
+[@JM8]
+#ACT
+give 回城卷 1
+mapmove D716
+
+
+[@H8]
+#ACT
+give 回城卷 1
+mapmove D053
+
+
+[@H10]
+#ACT
+give 回城卷 1
+mapmove D10052
+
+
+[@H1]
+#ACT
+give 回城卷 1
+mapmove D022
+
+
+[@H2]
+#ACT
+give 回城卷 1
+mapmove D501
+
+
+[@JN1]
+#ACT
+give 回城卷 1
+mapmove D401
+
+
+[@JN2]
+#ACT
+give 回城卷 1
+mapmove D601
+
+
+[@JM1]
+#ACT
+give 回城卷 1
+mapmove E001
+
+
+[@H9]
+#ACT
+give 回城卷 1
+mapmove D401
+
+
+[@JN7]
+#ACT
+give 回城卷 1
+mapmove D011
+
+
+[@JXJDVE]
+#ACT
+give 回城卷 1
+mapmove M001
+
+
+[@SCQYV]
+#ACT
+give 回城卷 1 
+mapmove 2N01
+
+
+[@LM1]
+#IF 
+#ACT
+give 回城卷 1 
+mapmove DH00 138 192
+
+
+[@LM2]
+#IF 
+#ACT
+give 回城卷 1 
+mapmove Q004
+
+
+[@LM3]
+#IF 
+#ACT
+give 回城卷 1 
+mapmove F002
+
+
+[@FENGMOKOU]
+#IF 
+#ACT
+give 回城卷 1 
+mapmove 4 138 69
+
+[@进行装备管理]
+#if
+ISADMIN
+#say
+请选择....\ \ \
+<领取普通套装/@sandataozhuang> \ \
+<单独增加属性/@shua>  \  \
+<返回/@管理>\
+#elseact
+messagebox 对不起!!!你不是管理员!!!快点闪开!!!!\ 
+
+[@sandataozhuang]
+#IF
+  ISADMIN
+#say
+<━━━━━━━><$DATETIME><━━━━━━━>\ \
+<圣战套礼包/@圣战套> <法神套礼包/@法神套> <天尊套礼包/@天尊套> \\
+(每样礼包里只有首饰，服饰与武器请自行搭配)          <返回/@进行装备管理>\
+#elseact
+messagebox 对不起！你不是管理员！
+
+
+[@圣战套]
+#IF
+  ISADMIN
+#ACT
+give 圣战大礼包 1
+#elseact
+messagebox 对不起！你不是管理员！
+
+[@法神套]
+#IF
+  ISADMIN
+#ACT
+give 法神大礼包 1
+#elseact
+messagebox 对不起！你不是管理员！
+
+[@天尊套]
+#IF
+  ISADMIN
+#ACT
+give 天尊大礼包 1
+#elseact
+messagebox 对不起！你不是管理员！
+
+
+[@shua]
+#if
+ISADMIN
+#say
+<衣服增加属性/@yf1>   <手镯增加属性/@sz1>   <戒指增加属性/@jz1>\
+<项链增加属性/@xl1>   <头盔增加属性/@tk1>    <武器增加属性/@wq1>\
+<返回上页/@进行装备管理>\
+#elseact
+messagebox 对不起!!!你不是管理员!!!快点闪开!!!!\
+
+[@yf1]
+想赐予<衣服>哪种力量？每点一次加一点.请穿好衣服再选！\
+注意：无\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<衣服攻击/@yf1333>┆  ┆<衣服魔法/@yf1444>┆  ┆<衣服道术/@yf1555>┆  ┆<衣服持久/@yf1666>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<衣服防御/@yf1111>┆  ┆<衣服魔御/@yf1222>┆  ┆<返回上页/@shua>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+;防御
+[@yf1111]
+#if
+#act
+UPGRADEITEMEX 0 0 0 1 0
+goto @yf1
+;魔御
+[@yf1222]
+#if
+#act
+UPGRADEITEMEX 0 1 0 1 0
+goto @yf1
+;攻击
+[@yf1333]
+#if
+#act
+UPGRADEITEMEX 0 2 0 1 0
+goto @yf1
+;魔法
+[@yf1444]
+#if
+#act
+UPGRADEITEMEX 0 3 0 1 0
+goto @yf1
+;道术
+[@yf1555]
+#if
+#act
+UPGRADEITEMEX 0 4 0 1 0
+goto @yf1
+;持久
+[@yf1666]
+#if
+#act
+UPGRADEITEMEX 0 14 0 1 0
+goto @yf1
+
+;-------------------------------------武器------------------------
+[@wq1]
+想赐予<武器>哪种力量？每点一次加一点。请拿好武器再选！\
+注意:攻击速度+1必须要点10次武器速度后才能增加!否则是减速度!\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<武器攻击/@wq1111>┆  ┆<武器魔法/@wq1222>┆  ┆<武器道术/@wq1333>┆  ┆<武器准确/@wq1444>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<武器幸运/@wq1555>┆  ┆<武器速度/@wq1666>┆  ┆<武器持久/@wq1777>┆  ┆<返回上页/@shua>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+;攻击
+[@wq1111]
+#if
+#act
+UPGRADEITEMEX 1 0 0 1 0
+goto @wq1
+BREAK
+;魔法
+[@wq1222]
+#if
+#act
+UPGRADEITEMEX 1 1 0 1 0
+goto @wq1
+BREAK
+;道术
+[@wq1333]
+#if
+#act
+UPGRADEITEMEX 1 2 0 1 0
+goto @wq1
+BREAK
+;幸运
+[@wq1555]
+#if
+#act
+UPGRADEITEMEX 1 3 0 1 0
+goto @wq1
+BREAK
+;持久
+[@wq1777]
+#if
+#act
+UPGRADEITEMEX 1 14 0 1 0
+goto @wq1
+BREAK
+;准确
+[@wq1444]
+#if
+#act
+UPGRADEITEMEX 1 5 0 1 0
+goto @wq1
+BREAK
+;攻击速度
+[@wq1666]
+#if
+#act
+UPGRADEITEMEX 1 6 0 1 0
+goto @wq1
+BREAK
+
+;----------------------------------------项链-------------------------
+
+
+[@xl1]
+想赐予<项链>哪种力量？每点一次加一点。请戴好项链再选！\
+注意:请详细阅读上页的说明!\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<项链攻击/@xl13>┆  ┆<项链魔法/@xl14>┆  ┆<项链道术/@xl15>┆  ┆<项链准确/@xl11>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<项链幸运/@xl12>┆  ┆<项链持久/@xl16>┆  ┆<返回上页/@shua>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+
+;准确或魔法躲避，根据项链不同而不同
+[@xl11]
+#if
+#act
+UPGRADEITEMEX 3 0 0 1 0
+goto @xla1
+BREAK
+;幸运或敏捷，根据项链不同而不同
+[@xl12]
+#if
+#act
+UPGRADEITEMEX 3 1 0 1 0
+goto @xla1
+BREAK
+;攻击
+[@xl13]
+#if
+#act
+UPGRADEITEMEX 3 2 0 1 0
+goto @xla1
+BREAK
+;魔法
+[@xl14]
+#if
+#act
+UPGRADEITEMEX 3 3 0 1 0
+goto @xla1
+BREAK
+;道术
+[@xl15]
+#if
+#act
+UPGRADEITEMEX 3 4 0 1 0
+goto @xla1
+BREAK
+[@xl16]
+#if
+#act
+UPGRADEITEMEX 3 14 0 1 0
+goto @xla1
+BREAK
+;--------------------------------------------头盔-----------------
+[@tk1]
+想赐予<头盔>哪种力量？每点一次加一点。请戴好头盔再选！\
+注意:无!\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<头盔攻击/@tk11>┆  ┆<头盔魔法/@tk12>┆  ┆<头盔道术/@tk13>┆  ┆<头盔防御/@tk14>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<头盔魔御/@tk15>┆  ┆<头盔持久/@tk16>┆  ┆<返回上页/@shua>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+;攻击
+[@tk11]
+#if
+#act
+UPGRADEITEMEX 4 2 0 1 0
+goto @tk1
+BREAK
+;魔法
+[@tk12]
+#if
+#act
+UPGRADEITEMEX 4 3 0 1 0
+goto @tk1
+BREAK
+;道术
+[@tk13]
+#if
+#act
+UPGRADEITEMEX 4 4 0 1 0
+goto @tk1
+BREAK
+;防御
+[@tk14]
+#if
+#act
+UPGRADEITEMEX 4 0 0 1 0
+goto @tk1
+BREAK
+;魔御
+[@tk15]
+#if
+#act
+UPGRADEITEMEX 4 1 0 1 0
+goto @tk1
+BREAK
+;持久
+[@tk16]
+#if
+#act
+UPGRADEITEMEX 4 14 0 1 0
+goto @tk1
+BREAK
+
+;--------------------------------------左戒指---------------------------
+[@jz1]
+请详细阅读下面的说明然后再进行操作，否则会造成严重的后果\
+戒指分左手和右手，请选择\ \ 
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<左手戒指/@jza1>┆  ┆<右手戒指/@jzb1>┆  ┆<返回上页/@shua>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+
+
+
+[@jza1]
+想赐予<左戒指>哪种力量？每点一次加一点。请戴好戒指再选！\
+注意:无!\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<左戒攻击/@jza11>┆  ┆<左戒魔法/@jza12>┆  ┆<左戒道术/@jza13>┆  ┆<左戒防御/@jza14>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<左戒魔御/@jza15>┆  ┆<左戒持久/@jza16>┆  ┆<返回上页/@jz1>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+;攻击
+[@jza11]
+#if
+#act
+UPGRADEITEMEX 8 2 0 1 0
+goto @jza1
+BREAK
+;魔法
+[@jza12]
+#if
+#act
+UPGRADEITEMEX 8 3 0 1 0
+goto @jza1
+BREAK
+;道术
+[@jza13]
+#if
+#act
+UPGRADEITEMEX 8 4 0 1 0
+goto @jza1
+BREAK
+;防御
+[@jza14]
+#if
+#act
+UPGRADEITEMEX 8 0 0 1 0
+goto @jza1
+BREAK
+;魔御
+[@jza15]
+#if
+#act
+UPGRADEITEMEX 8 1 0 1 0
+goto @jza1
+BREAK
+;持久
+[@jza16]
+#if
+#act
+UPGRADEITEMEX 8 14 0 1 0
+goto @jza1
+BREAK
+
+;--------------------------------------右戒指---------------------------
+[@jzb1]
+想赐予<右戒指>哪种力量？每点一次加一点。请戴好戒指再选！\
+注意:无!\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<右戒攻击/@jzb11>┆  ┆<右戒魔法/@jzb12>┆  ┆<右戒道术/@jzb13>┆  ┆<右戒防御/@jzb14>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<右戒魔御/@jzb15>┆  ┆<右戒持久/@jzb16>┆  ┆<返回上页/@jz1>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+;攻击
+[@jzb11]
+#if
+#act
+UPGRADEITEMEX 7 2 0 1 0
+goto @jzb1
+BREAK
+;魔法
+[@jzb12]
+#if
+#act
+UPGRADEITEMEX 7 3 0 1 0
+goto @jzb1
+BREAK
+;道术
+[@jzb13]
+#if
+#act
+UPGRADEITEMEX 7 3 0 1 0
+goto @jzb1
+BREAK
+;防御
+[@jzb14]
+#if
+#act
+UPGRADEITEMEX 7 0 0 1 0
+goto @jzb1
+BREAK
+;魔御
+[@jzb15]
+#if
+#act
+UPGRADEITEMEX 7 1 0 1 0
+goto @jzb1
+BREAK
+;持久
+[@jzb16]
+#if
+#act
+UPGRADEITEMEX 7 14 0 1 0
+goto @jzb1
+BREAK
+
+;--------------------------------------左手镯---------------------------
+[@sz1]
+请详细阅读下面的说明然后再进行操作，否则会造成严重的后果\
+手镯分左手和右手，请选择\ \ 
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<左手手镯/@sza1>┆  ┆<右手手镯/@szb1>┆  ┆<返回上页/@shua>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+
+[@sza1]
+想赐予<左手镯>哪种力量？每点一次加一点。请戴好手镯再选！\
+注意:无!\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<左镯攻击/@sza11>┆  ┆<左镯魔法/@sza12>┆  ┆<左镯道术/@sza13>┆  ┆<左镯防御/@sza14>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<左镯魔御/@sza15>┆  ┆<左镯持久/@sza16>┆  ┆<返回上页/@sz1>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+;攻击
+[@sza11]
+#if
+#act
+UPGRADEITEMEX 6 2 0 1 0
+goto @sza1
+BREAK
+;魔法
+[@sza12]
+#if
+#act
+UPGRADEITEMEX 6 3 0 1 0
+goto @sza1
+BREAK
+;道术
+[@sza13]
+#if
+#act
+UPGRADEITEMEX 6 4 0 1 0
+goto @sza1
+BREAK
+;防御
+[@sza14]
+#if
+#act
+UPGRADEITEMEX 6 0 0 1 0
+goto @sza1
+BREAK
+;魔御
+[@sza15]
+#if
+#act
+UPGRADEITEMEX 6 1 0 1 0
+goto @sza1
+BREAK
+;持久
+[@sza16]
+#if
+#act
+UPGRADEITEMEX 6 14 0 1 0
+goto @sza1
+BREAK
+;--------------------------------------右手镯---------------------------
+[@szb1]
+想赐予<右手镯>哪种力量？每点一次加一点。请戴好手镯再选！\
+注意:无!\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<右镯攻击/@szb11>┆  ┆<右镯魔法/@szb12>┆  ┆<右镯道术/@szb13>┆  ┆<右镯防御/@szb14>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<右镯魔御/@szb15>┆  ┆<右镯持久/@szb16>┆  ┆<返回上页/@sz1>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+;攻击
+[@szb11]
+#if
+#act
+UPGRADEITEMEX 5 2 0 1 0
+goto @szb1
+BREAK
+;魔法
+[@szb12]
+#if
+#act
+UPGRADEITEMEX 5 3 0 1 0
+goto @szb1
+BREAK
+;道术
+[@szb13]
+#if
+#act
+UPGRADEITEMEX 5 4 0 1 0
+goto @szb1
+BREAK
+;防御
+[@szb14]
+#if
+#act
+UPGRADEITEMEX 5 0 0 1 0
+goto @szb1
+BREAK
+;魔御
+[@szb15]
+#if
+#act
+UPGRADEITEMEX 5 1 0 1 0
+goto @szb1
+BREAK
+;持久
+[@szb16]
+#if
+#act
+UPGRADEITEMEX 5 14 0 1 0
+goto @szb1
+BREAK
+
+
+[@进行怪物攻城]
+这里可以控制怪物攻城，你想要怪物进攻哪个城市？\ \
+<盟重省/@盟重省>　　<比齐城/@比齐城>\ \
+<封魔谷/@封魔谷>　　<苍月岛/@苍月岛>\ \
+<返回/@管理>
+[@盟重省]
+请选择进攻盟重省的怪物！\ 
+<暗之系怪物进攻/@盟暗之系>　<祖玛系怪物进攻/@盟祖玛系>  <牛魔系怪物进攻/@盟牛魔系>\
+<猪洞系怪物进攻/@盟猪洞系>　<虹魔系怪物进攻/@盟虹魔系>  <统领系怪物进攻/@盟统领系>\
+<BOSS系怪物进攻/@盟BOSS系>\ \
+<返回/@进行怪物攻城>
+[@比齐城]
+请选择进攻比齐城的怪物！\ 
+<暗之系怪物进攻/@比暗之系>　<祖玛系怪物进攻/@比祖玛系>  <牛魔系怪物进攻/@比牛魔系>\
+<猪洞系怪物进攻/@比猪洞系>　<虹魔系怪物进攻/@比虹魔系>  <统领系怪物进攻/@比统领系>\
+<BOSS系怪物进攻/@比BOSS系>\ \
+<返回/@进行怪物攻城>
+[@封魔谷]
+请选择进攻封魔谷的怪物！\ 
+<暗之系怪物进攻/@封暗之系>　<祖玛系怪物进攻/@封祖玛系>  <牛魔系怪物进攻/@封牛魔系>\
+<猪洞系怪物进攻/@封猪洞系>　<虹魔系怪物进攻/@封虹魔系>  <统领系怪物进攻/@封统领系>\
+<BOSS系怪物进攻/@封BOSS系>\ \
+<返回/@进行怪物攻城>
+[@苍月岛]
+请选择进攻苍月岛的怪物！\ 
+<暗之系怪物进攻/@苍暗之系>　<祖玛系怪物进攻/@苍祖玛系>  <牛魔系怪物进攻/@苍牛魔系>\
+<猪洞系怪物进攻/@苍猪洞系>　<虹魔系怪物进攻/@苍虹魔系>  <统领系怪物进攻/@苍统领系>\
+<BOSS系怪物进攻/@苍BOSS系>\ \
+<返回/@进行怪物攻城>
+
+[@苍BOSS系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 1
+PARAM4 50
+MOBPLACE 黄泉教主
+MOBPLACE 重装使者
+MOBPLACE 地藏魔王
+MOBPLACE 石墓尸王
+MOBPLACE 沃玛教主
+MOBPLACE 黄泉教主
+SENDMSG 6 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍统领系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 1
+PARAM4 50
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+SENDMSG 6 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍虹魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 5
+PARAM4 50
+MOBPLACE 虹魔蝎卫
+MOBPLACE 虹魔猪卫
+MOBPLACE 虹魔教主
+SENDMSG 6 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍猪洞系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 5
+PARAM4 50
+MOBPLACE 白野猪
+MOBPLACE 邪恶毒蛇
+MOBPLACE 黑野猪
+MOBPLACE 红野猪
+SENDMSG 6 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍牛魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军8
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司8
+MOBPLACE 牛魔法师8
+MOBPLACE 牛魔战士
+SENDMSG 6 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍祖玛系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 5
+PARAM4 50
+MOBPLACE 祖玛卫士3
+MOBPLACE 祖玛弓箭手3
+MOBPLACE 祖玛雕像
+MOBPLACE 祖玛教主
+SENDMSG 6 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@苍暗之系]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 2
+PARAM4 50
+MOBPLACE 暗之双头血魔
+MOBPLACE 暗之双头金刚
+MOBPLACE 暗之骷髅精灵
+MOBPLACE 暗之黄泉教主
+MOBPLACE 暗之虹魔教主
+MOBPLACE 暗之沃玛教主
+MOBPLACE 暗之牛魔王
+SENDMSG 6 怪物进攻了苍月岛！
+goto @苍月岛
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @苍月岛
+[@封BOSS系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 1
+PARAM4 50
+MOBPLACE 黄泉教主
+MOBPLACE 重装使者
+MOBPLACE 地藏魔王
+MOBPLACE 石墓尸王
+MOBPLACE 沃玛教主
+MOBPLACE 黄泉教主
+SENDMSG 6 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封统领系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 1
+PARAM4 50
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+SENDMSG 6 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封虹魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 5
+PARAM4 50
+MOBPLACE 虹魔蝎卫
+MOBPLACE 虹魔猪卫
+MOBPLACE 虹魔教主
+SENDMSG 6 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封猪洞系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 5
+PARAM4 50
+MOBPLACE 白野猪
+MOBPLACE 邪恶毒蛇
+MOBPLACE 黑野猪
+MOBPLACE 红野猪
+SENDMSG 6 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封牛魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军8
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司8
+MOBPLACE 牛魔法师8
+MOBPLACE 牛魔战士
+SENDMSG 6 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封祖玛系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 5
+PARAM4 50
+MOBPLACE 祖玛卫士3
+MOBPLACE 祖玛弓箭手3
+MOBPLACE 祖玛雕像
+SENDMSG 6 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@封暗之系]
+#IF
+ISADMIN
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 2
+PARAM4 50
+MOBPLACE 暗之双头血魔
+MOBPLACE 暗之双头金刚
+MOBPLACE 暗之骷髅精灵
+MOBPLACE 暗之黄泉教主
+MOBPLACE 暗之虹魔教主
+MOBPLACE 暗之沃玛教主
+MOBPLACE 暗之牛魔王
+SENDMSG 6 怪物进攻了封魔谷！
+goto @封魔谷
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @封魔谷
+[@比BOSS系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 1
+PARAM4 50
+MOBPLACE 黄泉教主
+MOBPLACE 重装使者
+MOBPLACE 地藏魔王
+MOBPLACE 石墓尸王
+MOBPLACE 沃玛教主
+MOBPLACE 黄泉教主
+SENDMSG 6 怪物进攻了比齐城！
+goto @比齐城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比齐城
+[@比统领系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 1
+PARAM4 50
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+SENDMSG 6 怪物进攻了比齐城！
+goto @比齐城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比齐城
+[@比虹魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 5
+PARAM4 50
+MOBPLACE 虹魔蝎卫
+MOBPLACE 虹魔猪卫
+MOBPLACE 虹魔教主
+SENDMSG 6 怪物进攻了比齐城！
+goto @比齐城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比齐城
+[@比猪洞系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 5
+PARAM4 50
+MOBPLACE 白野猪
+MOBPLACE 邪恶毒蛇
+MOBPLACE 黑野猪
+MOBPLACE 红野猪
+SENDMSG 6 怪物进攻了比齐城！
+goto @比齐城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比齐城
+[@比牛魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军8
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司8
+MOBPLACE 牛魔法师8
+MOBPLACE 牛魔战士
+SENDMSG 6 怪物进攻了比齐城！
+goto @比齐城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比齐城
+[@比祖玛系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 5
+PARAM4 50
+MOBPLACE 祖玛卫士3
+MOBPLACE 祖玛弓箭手3
+MOBPLACE 祖玛雕像
+SENDMSG 6 怪物进攻了比齐城！
+goto @比齐城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比齐城
+[@比暗之系]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 2
+PARAM4 50
+MOBPLACE 暗之双头血魔
+MOBPLACE 暗之双头金刚
+MOBPLACE 暗之骷髅精灵
+MOBPLACE 暗之黄泉教主
+MOBPLACE 暗之虹魔教主
+MOBPLACE 暗之沃玛教主
+MOBPLACE 暗之牛魔王
+SENDMSG 6 怪物进攻了比齐城！
+goto @比齐城
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @比齐城
+[@盟BOSS系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 1
+PARAM4 50
+MOBPLACE 黄泉教主
+MOBPLACE 重装使者
+MOBPLACE 地藏魔王
+MOBPLACE 石墓尸王
+MOBPLACE 沃玛教主
+MOBPLACE 黄泉教主
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟统领系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 1
+PARAM4 50
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+MOBPLACE 半兽统领
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟虹魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 5
+PARAM4 50
+MOBPLACE 虹魔蝎卫
+MOBPLACE 虹魔猪卫
+MOBPLACE 虹魔教主
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟猪洞系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 5
+PARAM4 50
+MOBPLACE 白野猪
+MOBPLACE 邪恶毒蛇
+MOBPLACE 黑野猪
+MOBPLACE 红野猪
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟牛魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军8
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司8
+MOBPLACE 牛魔法师8
+MOBPLACE 牛魔战士
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟祖玛系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 5
+PARAM4 50
+MOBPLACE 祖玛卫士3
+MOBPLACE 祖玛弓箭手3
+MOBPLACE 祖玛雕像
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟暗之系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 2
+PARAM4 50
+MOBPLACE 暗之双头血魔
+MOBPLACE 暗之双头金刚
+MOBPLACE 暗之骷髅精灵
+MOBPLACE 暗之黄泉教主
+MOBPLACE 暗之虹魔教主
+MOBPLACE 暗之沃玛教主
+MOBPLACE 暗之牛魔王
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+
+[@清除怪物]
+#IF
+#ACT
+CLEARMAPMON 3
+CLEARMAPMON 0
+CLEARMAPMON 4
+CLEARMAPMON 5
+SENDMSG 6 土城，比齐城，封魔谷，苍月岛内怪物已经全部清除！
+goto @管理
+
+}

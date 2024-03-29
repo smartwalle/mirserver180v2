@@ -1,0 +1,176 @@
+[@仓库]
+{
+您好。我是仓库保管员。为了您的仓库又<方便>又<安全>。\
+我为您提供以下仓库服务功能： \ \
+;<存放物品/@storage>\ 
+;<取回物品/@getback>\
+<打开仓库/@OpenStorage>\
+<打听金条/@NewBind>                     <离开/@exit>
+#ACT
+Close
+
+[@OpenStorage]
+您的物品都在这里，仔细检查一下吧！\ \
+<返回/@main>
+#ACT
+OpenStorageView 1 0 175
+
+[@storage]
+需要保管什么东西?\ \ 
+<返回/@main>
+
+[@getback]
+请看目录决定找什么东西.\ \ \  
+<返回/@main>
+
+[@getPreviouspage]
+#ACT
+goto @getback
+
+[@getnextpage]
+#ACT
+goto @getback
+
+[@NewBind]
+#IF
+#SAY
+你知道我是什么人吗？ \ 
+金币<交换/@JinBiHuanJiTiao>金条\
+金条<交换/@JinTiaoHuanJinBi>金币\
+金条<交换/@JinTiaoHuanJinZhuan>金砖\
+金砖<交换/@JinZhuanHuanJinTiao>金条\ 
+<离开/@exit>
+
+[@JinBiHuanJiTiao]
+#IF
+checkgold 1002000
+#SAY
+你说你要用金币换成金条? \
+好的，我帮你换 \
+但是要支付手续费 \
+费用是2000金币，你还换吗？ \ \
+<交换/@ChangeGoldBar> \
+<离开/@exit>
+#ELSESAY
+你连这点钱都没有，还换什么？ \
+等你有足够的钱，再来找我吧 \ \
+<返回/@main>
+
+[@ChangeGoldBar]
+#IF 
+CHECKBAGGAGE
+checkgold 1002000
+#ACT
+take 金币 1002000
+give 金条 1
+#SAY
+金币已经换好金条了. \ 
+还换吗？ \ \
+<交换/@JinBiHuanJiTiao> \
+<离开/@exit>
+#ELSESAY
+你的包里东西已经满了，或者你没有足够的钱支付手续费\
+你再确认一下吧 \ \
+<离开/@exit>
+
+[@JinTiaoHuanJinBi]
+#IF
+checkitem 金条 1
+#SAY 
+你要把金条换成金币? \
+好的，我给你换 \
+不过需要支付手续费\
+费用是2000金币，你还换吗？ \ \
+<交换/@JinTiaoHuanJinBiJianCha> \
+<离开/@exit>
+#ELSESAY
+你都没有金条还换什么? \
+想骗我?快滚! \ \
+<离开/@exit>
+
+[@JinTiaoHuanJinBiJianCha]
+#IF
+checkitem 金条 1
+checkgold 199000001
+#SAY
+我也很想给你换， \
+但是你钱太多了，我没办法给你换. \ \
+<离开/@exit>
+#ELSEACT
+goto @JinTiaoHuanJinBiQueRen
+
+[@JinTiaoHuanJinBiQueRen]
+#IF 
+checkitem 金条 1
+#ACT
+take 金条 1
+give 金币 998000
+#SAY
+金条已经换好金币了. \ 
+还换吗？ \ \
+<交换/@JinTiaoHuanJinBi> \
+<离开/@exit>
+
+[@JinTiaoHuanJinZhuan]
+#IF
+checkitem 金条 5
+checkgold 2000
+#SAY 
+你要把金条换成金砖? \
+好的，我给你换 \
+5根金条换1个金砖\
+不过需要支付手续费\
+费用是2000金币，你还换吗？ \ \
+<交换/@JinTiaoHuanJinZhuanQueRen> \
+<离开/@exit>
+#ELSESAY
+你都没有金条和钱还换什么? \
+想骗我?快滚! \ \
+<离开/@exit>
+
+[@JinTiaoHuanJinZhuanQueRen]
+#IF 
+checkitem 金条 5
+checkgold 2000
+#ACT
+take 金条 5
+give 金砖 1
+take 金币 2000
+#SAY
+金条已经换好金砖了了. \ 
+还换吗？ \ \
+<交换/@JinTiaoHuanJinZhuan> \
+<离开/@exit>
+
+[@JinZhuanHuanJinTiao]
+#IF
+checkitem 金砖 1
+checkgold 2000
+#SAY 
+你要把金砖换成金条? \
+好的，我给你换 \
+1个金砖换5根金条\
+不过需要支付手续费\
+费用是2000金币，你还换吗？ \ \
+<交换/@JinZhuanHuanJinTiaoQueRen> \
+<离开/@exit>
+#ELSESAY
+你都没有金条和钱还换什么? \
+想骗我?快滚! \ \
+<离开/@exit>
+
+[@JinZhuanHuanJinTiaoQueRen]
+#IF 
+checkitem 金砖 1
+checkgold 2000
+#ACT
+take 金砖 1
+give 金条 5
+take 金币 2000
+#SAY
+金砖已经换好金条了. \ 
+还换吗？ \ \
+<交换/@JinZhuanHuanJinTiao> \
+<离开/@exit>
+
+}

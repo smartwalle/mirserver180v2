@@ -1,0 +1,30 @@
+[@职业管理主页]
+{
+请选择你想要的职业：\ \
+<转职为战士/@转职为战士>\
+<转职为法师/@转职为法师>\
+<转职为道士/@转职为道士>\ \
+<返回/@游戏管理>   <离开/@exit>\
+
+[@转职为战士]
+#IF
+ISADMIN
+#ACT
+CHANGEJOB WARRIOT
+GOTO @职业管理主页
+
+[@转职为法师]
+#IF
+ISADMIN
+#ACT
+CHANGEJOB WIZARD
+GOTO @职业管理主页
+
+[@转职为道士]
+#IF
+ISADMIN
+#ACT
+CHANGEJOB TAOIST
+GOTO @职业管理主页
+
+}

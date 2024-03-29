@@ -1,0 +1,295 @@
+;变量说明
+;N$开孔最大数量 - 最大开孔数量条件
+;N$开孔数量 - 本次开孔数量
+;N$开孔元宝数量 - 需要元宝数量
+;其它已用变量
+;P1 - 元宝真实数量
+;P2 - 元宝条件
+;P3 - 剩余可开孔数量条件（用于比较，比实际可开孔数量大1）
+;P4 - 用于显示开孔数量选项计算
+[@装备开孔主页]
+{
+#IF
+#ACT
+MOV N$开孔最大数量 3
+MOV N$开孔数量 0
+MOV N$开孔元宝数量 200
+#SAY
+想要宝石发挥作用，还要将其镶嵌到装备中才行。在这之前要先对装\
+备进行开孔，如果不想装备被破坏，就需要用到一种特制的工具。\ \
+你有兴趣尝试一下吗？我可以为你提供服务，当然这不是免费的。\
+每件装备可以开启{<$STR(N$开孔最大数量)>个镶嵌孔位/SCOLOR=249}，每个孔位收费{<$STR(N$开孔元宝数量)>元宝/SCOLOR=249}。\ \
+<ITEMBOX:0:5:514:50:120:42:42:*:254#需要开孔的装备>\
+　　　　　        <确认开孔/@选择开孔数量>  <我再想想/@exit>  <返回/@main>\
+
+[@ItemIntoBox0]
+#OR
+;检查物品类型
+#OR
+COMPARETEXT <$BOXITEM[0].STDMODE> 5
+COMPARETEXT <$BOXITEM[0].STDMODE> 6
+COMPARETEXT <$BOXITEM[0].STDMODE> 10
+COMPARETEXT <$BOXITEM[0].STDMODE> 11
+COMPARETEXT <$BOXITEM[0].STDMODE> 15
+COMPARETEXT <$BOXITEM[0].STDMODE> 16
+COMPARETEXT <$BOXITEM[0].STDMODE> 19
+COMPARETEXT <$BOXITEM[0].STDMODE> 20
+COMPARETEXT <$BOXITEM[0].STDMODE> 21
+COMPARETEXT <$BOXITEM[0].STDMODE> 22
+COMPARETEXT <$BOXITEM[0].STDMODE> 23
+COMPARETEXT <$BOXITEM[0].STDMODE> 24
+COMPARETEXT <$BOXITEM[0].STDMODE> 26
+COMPARETEXT <$BOXITEM[0].STDMODE> 30
+COMPARETEXT <$BOXITEM[0].STDMODE> 62
+COMPARETEXT <$BOXITEM[0].STDMODE> 63
+COMPARETEXT <$BOXITEM[0].STDMODE> 64
+#ELSEACT
+RETURNBOXITEM 0
+MESSAGEBOX 我不想知道你这是什么宝贝，我也没功夫陪你瞎闹。
+BREAK
+
+[@选择开孔数量]
+#IF
+CHECKBOXITEMCOUNT 0 1
+#ELSESAY
+请放入要进行开孔的装备！\ \
+<返回/@装备开孔主页>\
+<离开/@exit>\
+#ELSEACT
+BREAK
+
+;检查物品类型
+#OR
+COMPARETEXT <$BOXITEM[0].STDMODE> 5
+COMPARETEXT <$BOXITEM[0].STDMODE> 6
+COMPARETEXT <$BOXITEM[0].STDMODE> 10
+COMPARETEXT <$BOXITEM[0].STDMODE> 11
+COMPARETEXT <$BOXITEM[0].STDMODE> 15
+COMPARETEXT <$BOXITEM[0].STDMODE> 16
+COMPARETEXT <$BOXITEM[0].STDMODE> 19
+COMPARETEXT <$BOXITEM[0].STDMODE> 20
+COMPARETEXT <$BOXITEM[0].STDMODE> 21
+COMPARETEXT <$BOXITEM[0].STDMODE> 22
+COMPARETEXT <$BOXITEM[0].STDMODE> 23
+COMPARETEXT <$BOXITEM[0].STDMODE> 24
+COMPARETEXT <$BOXITEM[0].STDMODE> 26
+COMPARETEXT <$BOXITEM[0].STDMODE> 30
+COMPARETEXT <$BOXITEM[0].STDMODE> 62
+COMPARETEXT <$BOXITEM[0].STDMODE> 63
+COMPARETEXT <$BOXITEM[0].STDMODE> 64
+#ELSEACT
+RETURNBOXITEM 0
+BREAK
+#ELSESAY
+我不想知道你这是什么宝贝，我也没功夫陪你瞎闹。\ \ 
+<返回/@宝石拆除主页>\
+<离开/@exit>\
+
+#IF
+#ACT
+SETUPGRADEITEM 0
+
+;检测是否已到最大开孔数量
+#IF
+CHECKFLUTECOUNT -1 < <$STR(N$开孔最大数量)>
+#ELSEACT
+RETURNBOXITEM 0
+BREAK
+#ELSESAY
+实在抱歉，以我目前的能力，\
+【<$BOXITEM[0].NAME>】最多只能开启【<$STR(N$开孔最大数量)>个镶嵌孔位】。\ \
+<返回/@装备开孔主页>\
+<离开/@exit>\ 
+
+;显示开孔数量选项
+#IF
+#SAY
+请选择你要为【<$BOXITEM[0].NAME>】开启多少个镶嵌孔位：\
+
+#IF
+#ACT
+MOV P4 <$STR(N$开孔最大数量)>
+
+#IF
+CHECKFLUTECOUNT -1 < <$STR(P4)>
+#ACT
+DEC P4 1
+#SAY
+我要<开启一个镶嵌孔位/@开启一个镶嵌孔位>\
+
+#IF
+CHECKFLUTECOUNT -1 < <$STR(P4)>
+#ACT
+DEC P4 1
+#SAY
+我要<开启两个镶嵌孔位/@开启两个镶嵌孔位>\
+
+#IF
+CHECKFLUTECOUNT -1 < <$STR(P4)>
+#ACT
+DEC P4 1
+#SAY
+我要<开启三个镶嵌孔位/@开启三个镶嵌孔位>\
+
+#IF
+CHECKFLUTECOUNT -1 < <$STR(P4)>
+#ACT
+DEC P4 1
+#SAY
+我要<开启四个镶嵌孔位/@开启四个镶嵌孔位>\
+
+#IF
+CHECKFLUTECOUNT -1 < <$STR(P4)>
+#ACT
+DEC P4 1
+#SAY
+我要<开启五个镶嵌孔位/@开启五个镶嵌孔位>\
+
+#IF
+#SAY
+\ \
+<返回/@装备开孔主页>\
+<离开/@exit>\
+
+[@开启一个镶嵌孔位]
+#IF
+#ACT
+MOV N$开孔数量 1
+GOTO @确认开孔
+
+[@开启两个镶嵌孔位]
+#IF
+#ACT
+MOV N$开孔数量 2
+GOTO @确认开孔
+
+[@开启三个镶嵌孔位]
+#IF
+#ACT
+MOV N$开孔数量 3
+GOTO @确认开孔
+
+[@开启四个镶嵌孔位]
+#IF
+#ACT
+MOV N$开孔数量 4
+GOTO @确认开孔
+
+[@开启五个镶嵌孔位]
+#IF
+#ACT
+MOV N$开孔数量 5
+GOTO @确认开孔
+
+[@确认开孔]
+#IF
+CHECKBOXITEMCOUNT 0 1
+#ELSESAY
+请放入要进行开孔的装备！\ \
+<返回/@装备开孔主页>\
+<离开/@exit>\
+#ELSEACT
+BREAK
+
+;检查物品类型
+#OR
+COMPARETEXT <$BOXITEM[0].STDMODE> 5
+COMPARETEXT <$BOXITEM[0].STDMODE> 6
+COMPARETEXT <$BOXITEM[0].STDMODE> 10
+COMPARETEXT <$BOXITEM[0].STDMODE> 11
+COMPARETEXT <$BOXITEM[0].STDMODE> 15
+COMPARETEXT <$BOXITEM[0].STDMODE> 16
+COMPARETEXT <$BOXITEM[0].STDMODE> 19
+COMPARETEXT <$BOXITEM[0].STDMODE> 20
+COMPARETEXT <$BOXITEM[0].STDMODE> 21
+COMPARETEXT <$BOXITEM[0].STDMODE> 22
+COMPARETEXT <$BOXITEM[0].STDMODE> 23
+COMPARETEXT <$BOXITEM[0].STDMODE> 24
+COMPARETEXT <$BOXITEM[0].STDMODE> 26
+COMPARETEXT <$BOXITEM[0].STDMODE> 30
+COMPARETEXT <$BOXITEM[0].STDMODE> 62
+COMPARETEXT <$BOXITEM[0].STDMODE> 63
+COMPARETEXT <$BOXITEM[0].STDMODE> 64
+#ELSEACT
+RETURNBOXITEM 0
+BREAK
+#ELSESAY
+我不想知道你这是什么宝贝，我也没功夫陪你瞎闹。\ \ 
+<返回/@宝石拆除主页>\
+<离开/@exit>\
+
+#IF
+#ACT
+SETUPGRADEITEM 0
+
+;检测是否已到最大开孔数量
+#IF
+CHECKFLUTECOUNT -1 < <$STR(N$开孔最大数量)>
+#ELSEACT
+RETURNBOXITEM 0
+BREAK
+#ELSESAY
+实在抱歉，以我目前的能力，\
+【<$BOXITEM[0].NAME>】最多只能开启【<$STR(N$开孔最大数量)>个镶嵌孔位】。\ \
+<返回/@装备开孔主页>\
+<离开/@exit>\ 
+
+;计算剩余可开孔数量条件
+#IF
+#ACT
+MOV P3 <$STR(N$开孔最大数量)>
+DEC P3 <$STR(N$开孔数量)>
+INC P3 1
+
+;检测是否可以开启相应数量的孔位
+#IF
+CHECKFLUTECOUNT -1 < <$STR(P3)>
+#ELSEACT
+BREAK
+#ELSESAY
+你的【<$BOXITEM[0].NAME>】无法再开启【<$STR(N$开孔数量)>个镶嵌孔位】。\ \
+<返回/@选择开孔数量>\
+<离开/@exit>\ 
+
+;计算元宝条件
+#IF
+#ACT
+MUL P1 <$STR(N$开孔元宝数量)> <$STR(N$开孔数量)>
+DEC P1 1
+MOV P2 <$STR(P1)>
+INC P1 1
+
+;检查材料是否充足
+#IF
+CHECKGAMEGOLD > <$STR(P2)>
+#ACT
+GAMEGOLD - <$STR(P1)>
+#ELSESAY
+什么，你连这点实力都没有，还想我为你服务？\ 
+准备好足够的元宝再来找我吧。\ \ 
+<离开/@exit>\ 
+#ELSEACT
+RETURNBOXITEM 0
+BREAK
+
+;开孔
+#IF
+#ACT
+SETFLUTECOUNT -1 <$STR(N$开孔数量)>
+
+;检测如果有超过最大数量，直接修正
+#IF
+CHECKFLUTECOUNT -1 > <$STR(N$开孔最大数量)>
+#ACT
+SETFLUTECOUNT -1 <$STR(N$开孔最大数量)>
+
+#IF
+#ACT
+UPDATEBOXITEM 0
+RETURNBOXITEM 0
+#SAY
+哈哈，果然是熟能生巧。\
+你的【<$BOXITEM[0].NAME>】开孔成功，快去看看吧。\ \ 
+<返回/@main>\ 
+<离开/@exit>\ 
+}

@@ -1,0 +1,249 @@
+[@衣服领取主页]
+{
+您可以领取以下衣服：\
+战神盔甲<男/@战神盔甲男> <女/@战神盔甲女>       恶魔长袍<男/@恶魔长袍男> <女/@恶魔长袍女>       幽灵战衣<男/@幽灵战衣男> <女/@幽灵战衣女>\
+<天魔神甲/@天魔神甲> <圣战宝甲/@圣战宝甲>   <法神披风/@法神披风> <霓裳羽衣/@霓裳羽衣>   <天尊道袍/@天尊道袍> <天师长袍/@天师长袍>\
+雷霆战甲<男/@雷霆战甲男> <女/@雷霆战甲女>       烈焰魔衣<男/@烈焰魔衣男> <女/@烈焰魔衣女>       光芒道袍<男/@光芒道袍男> <女/@光芒道袍女>\
+<凤天魔甲/@凤天魔甲> <凰天魔衣/@凰天魔衣>   英雄圣衣<男/@英雄圣衣男> <女/@英雄圣衣女>       幽冥魂衣<男/@幽冥魂衣男> <女/@幽冥魂衣女>\
+狂雷战甲<男/@狂雷战甲男> <女/@狂雷战甲女>       逆火魔袍<男/@逆火魔袍男> <女/@逆火魔袍女>       通云道袍<男/@通云道袍男> <女/@通云道袍女>\
+天龙圣衣<男/@天龙圣衣男> <女/@天龙圣衣女>       主宰神衣<男/@主宰神衣男> <女/@主宰神衣女>\ \
+<返回/@游戏管理>   <离开/@exit>\
+
+[@战神盔甲男]
+#IF
+ISADMIN
+#ACT
+GIVE 战神盔甲(男)
+GOTO @衣服领取主页
+
+[@战神盔甲女]
+#IF
+ISADMIN
+#ACT
+GIVE 战神盔甲(女)
+GOTO @衣服领取主页
+
+[@恶魔长袍男]
+#IF
+ISADMIN
+#ACT
+GIVE 恶魔长袍(男)
+GOTO @衣服领取主页
+
+[@恶魔长袍女]
+#IF
+ISADMIN
+#ACT
+GIVE 恶魔长袍(女)
+GOTO @衣服领取主页
+
+[@幽灵战衣男]
+#IF
+ISADMIN
+#ACT
+GIVE 幽灵战衣(男)
+GOTO @衣服领取主页
+
+[@幽灵战衣女]
+#IF
+ISADMIN
+#ACT
+GIVE 幽灵战衣(女)
+GOTO @衣服领取主页
+
+[@天魔神甲]
+#IF
+ISADMIN
+#ACT
+GIVE 天魔神甲
+GOTO @衣服领取主页
+
+[@圣战宝甲]
+#IF
+ISADMIN
+#ACT
+GIVE 圣战宝甲
+GOTO @衣服领取主页
+
+[@法神披风]
+#IF
+ISADMIN
+#ACT
+GIVE 法神披风
+GOTO @衣服领取主页
+
+[@霓裳羽衣]
+#IF
+ISADMIN
+#ACT
+GIVE 霓裳羽衣
+GOTO @衣服领取主页
+
+[@天尊道袍]
+#IF
+ISADMIN
+#ACT
+GIVE 天尊道袍
+GOTO @衣服领取主页
+
+[@天师长袍]
+#IF
+ISADMIN
+#ACT
+GIVE 天师长袍
+GOTO @衣服领取主页
+
+[@雷霆战甲男]
+#IF
+ISADMIN
+#ACT
+GIVE 雷霆战甲(男)
+GOTO @衣服领取主页
+
+[@雷霆战甲女]
+#IF
+ISADMIN
+#ACT
+GIVE 雷霆战甲(女)
+GOTO @衣服领取主页
+
+[@烈焰魔衣男]
+#IF
+ISADMIN
+#ACT
+GIVE 烈焰魔衣(男)
+GOTO @衣服领取主页
+
+[@烈焰魔衣女]
+#IF
+ISADMIN
+#ACT
+GIVE 烈焰魔衣(女)
+GOTO @衣服领取主页
+
+[@光芒道袍男]
+#IF
+ISADMIN
+#ACT
+GIVE 光芒道袍(男)
+GOTO @衣服领取主页
+
+[@光芒道袍女]
+#IF
+ISADMIN
+#ACT
+GIVE 光芒道袍(女)
+GOTO @衣服领取主页
+
+[@凤天魔甲]
+#IF
+ISADMIN
+#ACT
+GIVE 凤天魔甲
+GOTO @衣服领取主页
+
+[@凰天魔衣]
+#IF
+ISADMIN
+#ACT
+GIVE 凰天魔衣
+GOTO @衣服领取主页
+
+[@英雄圣衣男]
+#IF
+ISADMIN
+#ACT
+GIVE 英雄圣衣(男)
+GOTO @衣服领取主页
+
+[@英雄圣衣女]
+#IF
+ISADMIN
+#ACT
+GIVE 英雄圣衣(女)
+GOTO @衣服领取主页
+
+[@幽冥魂衣男]
+#IF
+ISADMIN
+#ACT
+GIVE 幽冥魂衣(男)
+GOTO @衣服领取主页
+
+[@幽冥魂衣女]
+#IF
+ISADMIN
+#ACT
+GIVE 幽冥魂衣(女)
+GOTO @衣服领取主页
+
+[@狂雷战甲男]
+#IF
+ISADMIN
+#ACT
+GIVE 狂雷战甲(男)
+GOTO @衣服领取主页
+
+[@狂雷战甲女]
+#IF
+ISADMIN
+#ACT
+GIVE 狂雷战甲(女)
+GOTO @衣服领取主页
+
+[@逆火魔袍男]
+#IF
+ISADMIN
+#ACT
+GIVE 逆火魔袍(男)
+GOTO @衣服领取主页
+
+[@逆火魔袍女]
+#IF
+ISADMIN
+#ACT
+GIVE 逆火魔袍(女)
+GOTO @衣服领取主页
+
+[@通云道袍男]
+#IF
+ISADMIN
+#ACT
+GIVE 通云道袍(男)
+GOTO @衣服领取主页
+
+[@通云道袍女]
+#IF
+ISADMIN
+#ACT
+GIVE 通云道袍(女)
+GOTO @衣服领取主页
+
+[@天龙圣衣男]
+#IF
+ISADMIN
+#ACT
+GIVE 天龙圣衣(男)
+GOTO @衣服领取主页
+
+[@天龙圣衣女]
+#IF
+ISADMIN
+#ACT
+GIVE 天龙圣衣(女)
+GOTO @衣服领取主页
+
+[@主宰神衣男]
+#IF
+ISADMIN
+#ACT
+GIVE 主宰神衣(男)
+GOTO @衣服领取主页
+
+[@主宰神衣女]
+#IF
+ISADMIN
+#ACT
+GIVE 主宰神衣(女)
+GOTO @衣服领取主页
+}

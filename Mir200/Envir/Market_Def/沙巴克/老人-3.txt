@@ -1,0 +1,24 @@
+[@main]
+你想知道最近沙吧克的攻城战役吗?\ \
+<查询攻城时间/@aboutwar>\
+<查看占领状态/@WarStatus>\
+
+[@aboutwar]
+下一次战役记录在:\
+<$CASTLEWARDATE> 20:00 开始。\ \
+
+<详细情况./@listwar>\
+
+<关闭./@exit>\
+
+[@listwar]
+<$LISTOFWAR>\ \
+<返回/@aboutwar>\
+
+[@WarStatus]
+占领行会:<$OWNERGUILD>\ \
+占领日期:<$CASTLECHANGEDATE>\ \
+占领天数:<$CASTLEGETDAYS>\ \
+行会掌门:<$LORD>\ \
+<返回/@main>\
+

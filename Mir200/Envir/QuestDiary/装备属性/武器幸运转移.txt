@@ -1,0 +1,120 @@
+;用于将一把武器的额外幸运属性转移到另一把武器
+;只做额外幸运属性转移，武器不会回收
+[@武器幸运转移]
+{
+;#IF
+;CHECKPKPOINT 2
+;#SAY
+;我不想和你这样的人打交道.. \ \
+;<取消/@exit>
+;#ELSEACT
+#IF
+#ACT
+GOTO @提交转移武器
+
+[@提交转移武器]
+#IF
+#ACT
+#SAY
+<想为你心爱的武器附加幸运，前提是你有一把有额外幸运的武器：/SCOLOR=255>\
+<1、要转出的武器需包含额外幸运属性，且转出后原武器幸运会消失。/SCOLOR=250>\
+<2、被转入的武器最好不要带有额外幸运属性，转移后幸运会被替换。/SCOLOR=250>\
+<3、每次转移需要花费500元宝，转移次数不限。/SCOLOR=250>\ \
+<ITEMBOX:0:5:514:50:103:42:42:*:254#转出幸运武器><ITEMBOX:1:5:514:120:103:42:42:*:254#转入幸运武器>\ 
+　　　 　　　->　　　　　        <开始转移/@开始转移>    <我再想想/@exit>\
+
+[@ItemIntoBox0]
+#IF
+#ACT
+SETUPGRADEITEM 0
+
+;如果第二个框有物品，则退回该物品
+#IF
+CHECKBOXITEMCOUNT 1 1
+#ACT
+RETURNBOXITEM 1
+
+;检查物品类型
+#OR
+COMPARETEXT <$BOXITEM[0].STDMODE> 5
+COMPARETEXT <$BOXITEM[0].STDMODE> 6
+#ELSEACT
+RETURNBOXITEM 0
+MESSAGEBOX 我只能对武器的幸运进行转移，其它装备幸运转移爱莫能助！
+BREAK
+
+#IF
+CHECKITEMADDVALUE -1 3 > 0
+#ELSEACT
+RETURNBOXITEM 0
+MESSAGEBOX 放入的武器没有额外幸运属性，不能进行转换！
+BREAK
+
+[@ItemIntoBox1]
+#IF
+CHECKBOXITEMCOUNT 0 1
+#ELSEACT
+RETURNBOXITEM 1
+MESSAGEBOX 需要先提供转出幸运的武器，请将准备好的武器放入第一个框内！
+BREAK
+
+#OR
+COMPARETEXT <$BOXITEM[1].STDMODE> 5
+COMPARETEXT <$BOXITEM[1].STDMODE> 6
+#ELSEACT
+RETURNBOXITEM 1
+MESSAGEBOX 我只能对武器的幸运进行转移，其它装备幸运转移爱莫能助！
+BREAK
+
+[@开始转移]
+#IF
+CHECKBOXITEMCOUNT 0 1
+CHECKBOXITEMCOUNT 1 1
+#ACT
+#ELSESAY
+请放入要进行幸运转移的武器！\ \
+<返回/@提交转移武器>\ 
+<离开/@exit>\ 
+#ELSEACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+BREAK
+
+;检查材料是否充足
+#IF
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+#ELSESAY
+什么，你连这点实力都没有，还想我为你服务？\ 
+准备好足够的元宝再来找我吧。\ \ 
+<离开/@exit>\ 
+#ELSEACT
+RETURNBOXITEM 0
+RETURNBOXITEM 1
+BREAK
+
+;获取转出武器的额外幸运
+#IF
+#ACT
+SETUPGRADEITEM 0
+GETITEMADDVALUE -1 3 <$STR(P0)>
+
+;幸运转移
+#IF
+#ACT
+SETUPGRADEITEM 1
+CHANGEITEMADDVALUE -1 3 = <$STR(P0)>
+
+SETUPGRADEITEM 0
+CHANGEITEMADDVALUE -1 3 = 0
+
+UPDATEBOXITEM 0
+RETURNBOXITEM 0
+UPDATEBOXITEM 1
+RETURNBOXITEM 1
+#SAY
+一切都在我的掌控之内，武器幸运转移成功！\ \
+<返回/@提交转移武器>\ 
+<离开/@exit>\ 
+}

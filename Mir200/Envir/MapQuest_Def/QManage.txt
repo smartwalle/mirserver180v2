@@ -1,0 +1,22 @@
+[@Startup]
+#IF
+#ACT
+#CALL [\天下第一\天下第一变量.txt] @天下第一变量
+#CALL [\行会召唤令\行会召唤令变量.txt] @行会召唤令变量
+
+[@Login]
+#IF
+CheckLevelEx > 0
+#ACT
+#CALL [\玩家登录\玩家登录.txt] @玩家登录
+
+[@HeroLogin]
+#IF
+CheckLevelEx > 0
+#ACT
+#CALL [\玩家登录\英雄登录.txt] @英雄登录
+
+[@行会召唤令]
+#IF
+#ACT
+#CALL [\行会召唤令\行会召唤令.txt] @行会召唤令响应

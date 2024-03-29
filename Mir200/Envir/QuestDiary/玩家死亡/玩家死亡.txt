@@ -1,0 +1,45 @@
+[@玩家死亡]
+{
+#IF
+KILLBYHUM
+ISCASTLEMASTER
+#ACT
+SENDMSG 1 战报:沙巴克城主【<$USERNAME>】在%m惨死在【<$KILLER>】的大刀之下！请各位兄弟火速支援...
+SENDMSG 10 战报:沙巴克城主【<$USERNAME>】在%m惨死在【<$KILLER>】的大刀之下！请各位兄弟火速支援...
+BREAK
+
+#IF
+KILLBYHUM
+ISGUILDMASTER
+#ACT
+SENDMSG 1 战报:一帮之主【<$USERNAME>】在%m惨死在【<$KILLER>】的大刀之下！请各位兄弟火速支援...
+SENDMSG 10 战报:一帮之主【<$USERNAME>】在%m惨死在【<$KILLER>】的大刀之下！请各位兄弟火速支援...
+BREAK
+
+#IF
+KILLBYHUM
+CHECKPKPOINT 2
+#ACT
+SENDMSG 1 战报:流窜作案多年！罪大恶极的【<$USERNAME>】今日在%m被勇士【<$KILLER>】抓捕归案...
+BREAK
+
+#IF
+KILLBYHUM
+#ACT
+SENDMSG 1 战报:玩家【<$KILLER>】在%m三拳两脚就把【%s】剁掉了，试问世间还有谁？
+BREAK
+
+#IF
+#ACT
+SENDMSG 1 战报:怪物【<$MONKILLER>】在%m轻轻松松撂倒了【%s】，大家速去支援！
+BREAK
+
+}
+
+[@玩家击杀]
+{
+#IF
+#ACT
+SENDMSG 5 系统提示：罪过罪过，你的屠刀之下又多了一个亡灵。
+
+}

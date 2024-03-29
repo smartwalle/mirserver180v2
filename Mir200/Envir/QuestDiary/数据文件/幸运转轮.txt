@@ -1,0 +1,501 @@
+[@TXWheel_1]
+{
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║经验3万 ║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+ 5 ║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+ 5 ║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验 1万║经验4 万║经验8 万║元宝+ 20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+
+[@TXWheel_1_2]
+#IF
+SMALL G19 100000
+#ACT
+MOVR P1 96
+MOV M35 <$STR(P1)>
+GOTO @TXWheel_2_1
+BREAK
+
+#IF
+LARGE G19 1000000
+#ACT
+MOVR P1 48
+MOV M35  <$STR(P1)>
+GOTO @TXWheel_2_1
+BREAK
+
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+MOVR P1 72
+MOV M35  <$STR(P1)>
+GOTO @TXWheel_2_1
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：启动幸运大转轮1次需要10个元宝，你的元宝不足无法启动。\　\　　　　请确保你的包裹内有多余的地方放奖品。
+GOTO @TXWheel_1
+BREAK
+
+[@TXWheel_2_1]
+#IF
+Random 10
+CHECKGAMEGOLD > 9
+Equal M35 1
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║经验 3万║<元宝+ 88>║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4 万║经验8 万║元宝+ 10║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+GAMEGOLD + 88
+SENDMSG 1 幸运大转轮停在了『元宝+88』上，恭喜(%s)获得了88个元宝！！
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+Random 5
+CHECKGAMEGOLD > 9
+Equal M35  2
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║经验 3万║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║<经验1万 >║经验4 万║经验8 万║元宝+20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+CHANGEEXP + 10000
+SENDMSG 6 幸运大转轮停在了『经验1万』上，你获得了1万点经验。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+CHECKGAMEGOLD > 9
+Equal M35 3
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║经验3 万║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4 万║<经验8万> ║元宝+ 20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+CHANGEEXP + 80000
+SENDMSG 6 幸运大转轮停在了『经验8万』上，你获得了8万点经验。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+CHECKGAMEGOLD > 9
+Equal M35  4
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║经验3 万║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║<元宝+ 20>║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4 万║经验8 万║元宝+ 20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+GAMEGOLD + 20
+SENDMSG 1 幸运大转轮停在了『元宝+20』上，恭喜(%s)获得了20个元宝。
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+CHECKGAMEGOLD > 9
+Equal M35  5
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║经验3 万║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║<元宝+ 10>║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4 万║经验8 万║元宝+ 20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+GAMEGOLD + 10
+SENDMSG 1 幸运大转轮停在了『元宝+10』上，恭喜(%s)获得了10个元宝!
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+CHECKGAMEGOLD > 9
+Equal M35  6
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║经验3 万║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║<元宝+  5>║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4 万║经验8 万║元宝+ 20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+GAMEGOLD + 5
+SENDMSG 6 幸运大转轮停在了『元宝+5』上，你获得了5个元宝。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+CHECKGAMEGOLD > 9
+Equal M35  7
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║经验3 万║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║<元宝+  5>║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4万 ║经验8万 ║元宝+ 20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+GAMEGOLD + 3
+SENDMSG 6 幸运大转轮停在了『元宝+5』上，你获得了5个元宝。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+CHECKGAMEGOLD > 9
+Equal M35  8
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║经验3 万║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4万 ║经验8万 ║<元宝+ 20>║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+GAMEGOLD + 20
+SENDMSG 6 幸运大转轮停在了『元宝+20』上，你获得了20个元宝。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+CHECKGAMEGOLD > 9
+Equal M35  9
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║经验3 万║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║<经验4万> ║经验8 万║元宝+  20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+CHANGEEXP + 40000
+SENDMSG 6 幸运大转轮停在了『经验4万』上，你获得了4万点经验。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+CHECKGAMEGOLD > 9
+Equal M35  10
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║<经验3 万>║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4 万║经验8 万║元宝+ 20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+CHANGEEXP + 30000
+SENDMSG 6 幸运大转轮停在了『经验3万』上，你获得了3万点经验。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+CHECKGAMEGOLD > 9
+Equal M35  11
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║<经验 5万>║经验3万║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4 万║经验8 万║元宝+  20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+CHANGEEXP + 50000
+SENDMSG 6 幸运大转轮停在了『经验5万』上，你获得了5万点经验。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+CHECKGAMEGOLD > 9
+Equal M35  12
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║<经验 2万>║经验 5万║经验3万 ║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4 万║经验8万 ║元宝+ 20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+CHANGEEXP + 20000
+SENDMSG 6 幸运大转轮停在了『经验2万』上，你获得了2万点经验。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+CHECKGAMEGOLD > 9
+Large M35  30
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║<经验3  万>║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4 万║经验8 万║元宝+ 20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+CHANGEEXP + 30000
+SENDMSG 6 幸运大转轮停在了『经验3万』上，你获得了3万点经验。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+Random 50
+CHECKGAMEGOLD > 9
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║经验3 万║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4 万║<经验8 万>║元宝+ 20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+CHANGEEXP + 80000
+SENDMSG 6 幸运大转轮停在了『经验8万』上，你获得了8万点经验。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+Random 20
+CHECKGAMEGOLD > 9
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║经验3 万║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║<元宝+  5>║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4 万║经验8 万║元宝+  20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+GAMEGOLD + 5
+SENDMSG 6 幸运大转轮停在了『元宝+5』上，你获得了5个元宝。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+Random 10
+CHECKGAMEGOLD > 9
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║经验3 万║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║<元宝+  5>║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4 万║经验8 万║元宝+  20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+GAMEGOLD + 5
+SENDMSG 6 幸运大转轮停在了『元宝+5』上，你获得了5个元宝。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+Random 5
+CHECKGAMEGOLD > 9
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║经验3 万║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║<经验4 万>║经验8 万║元宝+ 20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+CHANGEEXP + 40000
+SENDMSG 6 幸运大转轮停在了『经验4万』上，你获得了4万点经验。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+Random 3
+CHECKGAMEGOLD > 9
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║经验 5万║<经验3 万>║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4 万║经验8 万║元宝+  20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+CHANGEEXP + 30000
+SENDMSG 6 幸运大转轮停在了『经验3万』上，你获得了3万点经验。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+Random 2
+CHECKGAMEGOLD > 9
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║经验 2万║<经验 5万>║经验3 万║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4 万║经验8 万║元宝+ 20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+CHANGEEXP + 50000
+SENDMSG 6 幸运大转轮停在了『经验5万』上，你获得了5万点经验。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+
+#IF
+CHECKGAMEGOLD > 9
+#SAY
+╔════╦════╦════╦════╗╔════╗\
+║<经验 2万>║经验 5万║经验3 万║元宝+ 88║║<游戏说明/@TXWheel_HELP>╠═╗\
+╠════╬════╩════╬════╣╚════╝　║\
+║元宝+  5║　　　　　　　　　║元宝+ 10║╔════╗　║\
+╠════╣　　<启动大转轮/@TXWheel_1_2>　　╠════╣║<总转次数/@TXWheel_3>╠═╣\
+║元宝+  5║　　　　　　　　　║元宝+ 20║╚════╝　║\
+╠════╬════╦════╬════╣╔════╗　║\
+║经验1万 ║经验4 万║经验8 万║元宝+ 20║║<返回首页/@MAIN>╠═╝\
+╚════╩════╩════╩════╝╚════╝\
+#ACT
+Gamegold - 10
+INC G19 1
+CHANGEEXP + 20000
+SENDMSG 6 幸运大转轮停在了『经验2万』上，你获得了2万点经验。剩余元宝<$GAMEGOLD>个.
+MOV P1 0
+MOV M35 0
+BREAK
+#ELSEACT
+MESSAGEBOX 启动幸运大转轮1次需要10个元宝，你的元宝不足无法启动。
+GOTO @TXWheel_1
+BREAK
+
+[@TXWheel_3]
+#IF
+#ACT
+MESSAGEBOX 目前全服务器启动幸运大转轮总次数为：<$STR(G19)>次\总转次数越多，大家的中奖率也越高！\　
+GOTO @TXWheel_1
+BREAK
+
+[@TXWheel_HELP]
+#IF
+#ACT
+MESSAGEBOX 幸运大转轮，100%中奖率，你还在等什么？赶快来参加吧。\10个元宝即可玩一次幸运大转轮！\获得什么奖励要看你的运气\奖品多多，幸运多多，等你来拿！
+GOTO @TXWheel_1
+BREAK
+}

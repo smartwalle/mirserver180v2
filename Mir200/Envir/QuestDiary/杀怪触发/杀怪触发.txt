@@ -1,0 +1,8 @@
+[@É±¹Ö´¥·¢]
+{
+;#IF
+;CHECKMAPNAME XEJD
+;#ACT
+;#CALL [\É±¹Ö´¥·¢\Ð°¶ñ½ûµØ.txt] @Ð°¶ñ½ûµØ
+;BREAK
+}

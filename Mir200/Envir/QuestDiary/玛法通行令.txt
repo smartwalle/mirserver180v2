@@ -1,0 +1,577 @@
+[@玛法通行令]
+{
+#IF
+ISADMIN
+#ACT
+GOTO @Admin
+#ELSEACT
+GOTO @Player
+
+[@Admin]
+什么...你竟然有玛法通行令, 既然如此, 那就告诉我你想去哪里.\
+别怪我没有提醒你, 不管传送是否成功, 只要召唤了我, 就会减少\
+玛法通行令的持久.\ \
+※ <安全区域/@AnQuanChuanSong> ※ <危险区域/@WeiXianChuanSong> ※ <邪恶区域/@XieEChuanSong> ※ <BOSS之家/@BossZhiJia> ※\ \
+<让我再想想/@exit>
+
+[@Player]
+什么...你竟然有玛法通行令, 既然如此, 那就告诉我你想去哪里.\
+别怪我没有提醒你, 不管传送是否成功, 只要召唤了我, 就会减少\
+玛法通行令的持久.\ \
+※ <安全区域/@AnQuanChuanSong> ※ <危险区域/@WeiXianChuanSong> ※\ \
+<让我再想想/@exit>
+
+[@AnQuanChuanSong]
+以下区域免费直达, 保证安全无副作用, 请放心使用. \ \
+※ <比奇大城/@BiQiCheng> ※ <银杏山谷/@YinXingShanGu> ※ <边 界 村/@BianJieCun> ※ <白 日 门/@BaiRiMen> ※\
+※ <盟重土城/@MengChong> ※ <封 魔 谷/@FengMoGu> ※ <毒蛇山谷/@DuSheShanGu> ※ <苍 月 岛/@CangYueDao> ※\
+※ <魔 龙 城/@MoLongCheng> ※\ \
+<返回/@玛法通行令>
+
+[@BiQiCheng]
+#IF 
+#ACT
+MAPMOVE 0 333 268 
+BREAK 
+
+[@YinXingShanGu]
+#IF 
+#ACT
+MAPMOVE 0 634 612
+BREAK 
+
+[@BianJieCun]
+#IF 
+#ACT
+MAPMOVE 0 288 615
+BREAK 
+  
+[@BaiRiMen]
+#IF 
+#ACT
+MAPMOVE 11 177 324
+BREAK 
+
+[@MengChong]
+#IF 
+#ACT
+MAPMOVE 3 333 333
+BREAK 
+
+[@FengMoGu]
+#IF 
+#ACT
+MAPMOVE 4 241 202
+BREAK 
+
+[@DuSheShanGu]
+#IF 
+#ACT
+MAPMOVE 2 503 483
+BREAK 
+
+[@CangYueDao]
+#IF 
+#ACT
+MAPMOVE 5 140 338
+BREAK 
+
+[@MoLongCheng]
+#IF 
+#ACT
+MAPMOVE 6 127 160
+BREAK 
+
+[@WeiXianChuanSong]
+有一定的危险性, 不过我相信你的实力, <20000金币>童叟无欺. \ \
+※ <兽人古墓/@ShouRenGuMu> ※ <天然洞穴/@TianRanDongXue> ※ <比奇矿区/@BiQiKuangQu> ※ <沃玛寺庙/@WoMaSiMiao> ※\
+※ <毒蛇矿区/@DuSheKuangQu> ※ <封魔矿区/@FengMoKuangQu> ※ <疾 风 殿/@JiFengDian> ※ <死亡山谷/@WuGongDong> ※\
+※ <石墓入口/@ShiMuRuKou> ※ <祖玛寺庙/@ZuMaSiMiao> ※ <尸魔洞穴/@ShiMoDong> ※ <骨魔洞穴/@GuMoDong> ※\
+※ <牛魔寺庙/@NiuMoSiMiao> ※ <从林迷宫/@CongLinMiGong> ※ <魔龙东郊/@MoLongDongJiao> ※ <魔龙西郊/@MoLongXiJiao> ※\ \
+<返回/@玛法通行令>
+
+[@ShouRenGuMu]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE 0 144 36
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+[@TianRanDongXue]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE 0 43 110    
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+[@BiQiKuangQu]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE 0 659 218
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+[@WoMaSiMiao]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE D021 71 69
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+[@DuSheKuangQu]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE 2 560 175 
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+[@FengMoKuangQu]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE 4 59 70
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+[@JiFengDian]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE D2004 73 70
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+[@WuGongDong]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE 3 143 93
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+[@ShiMuRuKou]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE D710 27 20
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+[@ZuMaSiMiao]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE 0157 17 17
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+[@CongLinMiGong]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE 11 358 248
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+[@ShiMoDong]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE 5 522 615
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+[@GuMoDong]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE 5 544 131
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+[@NiuMoSiMiao]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE 5 658 463
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+
+[@MoLongDongJiao]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE 6 470 378
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+[@MoLongXiJiao]
+#IF
+CHECKGOLD 20000
+#ACT
+TAKE 金币 20000
+MAPMOVE 6 460 70
+BREAK
+#ELSEACT
+MESSAGEBOX 20000金币都没有?努力一点吧,年轻人.
+GOTO @WeiXianChuanSong
+BREAK
+
+[@XieEChuanSong]
+想去洞穴的深处? 在你没有准备好之前, 我劝你还是谨慎为好. \
+话不多说, 服务一次<10个元宝>. \ \
+※ <矿区东部/@KuangQuDongBu> ※ <沃玛二层/@WoMaErCeng> ※ <石墓五层/@ShiMuWuCeng> ※ <祖玛四层/@ZuMaSiCeng> ※\
+※ <霸者大厅/@BaZheDaTing> ※ <尸魔三层/@ShiMoSanCeng> ※ <骨魔三层/@GuMoSanCeng> ※ <牛魔四层/@NiuMoSiCeng> ※\
+※ <抉择之地/@JueZeZhiDi> ※ <魔龙沼泽/@MoLongZhaoZe> ※\ \
+<返回/@玛法通行令>
+
+[@KuangQuDongBu]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE D402 13 144
+#ELSEACT
+MESSAGEBOX 想到比奇废矿区东部?等你有10个元宝再来吧!
+GOTO @XieEChuanSong
+BREAK
+
+[@WoMaErCeng]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE D023 199 196
+#ELSEACT
+MESSAGEBOX 想到沃玛寺庙二层?等你有10个元宝再来吧!
+GOTO @XieEChuanSong
+BREAK
+
+[@ShiMuWuCeng]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE D715 31 342
+#ELSEACT
+MESSAGEBOX 想到石墓五层?等你有10个元宝再来吧!
+GOTO @XieEChuanSong
+BREAK
+
+[@ZuMaSiCeng]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE  D504 168 214
+#ELSEACT
+MESSAGEBOX 想到祖玛寺庙四层?等你有10个元宝再来吧!
+GOTO @XieEChuanSong
+BREAK
+
+[@BaZheDaTing]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE  D2008 80 80
+#ELSEACT
+MESSAGEBOX 想到霸者大厅?等你有10个元宝再来吧!
+GOTO @XieEChuanSong
+BREAK
+
+[@GuMoSanCeng]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE  D2063 91 166
+#ELSEACT
+MESSAGEBOX 想到骨魔洞三层?等你有10个元宝再来吧!
+GOTO @XieEChuanSong
+BREAK
+
+[@ShiMoSanCeng]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAP  D2052
+#ELSEACT
+MESSAGEBOX 想到尸魔洞三层?等你有10个元宝再来吧!
+GOTO @XieEChuanSong
+BREAK
+
+[@GuMoSanCeng]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE  D2063 91 166
+#ELSEACT
+MESSAGEBOX 想到骨魔洞三层?等你有10个元宝再来吧!
+GOTO @XieEChuanSong
+BREAK
+
+[@NiuMoSiCeng]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE  D2075 40 107
+#ELSEACT
+MESSAGEBOX 想到牛魔寺庙四层?等你有10个元宝再来吧!
+GOTO @XieEChuanSong
+BREAK
+
+[@JueZeZhiDi]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE D1004 173 82
+#ELSEACT
+MESSAGEBOX 想到抉择之地?等你有10个元宝再来吧!
+GOTO @XieEChuanSong
+BREAK
+
+[@MoLongZhaoZe]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE 622 54 263
+#ELSEACT
+MESSAGEBOX 想到魔龙沼泽?等你有10个元宝再来吧!
+GOTO @XieEChuanSong
+BREAK
+
+[@BossZhiJia]
+不敢想象, 你竟然有如此勇气, 期待你的凯旋归来. \
+悄悄告诉你, 以下服务价格...不透明.\ \
+※ <尸 王 殿/@ShiWangDian> ※ <石墓六层/@ShiMuLiuCeng> ※ <沃玛大殿/@WoMaDaDian> ※ <死亡棺材/@SiWangGuanCai> ※\
+※ <祖玛六层/@ZuMaLiuCeng> ※ <魔 魂 殿/@MoHunDian> ※ <封 魔 殿/@FengMoDian> ※ <骨魔五层/@GuMoWuCeng> ※\
+※ <祖玛之家/@ZuMaZhiJia> ※ <牛魔大厅/@NiuMoDaTing> ※ <恶魔祭坛/@EMoJiTan> ※ <赤月魔穴/@ChiYueMoXue> ※\
+※ <魔龙血域/@MoLongXueYu> ※\ \
+<返回/@玛法通行令>    <你最好老实一点/@BossZhiJiaPrice>
+
+[@BossZhiJiaPrice]
+开个玩笑啦, 价格都在这里, 自己看吧: \
+< 20元宝>: ※ <尸 王 殿/@ShiWangDian> ※ <石墓六层/@ShiMuLiuCeng> ※ <沃玛大殿/@WoMaDaDian> ※ <死亡棺材/@SiWangGuanCai> ※\
+　　　　 ※ <祖玛六层/@ZuMaLiuCeng> ※ <魔 魂 殿/@MoHunDian> ※ \
+< 50元宝>: ※ <封 魔 殿/@FengMoDian> ※ <骨魔五层/@GuMoWuCeng> ※\
+<100元宝>: ※ <祖玛之家/@ZuMaZhiJia> ※ <牛魔大厅/@NiuMoDaTing> ※\
+<200元宝>: ※ <恶魔祭坛/@EMoJiTan> ※ <赤月魔穴/@ChiYueMoXue> ※\
+<400元宝>: ※ <魔龙血域/@MoLongXueYu> ※\ \
+<返回/@BossZhiJia>
+
+[@ShiWangDian]
+#IF
+CHECKGAMEGOLD > 19
+#ACT
+GAMEGOLD - 20
+MAP Q004
+#ELSEACT
+MESSAGEBOX 想到尸王殿?等你有20个元宝再来吧!
+GOTO @BossZhiJia
+BREAK
+
+[@ShiMuLiuCeng]
+#IF
+CHECKGAMEGOLD > 19
+#ACT
+GAMEGOLD - 20
+MAP D716
+#ELSEACT
+MESSAGEBOX 想到石墓六层?等你有20个元宝再来吧!
+GOTO @BossZhiJia
+BREAK
+
+[@WoMaDaDian]
+#IF
+CHECKGAMEGOLD > 19
+#ACT
+GAMEGOLD - 20
+MAPMOVE D023 47 361
+#ELSEACT
+MESSAGEBOX 想到沃玛大殿?等你有20个元宝再来吧!
+GOTO @BossZhiJia
+BREAK
+
+[@SiWangGuanCai]
+#IF
+CHECKGAMEGOLD > 19
+#ACT
+GAMEGOLD - 20
+MAPMOVE D606 10 26
+#ELSEACT
+MESSAGEBOX 想到死亡棺材?等你有20个元宝再来吧!
+GOTO @BossZhiJia
+BREAK
+
+[@ZuMaLiuCeng]
+#IF
+CHECKGAMEGOLD > 19
+#ACT
+GAMEGOLD - 20
+MAP D5071
+#ELSEACT
+MESSAGEBOX 想到祖玛六层?等你有20个元宝再来吧!
+GOTO @BossZhiJia
+BREAK
+
+[@MoHunDian]
+#IF
+CHECKGAMEGOLD > 19
+#ACT
+GAMEGOLD - 20
+MAPMOVE D2010 174 40
+#ELSEACT
+MESSAGEBOX 想到魔魂殿?等你有20个元宝再来吧!
+GOTO @BossZhiJia
+BREAK
+
+[@FengMoDian]
+#IF
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+MAPMOVE D2013 80 80
+#ELSEACT
+MESSAGEBOX 想到封魔殿?等你有50个元宝再来吧!
+GOTO @BossZhiJia
+BREAK
+
+[@GuMoWuCeng]
+#IF
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+MAPMOVE D2064 16 176  
+#ELSEACT
+MESSAGEBOX 想到骨魔五层?等你有50个元宝再来吧!
+GOTO @BossZhiJia
+BREAK
+
+[@ZuMaZhiJia]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+MAP D515
+#ELSEACT
+MESSAGEBOX 想到祖玛教主之家?等你有100个元宝再来吧!
+GOTO @BossZhiJia
+BREAK
+
+[@NiuMoDaTing]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+MAPMOVE D2078 252 252
+#ELSEACT
+MESSAGEBOX 想到牛魔大厅?等你有100个元宝再来吧!
+GOTO @BossZhiJia
+BREAK
+
+[@EMoJiTan]
+#IF
+CHECKGAMEGOLD > 190
+#ACT
+GAMEGOLD - 200
+MAPMOVE D10051 182 57  
+#ELSEACT
+MESSAGEBOX 想到恶魔祭坛?等你有200个元宝再来吧!
+GOTO @BossZhiJia
+BREAK
+
+[@ChiYueMoXue]
+#IF
+CHECKGAMEGOLD > 190
+#ACT
+GAMEGOLD - 200
+MAPMOVE D10052 135 27
+#ELSEACT
+MESSAGEBOX 想到赤月魔穴?等你有200个元宝再来吧!
+GOTO @BossZhiJia
+BREAK
+
+[@MoLongXueYu]
+#IF
+CHECKGAMEGOLD > 399
+#ACT
+GAMEGOLD - 400
+MAPMOVE 66 251 209
+#ELSEACT
+MESSAGEBOX 想到魔龙血域?等你有400个元宝再来吧!
+GOTO @XieEChuanSong
+BREAK
+
+}

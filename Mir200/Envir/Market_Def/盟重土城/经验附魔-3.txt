@@ -1,0 +1,7 @@
+(@buy @sell @repair @s_repair )
+%100
+[@main]
+#IF
+#ACT
+#CALL [\装备属性\经验属性附魔.txt] @经验属性附魔
+Break
