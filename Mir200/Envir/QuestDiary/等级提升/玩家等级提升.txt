@@ -13,8 +13,8 @@ SENDMSG 5 系统提示：恭喜您等级提升到7级，为了帮助您更好的成长，【<$SERVERNAME>】
 GIVE 基本剑术 1
 GIVE 金创药(中)包 1
 GIVE 魔法药(中)包 1
-GIVESTATEITEM 聚灵珠(小) 0 1 1 1 1 1 1 1
-GIVESTATEITEM 比奇传送石 0 1 1 1 1 1 1 1
+GIVESTATEITEM 聚灵珠(小) 1 1 1 1 1 1
+GIVESTATEITEM 比奇传送石 1 1 1 1 1 1
 BREAK
 
 #IF
@@ -26,8 +26,8 @@ SENDMSG 5 系统提示：恭喜您等级提升到7级，为了帮助您更好的成长，【<$SERVERNAME>】
 GIVE 火球术 1
 GIVE 金创药(中)包 1
 GIVE 魔法药(中)包 1
-GIVESTATEITEM 聚灵珠(小) 0 1 1 1 1 1 1 1
-GIVESTATEITEM 比奇传送石 0 1 1 1 1 1 1 1
+GIVESTATEITEM 聚灵珠(小) 1 1 1 1 1 1
+GIVESTATEITEM 比奇传送石 1 1 1 1 1 1
 BREAK
 
 #IF
@@ -39,8 +39,8 @@ SENDMSG 5 系统提示：恭喜您等级提升到7级，为了帮助您更好的成长，【<$SERVERNAME>】
 GIVE 治愈术 1
 GIVE 金创药(中)包 1
 GIVE 魔法药(中)包 1
-GIVESTATEITEM 聚灵珠(小) 0 1 1 1 1 1 1 1
-GIVESTATEITEM 比奇传送石 0 1 1 1 1 1 1 1
+GIVESTATEITEM 聚灵珠(小) 1 1 1 1 1 1
+GIVESTATEITEM 比奇传送石 1 1 1 1 1 1
 BREAK
 
 #IF
@@ -48,8 +48,8 @@ CHECKLEVELEX = 22
 #ACT
 SENDMSG 1 恭喜【<$USERNAME>】等级提升到22级，获得奖励【聚灵珠(中)】和【封魔传送石】！
 SENDMSG 5 系统提示：恭喜您等级提升到22级，为感谢您对玛法大陆做出的贡献，【<$SERVERNAME>】特意为您准备了以下礼物，还请笑纳！
-GIVESTATEITEM 聚灵珠(中) 0 1 1 1 1 1 1 1
-GIVESTATEITEM 封魔传送石 0 1 1 1 1 1 1 1
+GIVESTATEITEM 聚灵珠(中) 1 1 1 1 1 1
+GIVESTATEITEM 封魔传送石 1 1 1 1 1 1
 BREAK
 
 #IF
@@ -57,8 +57,7 @@ CHECKLEVELEX = 35
 #ACT
 SENDMSG 1 恭喜【<$USERNAME>】等级提升到35级，获得奖励【聚灵珠(大)】、【盟重传送石】和【移动仓库】！
 SENDMSG 5 系统提示：恭喜您等级提升到35级，为感谢您对玛法大陆做出的贡献，【<$SERVERNAME>】特意为您准备了以下礼物，还请笑纳！
-GIVESTATEITEM 聚灵珠(大) 0 1 1 1 1 1 1 1
-GIVESTATEITEM 盟重传送石 0 1 1 1 1 1 1 1
-GIVESTATEITEM 移动仓库 0 1 1 1 1 1 1 1
+GIVESTATEITEM 聚灵珠(大) 1 1 1 1 1 1
+GIVESTATEITEM 盟重传送石 1 1 1 1 1 1
 BREAK
 }
