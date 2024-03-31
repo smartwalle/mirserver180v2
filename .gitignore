@@ -16,6 +16,7 @@ LoginSrv/CountLog
 LoginSrv/IdLog
 
 SelGate/Log
+SelGate/DataLog
 
 LogServer/BaseDir
 

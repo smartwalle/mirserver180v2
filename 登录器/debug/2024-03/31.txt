@@ -1,0 +1,144 @@
+HGE Started..
+
+HGE version: 1.80
+Date: 31. 3.2024, 19:18:10
+
+OS: Windows 6.1.7601
+Memory: 4193720K total, 3140688K free
+
+D3D Driver: vm3dum_loader.dll
+Description: VMware SVGA 3D
+Version: 9.17.6.5
+Can't find appropriate full screen video mode 0
+Mode: 1271 x 824 x UNKNOWN
+
+MaxTextureWidth: 16384
+MaxTextureHeight: 16384
+MaxPrimitiveCount: 2097151
+MaxVertexIndex: 1048575
+Cache 3072 4096 4096
+Init done.
+
+
+Finishing..
+The End.
+HGE Started..
+
+HGE version: 1.80
+Date: 31. 3.2024, 19:20: 2
+
+OS: Windows 6.1.7601
+Memory: 4193720K total, 3134284K free
+
+D3D Driver: vm3dum_loader.dll
+Description: VMware SVGA 3D
+Version: 9.17.6.5
+Can't find appropriate full screen video mode 0
+Mode: 1271 x 824 x UNKNOWN
+
+MaxTextureWidth: 16384
+MaxTextureHeight: 16384
+MaxPrimitiveCount: 2097151
+MaxVertexIndex: 1048575
+Cache 3072 4096 4096
+Init done.
+
+
+Finishing..
+The End.
+HGE Started..
+
+HGE version: 1.80
+Date: 31. 3.2024, 19:20: 6
+
+OS: Windows 6.1.7601
+Memory: 4193720K total, 3136740K free
+
+D3D Driver: vm3dum_loader.dll
+Description: VMware SVGA 3D
+Version: 9.17.6.5
+Can't find appropriate full screen video mode 0
+Mode: 1271 x 824 x UNKNOWN
+
+MaxTextureWidth: 16384
+MaxTextureHeight: 16384
+MaxPrimitiveCount: 2097151
+MaxVertexIndex: 1048575
+Cache 3072 4096 4096
+Init done.
+
+
+Finishing..
+The End.
+HGE Started..
+
+HGE version: 1.80
+Date: 31. 3.2024, 19:21:31
+
+OS: Windows 6.1.7601
+Memory: 4193720K total, 3138036K free
+
+D3D Driver: vm3dum_loader.dll
+Description: VMware SVGA 3D
+Version: 9.17.6.5
+Can't find appropriate full screen video mode 0
+Mode: 1271 x 824 x UNKNOWN
+
+MaxTextureWidth: 16384
+MaxTextureHeight: 16384
+MaxPrimitiveCount: 2097151
+MaxVertexIndex: 1048575
+Cache 3072 4096 4096
+Init done.
+
+
+Finishing..
+The End.
+HGE Started..
+
+HGE version: 1.80
+Date: 31. 3.2024, 19:21:42
+
+OS: Windows 6.1.7601
+Memory: 4193720K total, 3138048K free
+
+D3D Driver: vm3dum_loader.dll
+Description: VMware SVGA 3D
+Version: 9.17.6.5
+Can't find appropriate full screen video mode 0
+Mode: 1271 x 824 x UNKNOWN
+
+MaxTextureWidth: 16384
+MaxTextureHeight: 16384
+MaxPrimitiveCount: 2097151
+MaxVertexIndex: 1048575
+Cache 3072 4096 4096
+Init done.
+
+
+Finishing..
+The End.
+HGE Started..
+
+HGE version: 1.80
+Date: 31. 3.2024, 19:21:50
+
+OS: Windows 6.1.7601
+Memory: 4193720K total, 3137216K free
+
+D3D Driver: vm3dum_loader.dll
+Description: VMware SVGA 3D
+Version: 9.17.6.5
+Can't find appropriate full screen video mode 0
+Mode: 1271 x 824 x UNKNOWN
+
+MaxTextureWidth: 16384
+MaxTextureHeight: 16384
+MaxPrimitiveCount: 2097151
+MaxVertexIndex: 1048575
+Cache 3072 4096 4096
+Init done.
+
+
+Finishing..
+The End.
