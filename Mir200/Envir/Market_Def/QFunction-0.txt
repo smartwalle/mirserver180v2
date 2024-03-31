@@ -16,6 +16,22 @@ SETUPGRADEFAIL
 BREAK
 
 ;--------------------------------------------------------------
+;开始挂机触发
+[@StartAutoOnline]
+#IF
+CHECKMAPNAME 0
+#ACT
+SENDMSG 6 当前地图禁止挂机
+#ELSEACT
+STARTAUTOPLAYGAME
+
+;点停止挂机触发
+[@StopAutoOnline]
+#IF
+#ACT
+STOPAUTOPLAYGAME
+
+;--------------------------------------------------------------
 [@PlayLevelUp]
 #ACT
 #CALL [\等级提升\玩家等级提升.txt] @玩家等级提升
@@ -412,7 +428,7 @@ SENDMSG 5 系统提示：您获得两个小时的十倍经验，如果掉线或死亡双倍时间将消失！
 #CALL [\游戏管理\游戏管理.txt] @游戏管理
 
 ;--------------------------------------------------------------
-[@切换地图]
+[@EnterMap]
 ;中止未知暗殿超时移动
 #IF
 NOT COMPARETEXT <$MAP> M001
