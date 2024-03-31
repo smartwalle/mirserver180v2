@@ -1,14 +1,16 @@
 [@修理师]
 {
 不是我吹牛，整个玛法大陆，就没有我不能修理的装备。\ \
-<特殊修理/@Repaire>全身装备\
+<特殊修理/@特殊修理>全身装备\
 <离开/@exit>\
 #ACT
 Close
 
-[@Repaire]
-#IF 
+[@特殊修理]
+#IF
+CHECKREPAIRALLGOLD <$STR(N99)>
 #ACT
+TAKE 金币 <$STR(N99)> 
 REPAIRALL
 #SAY 
 所有装备都焕然一新。\ \
