@@ -15,6 +15,8 @@ LoginSrv/ChrLog
 LoginSrv/CountLog
 LoginSrv/IdLog
 
+SelGate/Log
+
 LogServer/BaseDir
 
 Mir200/ConLog
@@ -28,3 +30,4 @@ RunGate/常规日志
 
 登录器/输出文件夹
 /.idea/
+
