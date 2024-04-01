@@ -1,0 +1,80 @@
+[@武器幸运管理主页]
+{
+请选择你想要的性别：\ \
+<幸运+1/@幸运1>  <幸运+2/@幸运2>  <幸运+3/@幸运3>\
+<幸运+4/@幸运4>  <幸运+5/@幸运5>  <幸运+6/@幸运6>\
+<幸运+7/@幸运7>  <幸运+8/@幸运8>  <幸运+9/@幸运9>\
+<幸运重置/@幸运重置>\ \
+<返回/@游戏管理>   <离开/@exit>\
+
+[@幸运1]
+#IF
+ISADMIN
+#ACT
+CHANGEITEMADDVALUE 1 3 = 1
+GOTO @武器幸运管理主页
+
+[@幸运2]
+#IF
+ISADMIN
+#ACT
+CHANGEITEMADDVALUE 1 3 = 2
+GOTO @武器幸运管理主页
+
+[@幸运3]
+#IF
+ISADMIN
+#ACT
+CHANGEITEMADDVALUE 1 3 = 3
+GOTO @武器幸运管理主页
+
+[@幸运4]
+#IF
+ISADMIN
+#ACT
+CHANGEITEMADDVALUE 1 3 = 4
+GOTO @武器幸运管理主页
+
+[@幸运5]
+#IF
+ISADMIN
+#ACT
+CHANGEITEMADDVALUE 1 3 = 5
+GOTO @武器幸运管理主页
+
+[@幸运6]
+#IF
+ISADMIN
+#ACT
+CHANGEITEMADDVALUE 1 3 = 6
+GOTO @武器幸运管理主页
+
+[@幸运7]
+#IF
+ISADMIN
+#ACT
+CHANGEITEMADDVALUE 1 3 = 7
+GOTO @武器幸运管理主页
+
+[@幸运8]
+#IF
+ISADMIN
+#ACT
+CHANGEITEMADDVALUE 1 3 = 8
+GOTO @武器幸运管理主页
+
+[@幸运9]
+#IF
+ISADMIN
+#ACT
+CHANGEITEMADDVALUE 1 3 = 9
+GOTO @武器幸运管理主页
+
+[@幸运重置]
+#IF
+ISADMIN
+#ACT
+CHANGEITEMADDVALUE 1 3 = 0
+GOTO @武器幸运管理主页
+
+}
