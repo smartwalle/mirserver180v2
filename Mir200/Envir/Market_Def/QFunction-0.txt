@@ -19,10 +19,7 @@ BREAK
 ;开始挂机触发
 [@StartAutoOnline]
 #IF
-CHECKMAPNAME 0
 #ACT
-SENDMSG 6 当前地图禁止挂机
-#ELSEACT
 STARTAUTOPLAYGAME
 
 ;点停止挂机触发
