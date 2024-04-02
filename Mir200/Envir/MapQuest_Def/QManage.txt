@@ -9,7 +9,7 @@
 CheckLevelEx > 0
 #ACT
 #CALL [\玩家登录\玩家登录.txt] @玩家登录
-#CALL [\自定义按钮\自定义按钮.txt] @自定义按钮
+;#CALL [\自定义按钮\自定义按钮.txt] @自定义按钮
 
 [@HeroLogin]
 #IF
