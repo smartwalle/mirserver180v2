@@ -59,7 +59,7 @@
 1/1 大手镯
 )
 
-#CHILD 1/80 RANDOM
+#CHILD 1/200 RANDOM
 (
 1/1 攻击神水
 1/1 魔力神水
