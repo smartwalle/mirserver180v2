@@ -27,6 +27,13 @@ VAR STRING GLOBAL 天下第一女道士行会
 VAR STRING GLOBAL 天下第一女道士等级
 VAR STRING GLOBAL 天下第一女道士日期
 
+MOV A0
+MOV A1
+MOV A2
+MOV A3
+MOV A4
+MOV A5
+
 LOADVAR GLOBAL 天下第一男战士名称 ..\Npc_Data\天下第一数据.txt
 LOADVAR GLOBAL 天下第一男战士行会 ..\Npc_Data\天下第一数据.txt
 LOADVAR GLOBAL 天下第一男战士等级 ..\Npc_Data\天下第一数据.txt
@@ -51,4 +58,11 @@ LOADVAR GLOBAL 天下第一女道士名称 ..\Npc_Data\天下第一数据.txt
 LOADVAR GLOBAL 天下第一女道士行会 ..\Npc_Data\天下第一数据.txt
 LOADVAR GLOBAL 天下第一女道士等级 ..\Npc_Data\天下第一数据.txt
 LOADVAR GLOBAL 天下第一女道士日期 ..\Npc_Data\天下第一数据.txt
+
+MOV A0 <$GLOBAL(天下第一男战士名称)>
+MOV A1 <$GLOBAL(天下第一女战士名称)>
+MOV A2 <$GLOBAL(天下第一男法师名称)>
+MOV A3 <$GLOBAL(天下第一女法师名称)>
+MOV A4 <$GLOBAL(天下第一男道士名称)>
+MOV A5 <$GLOBAL(天下第一女道士名称)>
 }
