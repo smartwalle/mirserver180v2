@@ -129,10 +129,10 @@ CALCVAR GLOBAL 天下第一男战士名称 = <$USERNAME>
 CALCVAR GLOBAL 天下第一男战士行会 = <$GUILDNAME>
 CALCVAR GLOBAL 天下第一男战士等级 = <$LEVEL>
 CALCVAR GLOBAL 天下第一男战士日期 = <$DATETIME>
-SAVEVAR GLOBAL 天下第一男战士名称 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男战士行会 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男战士等级 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男战士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男战士名称 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男战士行会 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男战士等级 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男战士日期 ..\Npc_Data\天下第一数据.txt
 MOV A0 <$USERNAME>
 
 SENDMSG 1 恭喜【%s】申请成为天下第一男战士！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
@@ -172,10 +172,10 @@ CALCVAR GLOBAL 天下第一女战士名称 = <$USERNAME>
 CALCVAR GLOBAL 天下第一女战士行会 = <$GUILDNAME>
 CALCVAR GLOBAL 天下第一女战士等级 = <$LEVEL>
 CALCVAR GLOBAL 天下第一女战士日期 = <$DATETIME>
-SAVEVAR GLOBAL 天下第一女战士名称 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女战士行会 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女战士等级 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女战士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女战士名称 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女战士行会 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女战士等级 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女战士日期 ..\Npc_Data\天下第一数据.txt
 MOV A1 <$USERNAME>
 
 SENDMSG 1 恭喜【%s】申请成为天下第一女战士！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
@@ -215,10 +215,10 @@ CALCVAR GLOBAL 天下第一男法师名称 = <$USERNAME>
 CALCVAR GLOBAL 天下第一男法师行会 = <$GUILDNAME>
 CALCVAR GLOBAL 天下第一男法师等级 = <$LEVEL>
 CALCVAR GLOBAL 天下第一男法师日期 = <$DATETIME>
-SAVEVAR GLOBAL 天下第一男法师名称 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男法师行会 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男法师等级 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男法师日期 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男法师名称 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男法师行会 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男法师等级 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男法师日期 ..\Npc_Data\天下第一数据.txt
 MOV A2 <$USERNAME>
 
 SENDMSG 1 恭喜【%s】申请成为天下第一男法师！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
@@ -258,10 +258,10 @@ CALCVAR GLOBAL 天下第一女法师名称 = <$USERNAME>
 CALCVAR GLOBAL 天下第一女法师行会 = <$GUILDNAME>
 CALCVAR GLOBAL 天下第一女法师等级 = <$LEVEL>
 CALCVAR GLOBAL 天下第一女法师日期 = <$DATETIME>
-SAVEVAR GLOBAL 天下第一女法师名称 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女法师行会 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女法师等级 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女法师日期 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女法师名称 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女法师行会 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女法师等级 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女法师日期 ..\Npc_Data\天下第一数据.txt
 MOV A3 <$USERNAME>
 
 SENDMSG 1 恭喜【%s】申请成为天下第一女法师！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
@@ -301,10 +301,10 @@ CALCVAR GLOBAL 天下第一男道士名称 = <$USERNAME>
 CALCVAR GLOBAL 天下第一男道士行会 = <$GUILDNAME>
 CALCVAR GLOBAL 天下第一男道士等级 = <$LEVEL>
 CALCVAR GLOBAL 天下第一男道士日期 = <$DATETIME>
-SAVEVAR GLOBAL 天下第一男道士名称 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男道士行会 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男道士等级 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男道士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男道士名称 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男道士行会 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男道士等级 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男道士日期 ..\Npc_Data\天下第一数据.txt
 MOV A4 <$USERNAME>
 
 SENDMSG 1 恭喜【%s】申请成为天下第一男道士！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
@@ -344,10 +344,10 @@ CALCVAR GLOBAL 天下第一女道士名称 = <$USERNAME>
 CALCVAR GLOBAL 天下第一女道士行会 = <$GUILDNAME>
 CALCVAR GLOBAL 天下第一女道士等级 = <$LEVEL>
 CALCVAR GLOBAL 天下第一女道士日期 = <$DATETIME>
-SAVEVAR GLOBAL 天下第一女道士名称 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女道士行会 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女道士等级 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女道士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女道士名称 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女道士行会 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女道士等级 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女道士日期 ..\Npc_Data\天下第一数据.txt
 MOV A5 <$USERNAME>
 
 SENDMSG 1 恭喜【%s】申请成为天下第一女道士！他在烽烟四起的【<$SERVERNAME>】中修炼成为天下第一，明天的天下第一会是谁？
@@ -405,10 +405,10 @@ CALCVAR GLOBAL 天下第一男战士名称 =
 CALCVAR GLOBAL 天下第一男战士行会 =
 CALCVAR GLOBAL 天下第一男战士等级 =
 CALCVAR GLOBAL 天下第一男战士日期 =
-SAVEVAR GLOBAL 天下第一男战士名称 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男战士行会 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男战士等级 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男战士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男战士名称 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男战士行会 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男战士等级 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男战士日期 ..\Npc_Data\天下第一数据.txt
 MOV A0
 #CALL [\天下第一\天下第一变更.txt] @原天下第一处理
 }
@@ -423,10 +423,10 @@ CALCVAR GLOBAL 天下第一女战士名称 =
 CALCVAR GLOBAL 天下第一女战士行会 =
 CALCVAR GLOBAL 天下第一女战士等级 =
 CALCVAR GLOBAL 天下第一女战士日期 =
-SAVEVAR GLOBAL 天下第一女战士名称 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女战士行会 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女战士等级 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女战士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女战士名称 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女战士行会 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女战士等级 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女战士日期 ..\Npc_Data\天下第一数据.txt
 MOV A1
 #CALL [\天下第一\天下第一变更.txt] @原天下第一处理
 }
@@ -441,10 +441,10 @@ CALCVAR GLOBAL 天下第一男法师名称 =
 CALCVAR GLOBAL 天下第一男法师行会 =
 CALCVAR GLOBAL 天下第一男法师等级 =
 CALCVAR GLOBAL 天下第一男法师日期 =
-SAVEVAR GLOBAL 天下第一男法师名称 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男法师行会 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男法师等级 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男法师日期 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男法师名称 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男法师行会 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男法师等级 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男法师日期 ..\Npc_Data\天下第一数据.txt
 MOV A2
 #CALL [\天下第一\天下第一变更.txt] @原天下第一处理
 }
@@ -459,10 +459,10 @@ CALCVAR GLOBAL 天下第一女法师名称 =
 CALCVAR GLOBAL 天下第一女法师行会 =
 CALCVAR GLOBAL 天下第一女法师等级 =
 CALCVAR GLOBAL 天下第一女法师日期 =
-SAVEVAR GLOBAL 天下第一女法师名称 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女法师行会 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女法师等级 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女法师日期 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女法师名称 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女法师行会 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女法师等级 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女法师日期 ..\Npc_Data\天下第一数据.txt
 MOV A3
 #CALL [\天下第一\天下第一变更.txt] @原天下第一处理
 }
@@ -477,10 +477,10 @@ CALCVAR GLOBAL 天下第一男道士名称 =
 CALCVAR GLOBAL 天下第一男道士行会 =
 CALCVAR GLOBAL 天下第一男道士等级 =
 CALCVAR GLOBAL 天下第一男道士日期 =
-SAVEVAR GLOBAL 天下第一男道士名称 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男道士行会 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男道士等级 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一男道士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男道士名称 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男道士行会 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男道士等级 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一男道士日期 ..\Npc_Data\天下第一数据.txt
 MOV A4
 #CALL [\天下第一\天下第一变更.txt] @原天下第一处理
 }
@@ -495,10 +495,10 @@ CALCVAR GLOBAL 天下第一女道士名称 =
 CALCVAR GLOBAL 天下第一女道士行会 =
 CALCVAR GLOBAL 天下第一女道士等级 =
 CALCVAR GLOBAL 天下第一女道士日期 =
-SAVEVAR GLOBAL 天下第一女道士名称 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女道士行会 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女道士等级 ..\QuestDiary\天下第一\天下第一数据.txt
-SAVEVAR GLOBAL 天下第一女道士日期 ..\QuestDiary\天下第一\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女道士名称 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女道士行会 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女道士等级 ..\Npc_Data\天下第一数据.txt
+SAVEVAR GLOBAL 天下第一女道士日期 ..\Npc_Data\天下第一数据.txt
 MOV A5
 #CALL [\天下第一\天下第一变更.txt] @原天下第一处理
 }
