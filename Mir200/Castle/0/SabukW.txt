@@ -1,9 +1,9 @@
 [Setup]
 CastleName=É³°Í¿Ë
 OwnGuild=
-ChangeDate=2024-03-29 13:05:32
-WarDate=2024-03-29 13:05:32
-IncomeToday=2024-04-03 20:57:49
+ChangeDate=2024/03/29 13:05:32
+WarDate=2024/03/29 13:05:32
+IncomeToday=2024/04/04 8:29:12
 TotalGold=1000
 TodayIncome=1000
 
