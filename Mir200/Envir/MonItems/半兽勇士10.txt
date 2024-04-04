@@ -1,13 +1,10 @@
-1/5 金币 1000
+1/30 金币 1000
 
-#CHILD 1/30 RANDOM
-(
-1/1 太阳水
-)
-
-#CHILD 1/40 RANDOM
+#CHILD 1/10 RANDOM
 (
 1/1 强效太阳水
+1/1 强效金创药
+1/1 强效魔法药
 )
 
 #CHILD 1/60 RANDOM
