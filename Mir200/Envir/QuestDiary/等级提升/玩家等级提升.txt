@@ -55,7 +55,7 @@ BREAK
 #IF
 CHECKLEVELEX = 35
 #ACT
-SENDMSG 1 恭喜【<$USERNAME>】等级提升到35级，获得奖励【聚灵珠(大)】、【盟重传送石】和【移动仓库】！
+SENDMSG 1 恭喜【<$USERNAME>】等级提升到35级，获得奖励【聚灵珠(大)】、和【盟重传送石】！
 SENDMSG 5 系统提示：恭喜您等级提升到35级，为感谢您对玛法大陆做出的贡献，【<$SERVERNAME>】特意为您准备了以下礼物，还请笑纳！
 GIVESTATEITEM 聚灵珠(大) 1 1 1 1 1 1
 GIVESTATEITEM 盟重传送石 1 1 1 1 1 1
