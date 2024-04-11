@@ -12,4 +12,6 @@
 #AutoRun NPC RUNONDAY 18:00 @40级衣服怪物刷新
 #AutoRun NPC RUNONDAY 21:00 @40级衣服怪物刷新
 
+#AUTORUN NPC HOUR 1  @虎卫刷新
+
 ;#AUTORUN NPC SEC 10  @怪物攻城
