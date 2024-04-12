@@ -5,7 +5,9 @@
 ;<存放物品/@storage>\ 
 ;<取回物品/@getback>\
 <打开仓库/@OpenStorage>\
-<打听金条/@NewBind>                     <离开/@exit>
+<升级仓库/@升级仓库>\
+<打听金条/@NewBind>\
+<离开/@exit>\
 #ACT
 Close
 
@@ -173,4 +175,70 @@ take 金币 2000
 <交换/@JinZhuanHuanJinTiao> \
 <离开/@exit>
 
+[@升级仓库]
+#IF
+#ACT
+MOV N$无限仓库已扩展容量 0
+MOV N$无限仓库容量 0
+MOV N$无限仓库可扩展容量 882
+MOV N$无限仓库初始容量 98
+MOV N$无限仓库每次扩展容量 49
+
+#IF
+#ACT
+GETBIGSTORAGECOUNT N$无限仓库已扩展容量
+INC <$STR(N$无限仓库容量)> <$STR(N$无限仓库初始容量)>
+INC <$STR(N$无限仓库容量)> <$STR(N$无限仓库已扩展容量)>
+
+#IF
+SMALL N$无限仓库已扩展容量 N$无限仓库可扩展容量
+#SAY
+您的仓库目前可以存放 {<$STR(N$无限仓库容量)>/SCOLOR=224} 件物品，\
+如果想要存放更多的物品，我很乐意帮助您对仓库进行升级。\
+当然，每次升级需要花费 {50 /SCOLOR=224}万金币，可以获得 {<$STR(N$无限仓库每次扩展容量)>/SCOLOR=224} 个储物格。\ \
+<升级仓库/@升级仓库容量>\
+<返回/@main>\
+<离开/@exit>\
+#ELSESAY
+您的仓库已经开启所有储物格，不能继续升级。\ \
+<返回/@main>\
+<离开/@exit>\
+
+[@升级仓库容量]
+#IF
+#SAY
+您确定要对仓库进行升级吗？\ \ 
+<确认升级/@确认要升级>\
+<我再想想/@exit>\
+
+[@确认要升级]
+#IF
+#ACT
+GETBIGSTORAGECOUNT N$无限仓库已扩展容量
+
+#IF
+CHECKGOLD 500000
+#ELSEACT
+BREAK
+#ELSESAY
+升级仓库需要花费 50 万金币，准备好了再来找我吧！\ \ 
+<返回/@main>\
+<离开/@exit>\
+
+#IF
+CHECKGOLD 500000
+SMALL N$无限仓库已扩展容量 N$无限仓库可扩展容量
+#ACT 
+TAKE 金币 500000
+SETBIGSTORAGECOUNT + N$无限仓库每次扩展容量
+#SAY
+恭喜您，升级仓库成功，快去看看吧！\ \ 
+<打开仓库/@OpenStorage>\
+<继续升级/@升级仓库>\
+<返回/@main>\
+<离开/@exit>\
+#ELSESAY
+您的仓库已经开启所有储物格，不能继续升级。\ \
+<返回/@main>\
+<离开/@exit>\
 }
