@@ -65,7 +65,7 @@
 1/80 修罗
 1/80 凝霜
 
-#CHILD 1/150 RANDOM
+#CHILD 1/250 RANDOM
 (
 1/1 鹿皮靴
 1/1 铁腰带
@@ -83,13 +83,13 @@
 1/1 银蛇
 )
 
-#CHILD 1/600 RANDOM
+#CHILD 1/800 RANDOM
 (
 1/1 无极棍
 1/1 井中月
 )
 
-#CHILD 1/700 RANDOM
+#CHILD 1/900 RANDOM
 (
 1/1 记忆项链
 1/1 记忆头盔
