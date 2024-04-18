@@ -46,10 +46,10 @@ BREAK
 #IF
 CHECKLEVELEX = 22
 #ACT
-SENDMSG 1 恭喜【<$USERNAME>】等级提升到22级，获得奖励【聚灵珠(中)】和【封魔传送石】！
+SENDMSG 1 恭喜【<$USERNAME>】等级提升到22级，获得奖励【聚灵珠(中)】和【随机传送石】！
 SENDMSG 5 系统提示：恭喜您等级提升到22级，为感谢您对玛法大陆做出的贡献，【<$SERVERNAME>】特意为您准备了以下礼物，还请笑纳！
 GIVESTATEITEM 聚灵珠(中) 1 1 1 1 1 1
-GIVESTATEITEM 封魔传送石 1 1 1 1 1 1
+GIVESTATEITEM 随机传送石 1 1 1 1 1 1
 BREAK
 
 #IF
