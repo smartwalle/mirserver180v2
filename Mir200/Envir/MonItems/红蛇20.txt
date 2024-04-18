@@ -24,7 +24,7 @@
 1/1 生铁戒指
 )
 
-#CHILD 1/130 RANDOM
+#CHILD 1/160 RANDOM
 (
 1/1 金戒指
 )
@@ -50,7 +50,7 @@
 1/1 骷髅戒指
 )
 
-#CHILD 1/240 RANDOM
+#CHILD 1/340 RANDOM
 (
 1/1 珊瑚戒指
 1/1 降妖除魔戒指
@@ -64,7 +64,7 @@
 1/1 道士手镯
 )
 
-#CHILD 1/230 RANDOM
+#CHILD 1/330 RANDOM
 (
 1/1 死神手套
 1/1 金手镯

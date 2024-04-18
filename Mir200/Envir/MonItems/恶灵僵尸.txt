@@ -41,7 +41,7 @@
 1/1 生铁戒指
 )
 
-#CHILD 1/140 RANDOM
+#CHILD 1/260 RANDOM
 (
 1/1 金戒指
 )
