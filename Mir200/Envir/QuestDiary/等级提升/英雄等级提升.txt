@@ -6,30 +6,26 @@ SENDMSG 5 系统提示：恭喜您的英雄等级得到提升！
 
 #IF
 CHECKHEROLEVEL = 7
-CHECKHEROJOB Warrior
+CHECKHEROJOB WARRIOR
 #ACT
-SENDMSG 5 系统提示：恭喜您的英雄等级提升到7级，为了帮助您更好的成长，【<$SERVERNAME>】特意为您准备了以下礼物，还请笑纳！
 HERO.GIVE 英雄基本剑术 1
-HERO.GIVE 金创药(中)包 1
-HERO.GIVE 魔法药(中)包 1
-BREAK
 
 #IF
 CHECKHEROLEVEL = 7
-CHECKHEROJOB Wizard
+CHECKHEROJOB WIZARD
 #ACT
-SENDMSG 5 系统提示：恭喜您的英雄等级提升到7级，为了帮助您更好的成长，【<$SERVERNAME>】特意为您准备了以下礼物，还请笑纳！
 HERO.GIVE 英雄火球术 1
-HERO.GIVE 金创药(中)包 1
-HERO.GIVE 魔法药(中)包 1
-BREAK
 
 #IF
 CHECKHEROLEVEL = 7
-CHECKHEROJOB Taoist
+CHECKHEROJOB TAOIST
+#ACT
+HERO.GIVE 英雄治愈术 1
+
+#IF
+CHECKHEROLEVEL = 7
 #ACT
 SENDMSG 5 系统提示：恭喜您的英雄等级提升到7级，为了帮助您更好的成长，【<$SERVERNAME>】特意为您准备了以下礼物，还请笑纳！
-HERO.GIVE 英雄治愈术 1
 HERO.GIVE 金创药(中)包 1
 HERO.GIVE 魔法药(中)包 1
 BREAK
