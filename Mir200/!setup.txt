@@ -79,7 +79,7 @@ FirstRun=0
 OffLineShop=1
 OffLineHero=1
 OffLineSlave=1
-ItemNumber=11244850
+ItemNumber=11245436
 ItemNumberEx=1073744786
 ClientFile1=Mir.dat
 ClientFile2=mir.dat
@@ -5628,6 +5628,7 @@ ItemFluteStoneIdxCount=3
 ItemFluteStoneOverlapCount=0
 MonDieRetsetMonGenTime=0
 PetSuffixName=的宠物
+HidePetEggBaseAttr=0
 [Names]
 HealSkill=治愈术
 FireBallSkill=火球术
