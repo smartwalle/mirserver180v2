@@ -3,5 +3,5 @@
 [@main]
 #IF
 #ACT
-#CALL [\装备回收\装备回收.txt] @装备回收
+#CALL [\装备回收\金币回收.txt] @装备回收
 Break
