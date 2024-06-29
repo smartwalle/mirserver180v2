@@ -1,1 +1,3 @@
+D:\热血传奇20\data\mon41.wzl
+D:\热血传奇20\data\stateitem.wzl
 D:\MirServer\登录器\NewopUI.Pak
