@@ -3,7 +3,7 @@ CastleName=É³°Í¿Ë
 OwnGuild=
 ChangeDate=2024-03-29 13:05:32
 WarDate=2024-03-29 13:05:32
-IncomeToday=2024-10-18 20:48:30
+IncomeToday=2024-11-03 13:13:06
 TotalGold=1000
 TodayIncome=1000
 
