@@ -1779,7 +1779,7 @@ E605       13,63                ->         D601       10,198
 D601       9,197                ->         E605       13,64
 
 ; Î´Öª°µµî
-[M001 Î´Öª°µµî] NORECALL NORECONNECT(E603) NOGUILDRECALL NODEARRECALL NOMasterRECALL NOPOSITIONMOVE
+[M001 Î´Öª°µµî] NORECALL NORECONNECT(E603) NOGUILDRECALL NODEARRECALL NOMasterRECALL NOPOSITIONMOVE TimeMap(E603|60|0)
 
 ; =============================================================================
 ; ²ÔÔÂµº

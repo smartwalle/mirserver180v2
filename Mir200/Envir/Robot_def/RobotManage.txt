@@ -22,61 +22,6 @@ SENDMSG 1 游戏虽然好玩，可别忘了多陪陪你的家人和朋友!
 SENDMSG 1 亲爱的玩家，现在已经是晚上了!
 SENDMSG 1 游戏虽然好玩，也别忘了陪家人和朋友吃顿晚饭!
 
-[@40级衣服怪物刷新]
-#IF
-CheckMapSameMonCount D024 暗之沃玛教主 = 0
-#ACT
-MonGenEx D024 50 50 暗之沃玛教主 30 1 249
-SENDMSG 1 携带着[天师长袍]的暗之沃玛教主出现在[沃玛教主大殿],急需勇士们的支援...
-#ELSEACT
-SENDMSG 1 携带着[天师长袍]的暗之沃玛教主出现在[沃玛教主大殿],急需勇士们的支援...
-
-#IF
-CheckMapSameMonCount DM002 暗之骷髅精灵 = 0
-#ACT
-MonGenEx DM002 18 16 暗之骷髅精灵 10 1 249
-SENDMSG 1 携带着[圣战宝甲]的暗之骷髅精灵出现在[国王陵墓],急需勇士们的支援...
-#ELSEACT
-SENDMSG 1 携带着[圣战宝甲]的暗之骷髅精灵出现在[国王陵墓],急需勇士们的支援...
-
-#IF
-CheckMapSameMonCount D10051 暗之双头金刚 = 0
-#ACT
-MonGenEx D10051 55 25 暗之双头金刚 5 1 249
-SENDMSG 1 携带着[天尊道袍]的暗之双头金刚出现在[祭坛秘道],急需勇士们的支援...
-#ELSEACT
-SENDMSG 1 携带着[天尊道袍]的暗之双头金刚出现在[祭坛秘道],急需勇士们的支援...
-
-#IF
-CheckMapSameMonCount D2052 暗之黄泉教主 = 0
-#ACT
-MonGenEx D2052 50 50 暗之黄泉教主 50 1 249
-SENDMSG 1 携带着[法神披风]的暗之黄泉教主出现在[尸魔洞三层],急需勇士们的支援...
-#ELSEACT
-SENDMSG 1 携带着[法神披风]的暗之黄泉教主出现在[尸魔洞三层],急需勇士们的支援...
-
-#IF
-CheckMapSameMonCount D10052 暗之双头血魔 = 0
-#ACT
-MonGenEx D10052 65 35 暗之双头血魔 5 1 249
-SENDMSG 1 携带着[天魔神甲]的暗之双头血魔出现在[山谷秘道],急需勇士们的支援...
-#ELSEACT
-SENDMSG 1 携带着[天魔神甲]的暗之双头血魔出现在[山谷秘道],急需勇士们的支援...
-
-#IF
-CheckMapSameMonCount D2003 暗之虹魔教主 = 0
-#ACT
-MonGenEx D2003 96 128 暗之虹魔教主 5 1 249
-SENDMSG 1 携带着[霓裳羽衣]的暗之虹魔教主出现在[封魔道],急需勇士们的支援...
-#ELSEACT
-SENDMSG 1 携带着[霓裳羽衣]的暗之虹魔教主出现在[封魔道],急需勇士们的支援...
-
-[@虎卫刷新]
-#IF
-CheckMapSameMonCount 1002 虎卫 = 0
-#ACT
-MonGenEx 1002 14 13 虎卫 5 1 246
-
 [@怪物攻城]
 #IF
 #ACT
